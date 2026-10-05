@@ -62,11 +62,12 @@
   .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center}
   .hero h1{font-size:clamp(30px,4.6vw,58px);font-weight:700;margin:18px 0 22px}
   .hero .lead{font-size:clamp(17px,1.5vw,20px);color:var(--ink-2);max-width:560px}
-  .checks{list-style:none;margin:28px 0 0;display:grid;gap:12px}
-  .checks li{display:flex;gap:12px;align-items:flex-start;font-weight:500}
-  .checks svg{flex:none;margin-top:2px}
-  .trust{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
-  .chip{font-size:13px;font-weight:600;padding:8px 13px;border-radius:999px;background:var(--bg-2);border:1px solid var(--line);color:var(--ink-2)}
+  .proof-line{margin-top:30px;font-size:15px;font-weight:600;color:var(--ink-2)}
+  .pend{background:#FFF1C2;color:#7A4B00;font-weight:700;padding:0 .25em;border-radius:4px}
+
+  /* FAIXA DE AUTORIDADE */
+  .authority{padding:28px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
+  .authority .wrap{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px 28px;text-align:center;font-size:14px;color:var(--muted)}
 
   /* FORM */
   .form-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:32px;box-shadow:var(--shadow);position:relative}
@@ -90,9 +91,11 @@
   .success p{color:var(--ink-2)}
   .form-card.done .hero-cta{display:none}
   .form-card.done .success{display:block}
-  .mini-list{list-style:none;display:grid;gap:10px;margin:0 0 24px}
-  .mini-list li{display:flex;gap:10px;align-items:center;font-size:15px;font-weight:500;color:var(--ink-2)}
-  .mini-list li::before{content:"";flex:none;width:8px;height:8px;border-radius:2px;background:var(--lime-deep)}
+  .next-steps{list-style:none;counter-reset:ns;display:grid;gap:12px;margin:18px 0 18px}
+  .next-steps li{counter-increment:ns;display:flex;gap:12px;align-items:flex-start;font-size:15px;color:var(--ink-2)}
+  .next-steps li::before{content:counter(ns);flex:none;width:24px;height:24px;border-radius:7px;background:var(--lime);display:grid;place-items:center;font:700 12px Unbounded,sans-serif;color:var(--ink);margin-top:1px}
+  .fit{font-size:14px;color:var(--ink-2);padding:14px 16px;border-radius:12px;background:var(--bg-2);border:1px solid var(--line);margin-bottom:18px}
+  .form-note a{text-decoration:underline}
 
   /* MODAL */
   html.lock{overflow:hidden}
@@ -109,7 +112,7 @@
   .modal-x{flex:none;width:34px;height:34px;border-radius:50%;border:0;background:var(--bg-2);display:grid;place-items:center;cursor:pointer}
   .modal-x:hover{background:var(--line)}
   .modal-body{padding:24px 28px 28px}
-  .modal-body h2{font-size:22px;margin-bottom:6px}
+  .modal-body h2{font-size:22px;margin-bottom:20px}
   .modal-body .sub{color:var(--muted);font-size:15px;margin-bottom:22px}
   .pane{display:none}
   .pane.active{display:block;animation:paneIn .3s ease}
@@ -129,16 +132,6 @@
   .sec-head h2{font-size:clamp(28px,3.4vw,42px);font-weight:600;margin:14px 0 16px}
   .sec-head p{font-size:18px;color:var(--ink-2)}
 
-  /* DOR */
-  .pain{background:var(--ink);color:#fff}
-  .pain .eyebrow{color:#C9CDC2}
-  .pain .sec-head p{color:#C9CDC2}
-  .pain-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-  .pain-card{border:1px solid #2C3128;border-radius:var(--radius);padding:28px 24px;background:#171B14}
-  .pain-card .n{font-family:Unbounded;font-size:30px;color:var(--lime);margin-bottom:14px}
-  .pain-card h3{font-size:17px;font-weight:600;margin-bottom:10px}
-  .pain-card p{font-size:15px;color:#B5BAAE}
-
   /* COMO FUNCIONA */
   .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
   .step{position:relative;padding:28px 24px;border-radius:var(--radius);background:var(--bg-2);border:1px solid var(--line)}
@@ -146,15 +139,13 @@
   .step h3{font-size:18px;font-weight:600;margin-bottom:10px}
   .step p{color:var(--ink-2);font-size:15px}
   .step:not(:last-child)::after{content:"";position:absolute;top:50px;right:-14px;width:10px;height:10px;border-top:2px solid var(--ink);border-right:2px solid var(--ink);transform:rotate(45deg);z-index:2}
+  .steps-close{margin-top:40px;text-align:center;font:600 clamp(18px,2vw,22px)/1.35 Unbounded,Inter,sans-serif;letter-spacing:-.01em}
 
   /* DEMO */
   .demo{background:var(--bg-2)}
   .demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-  .demo-list{list-style:none;display:grid;gap:22px;margin-top:30px}
-  .demo-list li{display:flex;gap:16px}
-  .demo-list .ic{flex:none;width:42px;height:42px;border-radius:12px;background:#fff;border:1px solid var(--line);display:grid;place-items:center}
-  .demo-list b{display:block;margin-bottom:3px}
-  .demo-list span{color:var(--ink-2);font-size:15px}
+  .demo-text p{font-size:18px;color:var(--ink-2)}
+  .demo-text p + p{margin-top:16px}
   .mock{position:relative}
   .phone{width:340px;max-width:100%;margin:0 auto;background:var(--ink);border-radius:40px;padding:12px;box-shadow:var(--shadow)}
   .screen{background:#EFEAE2;border-radius:30px;overflow:hidden}
@@ -182,14 +173,6 @@
   .bar{height:6px;border-radius:6px;background:var(--line);overflow:hidden}
   .bar i{display:block;height:100%;width:82%;background:var(--lime-deep)}
 
-  /* FEATURES */
-  .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  .feat{padding:30px 26px;border:1px solid var(--line);border-radius:var(--radius);background:#fff;transition:border-color .2s,transform .2s}
-  .feat:hover{border-color:var(--ink);transform:translateY(-3px)}
-  .feat .ic{width:48px;height:48px;border-radius:14px;background:var(--lime-soft);display:grid;place-items:center;margin-bottom:20px}
-  .feat h3{font-size:18px;font-weight:600;margin-bottom:10px}
-  .feat p{color:var(--ink-2);font-size:15px}
-
   /* ANTES x DEPOIS */
   .compare{display:grid;grid-template-columns:1fr 1fr;gap:18px}
   .col{border-radius:24px;padding:36px 34px}
@@ -197,15 +180,14 @@
   .col ul{list-style:none;display:grid;gap:14px}
   .col li{display:flex;gap:12px;font-size:16px}
   .col li svg{flex:none;margin-top:3px}
+  .col li b{display:block;color:var(--ink);margin-bottom:2px}
   .before{background:var(--bg-2);border:1px solid var(--line);color:var(--ink-2)}
   .after{background:var(--lime);color:var(--ink)}
-  .after li{font-weight:500}
 
-  /* PARA QUEM */
-  .who-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-  .who{border-radius:var(--radius);padding:26px 22px;border:1px solid var(--line)}
-  .who b{font-family:Unbounded;font-size:16px;font-weight:600;display:block;margin:14px 0 8px}
-  .who span{color:var(--ink-2);font-size:15px}
+  /* PROVAS */
+  .proofs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+  .proof{border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;background:#fff;font-size:15px;color:var(--ink-2)}
+  .proof .k{display:block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
 
   /* FAQ */
   .faq{max-width:820px;margin:0 auto}
@@ -223,11 +205,10 @@
   .cta-box h2{font-size:clamp(28px,3.4vw,44px);font-weight:600;margin-bottom:16px}
   .cta-box p{color:#C9CDC2;font-size:18px}
   .cta-actions{display:grid;gap:12px;position:relative}
-  .cta-actions .btn-ghost{color:#fff;border-color:#3A4034}
-  .cta-actions .btn-ghost:hover{border-color:#fff}
 
   footer{border-top:1px solid var(--line);padding:40px 0}
   .foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+  .foot a{text-decoration:underline}
   .foot img{height:44px;width:auto}
 
   .wa-float{position:fixed;right:20px;bottom:20px;z-index:60;width:58px;height:58px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.7);transition:transform .15s}
@@ -238,8 +219,7 @@
 
   @media (max-width:1024px){
     .hero-grid,.demo-grid{grid-template-columns:1fr;gap:48px}
-    .pain-grid,.steps,.who-grid{grid-template-columns:repeat(2,1fr)}
-    .feat-grid{grid-template-columns:repeat(2,1fr)}
+    .steps{grid-template-columns:repeat(2,1fr)}
     .step::after{display:none}
     .cta-box{grid-template-columns:1fr;padding:56px 36px}
     .nav-links{display:none}
@@ -247,17 +227,17 @@
     .hero-copy{display:contents}
     .hero-copy .eyebrow{order:1}.hero-copy h1{order:2}.hero-copy .lead{order:3;margin-bottom:28px}
     .form-card{order:4}
-    .checks{order:5;margin-top:36px}.trust{order:6}
+    .proof-line{order:5;margin-top:28px}
   }
   @media (max-width:640px){
     .wrap{padding:0 16px}
     .hero{padding:32px 0 72px}
     section{padding:72px 0}
-    .pain-grid,.steps,.who-grid,.feat-grid,.compare{grid-template-columns:1fr}
+    .steps,.compare,.proofs{grid-template-columns:1fr}
     .row2{grid-template-columns:1fr}
     .form-card{padding:26px 20px}
     .brand .word{display:none}
-    .nav .btn{padding:11px 14px;font-size:14px}
+    .nav .btn{padding:11px 14px;font-size:13.5px}
     .float.cal{left:0;bottom:30px;width:190px}
     .float.lead{right:0;top:70px;width:170px}
     .cta-box{padding:44px 24px;border-radius:24px}
@@ -274,6 +254,58 @@
     .reveal,.bubble{opacity:1;transform:none}
   }
 </style>
+<script src="config.js"></script>
+<script>
+  // Tracking: grava cada passo do visitante no Supabase (painel.html) e nas ferramentas externas configuradas em config.js
+  const CFG = window.R3_CONFIG || {};
+  const UTM = {};
+  new URLSearchParams(location.search).forEach((v, k) => { if (k.startsWith('utm_')) UTM[k] = v; });
+  const novoId = () => crypto.randomUUID ? crypto.randomUUID() : Date.now() + '-' + Math.random().toString(36).slice(2);
+  let VISITANTE_ID;
+  try { VISITANTE_ID = localStorage.getItem('r3_visitante') || novoId(); localStorage.setItem('r3_visitante', VISITANTE_ID); }
+  catch (err) { VISITANTE_ID = novoId(); }
+
+  function supabase(path, body) {
+    if (!CFG.SUPABASE_URL || !CFG.SUPABASE_ANON_KEY) return Promise.resolve();
+    return fetch(CFG.SUPABASE_URL + '/rest/v1/' + path, {
+      method: 'POST', keepalive: true, body: JSON.stringify(body),
+      headers: {'Content-Type': 'application/json', apikey: CFG.SUPABASE_ANON_KEY,
+                Authorization: 'Bearer ' + CFG.SUPABASE_ANON_KEY, Prefer: 'return=minimal'}
+    }).catch(err => console.error(err));
+  }
+
+  window.dataLayer = window.dataLayer || [];
+  if (CFG.GA4_ID) {
+    const s = document.createElement('script');
+    s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + CFG.GA4_ID;
+    document.head.appendChild(s);
+    window.gtag = function(){ dataLayer.push(arguments); };
+    gtag('js', new Date()); gtag('config', CFG.GA4_ID);
+  }
+  if (CFG.META_PIXEL_ID) {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', CFG.META_PIXEL_ID); fbq('track', 'PageView');
+  }
+  if (CFG.CLARITY_ID) {
+    (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script",CFG.CLARITY_ID);
+  }
+
+  // Registra o evento no banco e em todas as ferramentas ativas
+  function track(event, params = {}) {
+    supabase('eventos', {visitante_id: VISITANTE_ID, evento: event, etapa: params.etapa ?? null, campo: params.campo ?? null,
+                         utm_source: UTM.utm_source ?? null, utm_medium: UTM.utm_medium ?? null, utm_campaign: UTM.utm_campaign ?? null});
+    try {
+      if (window.gtag) gtag('event', event, params);
+      if (window.fbq) {
+        if (event === 'form_submit') fbq('track', 'Lead', params);
+        else if (event === 'whatsapp_click') fbq('track', 'Contact', params);
+        else fbq('trackCustom', event, params);
+      }
+      if (window.clarity) clarity('event', event);
+    } catch (err) { console.error(err); }
+  }
+  track('page_view');
+</script>
 </head>
 <body>
 
@@ -285,11 +317,9 @@
     </a>
     <nav class="nav-links">
       <a href="#como-funciona">Como funciona</a>
-      <a href="#recursos">Recursos</a>
-      <a href="#para-quem">Para quem</a>
-      <a href="#faq">Dúvidas</a>
+      <a href="#faq">Perguntas frequentes</a>
     </nav>
-    <a href="#formulario" class="btn btn-lime" data-open-form>Quero uma demonstração</a>
+    <a href="#formulario" class="btn btn-lime" data-open-form>Quero clientes no meu pátio</a>
   </div>
 </header>
 
@@ -300,91 +330,69 @@
   <img class="hero-sym" src="assets/simbolo-r3.png" alt="">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <span class="eyebrow" style="justify-self:start">CRM para concessionárias</span>
-      <h1>Nenhum lead da sua loja fica <span class="mark">sem resposta.</span></h1>
-      <p class="lead">O CRM da R3 atende pelo WhatsApp em segundos, entende o que o cliente quer, agenda o test-drive na agenda do vendedor e faz o follow-up sozinho. Sua equipe só entra para fechar a venda.</p>
-      <ul class="checks">
-        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#D6E30F"/><path d="M7 12.5l3.2 3L17 9" stroke="#11140F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Resposta automática no WhatsApp, 24 horas por dia, inclusive fim de semana</li>
-        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#D6E30F"/><path d="M7 12.5l3.2 3L17 9" stroke="#11140F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Test-drive e visitas agendados sem ligação, com lembrete para o cliente</li>
-        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#D6E30F"/><path d="M7 12.5l3.2 3L17 9" stroke="#11140F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Funil de cada vendedor na tela do gerente, em tempo real</li>
-      </ul>
-      <div class="trust">
-        <span class="chip">Carros novos</span>
-        <span class="chip">Seminovos</span>
-        <span class="chip">Multimarcas</span>
-        <span class="chip">Grupos com várias lojas</span>
-      </div>
+      <span class="eyebrow" style="justify-self:start">Dono de loja,</span>
+      <h1>Você paga pelo lead, o vendedor demora e o cliente <span class="mark">nunca aparece na loja.</span></h1>
+      <p class="lead">A R3 coloca o cliente pronto pra comprar no seu pátio. Todo lead é atendido no WhatsApp em segundos, qualificado e com test-drive agendado.</p>
+      <!-- PENDENTE: números reais de prova -->
+      <p class="proof-line"><span class="pend">[INSERIR PROVA: nº]</span> lojas atendidas · <span class="pend">[INSERIR PROVA: nº]</span> leads atendidos</p>
     </div>
 
     <div class="form-card" id="formulario">
       <div class="hero-cta">
-        <h2>Veja o CRM funcionando na sua loja</h2>
-        <p class="sub">Responda 3 perguntas rápidas e um especialista te chama no WhatsApp para marcar a demonstração.</p>
-        <ul class="mini-list">
-          <li>Leva menos de 1 minuto</li>
-          <li>Demonstração com o cenário da sua loja</li>
-          <li>Sem compromisso</li>
-        </ul>
-        <button type="button" class="btn btn-ink" data-open-form>Quero minha demonstração
+        <h2>Veja como levar mais clientes ao seu pátio</h2>
+        <ol class="next-steps">
+          <li>Você preenche o formulário, em menos de 1 minuto.</li>
+          <li>Um especialista da R3 chama você no WhatsApp para entender a sua loja e o que ela precisa.</li>
+          <li>Marcamos uma reunião para mostrar como a R3 vai levar clientes ao pátio da sua loja.</li>
+        </ol>
+        <!-- PENDENTE: validar critério mínimo (nº de vendedores ou de leads por mês) -->
+        <p class="fit">É para você se sua loja recebe contatos todos os dias pelo WhatsApp, portais ou anúncios e quer que eles virem cliente no pátio.</p>
+        <button type="button" class="btn btn-ink" data-open-form>Quero clientes no meu pátio
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#D6E30F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
-        <p class="form-note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="4" y="10" width="16" height="11" rx="2" stroke="#6B7065" stroke-width="2"/><path d="M8 10V7a4 4 0 118 0v3" stroke="#6B7065" stroke-width="2"/></svg>Seus dados ficam com a gente. Sem spam.</p>
+        <p class="form-note">Leva 1 minuto. Um especialista da R3 entra em contato pelo WhatsApp.</p>
       </div>
       <div class="success" role="status" aria-live="polite">
         <div class="ok"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#11140F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Recebemos seu contato!</h3>
-        <p>Em breve um especialista da R3 te chama no WhatsApp para marcar a demonstração.</p>
+        <h3>Recebemos!</h3>
+        <p>Um especialista da R3 vai falar com você pelo WhatsApp. Salve nosso número: <span class="pend">[INSERIR número]</span>.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- DOR -->
-<section class="pain">
+<!-- FAIXA DE AUTORIDADE (PENDENTE: se a prova vier só como números agregados, esta faixa pode sair) -->
+<div class="authority">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">O problema</span>
-      <h2>Sua loja paga pelo lead e perde a venda na demora.</h2>
-      <p>Portal, site, Instagram, anúncio no Facebook: o lead chega por todo lado. Quem responde primeiro costuma levar a venda. E o vendedor está no pátio, em atendimento ou de folga.</p>
-    </div>
-    <div class="pain-grid">
-      <div class="pain-card reveal"><div class="n">01</div><h3>Lead esfriando</h3><p>O cliente chama às 21h de sábado e só recebe resposta na segunda. Já fechou com a loja da esquina.</p></div>
-      <div class="pain-card reveal"><div class="n">02</div><h3>WhatsApp no celular do vendedor</h3><p>As conversas ficam no aparelho pessoal. Se o vendedor sai da loja, a carteira de clientes sai junto.</p></div>
-      <div class="pain-card reveal"><div class="n">03</div><h3>Test-drive no caderno</h3><p>Agendamento anotado no papel, sem lembrete. O cliente esquece, falta, e o carro fica parado esperando.</p></div>
-      <div class="pain-card reveal"><div class="n">04</div><h3>Gerente no escuro</h3><p>Ninguém sabe quantos leads entraram, quantos foram atendidos e onde a negociação travou.</p></div>
-    </div>
+    <span class="pend">[INSERIR PROVA: logos de clientes em escala de cinza ou números agregados]</span>
   </div>
-</section>
+</div>
 
 <!-- COMO FUNCIONA -->
 <section id="como-funciona">
   <div class="wrap">
     <div class="sec-head center reveal">
       <span class="eyebrow">Como funciona</span>
-      <h2>Do primeiro "oi" ao test-drive, <span class="mark">no automático</span>.</h2>
-      <p>Você define as regras uma vez. O CRM executa todo dia, em todo lead.</p>
+      <h2>Do anúncio ao pátio, <span class="mark">em 4 passos</span></h2>
     </div>
     <div class="steps">
-      <div class="step reveal"><div class="num">1</div><h3>O lead chega</h3><p>Portais, site, Instagram, Facebook ou o WhatsApp da loja. Tudo cai no mesmo lugar, sem digitar nada.</p></div>
-      <div class="step reveal"><div class="num">2</div><h3>O WhatsApp responde</h3><p>Em segundos o cliente recebe a mensagem e já é qualificado: modelo de interesse, carro na troca, forma de pagamento.</p></div>
-      <div class="step reveal"><div class="num">3</div><h3>O agendamento acontece</h3><p>O cliente escolhe dia e horário do test-drive ou visita. Entra na agenda do vendedor com lembrete automático.</p></div>
-      <div class="step reveal"><div class="num">4</div><h3>Sua equipe fecha</h3><p>O vendedor recebe o lead pronto, com histórico completo. O gerente acompanha tudo no painel.</p></div>
+      <div class="step reveal"><div class="num">1</div><h3>Atrair</h3><p>Anúncios e portais com o seu estoque real.</p></div>
+      <div class="step reveal"><div class="num">2</div><h3>Atender em segundos</h3><p>A IA responde no WhatsApp da loja 24 horas por dia.</p></div>
+      <div class="step reveal"><div class="num">3</div><h3>Qualificar e agendar</h3><p>O cliente informa modelo, troca e forma de pagamento, escolhe o horário do test-drive e recebe lembrete.</p></div>
+      <div class="step reveal"><div class="num">4</div><h3>Medir</h3><p>Todo mês você vê quantos clientes chegaram ao pátio e quanto custou cada um.</p></div>
     </div>
+    <p class="steps-close reveal">Seu vendedor para de correr atrás de lead e faz o que sabe: vender.</p>
   </div>
 </section>
 
 <!-- DEMO -->
 <section class="demo">
   <div class="wrap demo-grid">
-    <div class="reveal">
+    <div class="demo-text reveal">
       <span class="eyebrow">Na prática</span>
-      <h2 style="font-size:clamp(28px,3.4vw,42px);font-weight:600;margin:14px 0 16px">Um atendimento que parece humano e funciona às 3 da manhã.</h2>
-      <p style="font-size:18px;color:var(--ink-2)">A conversa segue o jeito da sua loja: o seu tom, os seus horários, o seu estoque. Quando o cliente pede um vendedor, a conversa passa para a pessoa certa na hora.</p>
-      <ul class="demo-list">
-        <li><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 7v5l3 2" stroke="#11140F" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="#11140F" stroke-width="2"/></svg></span><div><b>Resposta em segundos</b><span>Nenhum cliente esperando fila, feriado ou troca de turno.</span></div></li>
-        <li><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M7 12h10M10 18h4" stroke="#11140F" stroke-width="2" stroke-linecap="round"/></svg></span><div><b>Qualificação automática</b><span>Seu vendedor já sabe o modelo, a troca e o orçamento antes de falar com o cliente.</span></div></li>
-        <li><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="#11140F" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="#11140F" stroke-width="2" stroke-linecap="round"/></svg></span><div><b>Agenda com lembrete</b><span>Confirmação no dia anterior e no dia do test-drive para o cliente não faltar.</span></div></li>
-      </ul>
+      <h2 style="font-size:clamp(28px,3.4vw,42px);font-weight:600;margin:14px 0 16px">Você já tentou agência. Já tentou sistema. O cliente continuou sem aparecer.</h2>
+      <p>A agência entrega lead e para por ali. O sistema organiza, mas não responde ninguém. No fim do mês, cada um culpa o outro, e quem paga é você.</p>
+      <p>Na R3, o mesmo time faz o anúncio, atende em segundos e só passa o cliente para o vendedor quando ele já tem horário marcado no pátio.</p>
     </div>
 
     <div class="mock reveal">
@@ -420,69 +428,43 @@
   </div>
 </section>
 
-<!-- RECURSOS -->
-<section id="recursos">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Recursos</span>
-      <h2>Tudo que a sua equipe de vendas precisa, em um só sistema.</h2>
-      <p>Feito para a rotina de loja de carro: lead de portal, avaliação de usado, financiamento, test-drive e pós-venda.</p>
-    </div>
-    <div class="feat-grid">
-      <div class="feat reveal"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 20l1.3-3.9A8 8 0 1112 20a8 8 0 01-3.9-1L4 20z" stroke="#11140F" stroke-width="2" stroke-linejoin="round"/></svg></div><h3>WhatsApp automatizado</h3><p>Atendimento, qualificação e respostas prontas no número oficial da loja. As conversas ficam na empresa, não no celular de cada vendedor.</p></div>
-      <div class="feat reveal"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="#11140F" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4M8 15h3" stroke="#11140F" stroke-width="2" stroke-linecap="round"/></svg></div><h3>Agendamento de test-drive</h3><p>O cliente marca pelo WhatsApp e o horário entra na agenda do vendedor. Lembretes automáticos para reduzir faltas.</p></div>
-      <div class="feat reveal"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 5h4v14H4zM10 5h4v9h-4zM16 5h4v5h-4z" stroke="#11140F" stroke-width="2" stroke-linejoin="round"/></svg></div><h3>Funil de vendas</h3><p>Cada negociação em uma etapa: novo lead, em atendimento, test-drive, proposta, fechado. Arraste e acompanhe.</p></div>
-      <div class="feat reveal"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#11140F" stroke-width="2"/><path d="M12 4v8l5.5 5.5" stroke="#11140F" stroke-width="2" stroke-linecap="round"/></svg></div><h3>Distribuição de leads</h3><p>Rodízio automático entre os vendedores de plantão. Nenhum lead fica parado esperando alguém pegar.</p></div>
-      <div class="feat reveal"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20 12a8 8 0 11-2.3-5.7M20 4v4h-4" stroke="#11140F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Follow-up automático</h3><p>O cliente sumiu? O CRM retoma a conversa no momento certo, com a mensagem certa, até ele responder.</p></div>
-      <div class="feat reveal"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2" stroke="#11140F" stroke-width="2" stroke-linecap="round"/></svg></div><h3>Painel do gerente</h3><p>Leads por origem, tempo de resposta, conversão por vendedor. Decisão com número, não com achismo.</p></div>
-    </div>
-  </div>
-</section>
-
 <!-- ANTES x DEPOIS -->
-<section style="padding-top:0">
+<section>
   <div class="wrap">
     <div class="sec-head center reveal">
       <span class="eyebrow">O que muda</span>
-      <h2>A mesma equipe, vendendo com método.</h2>
+      <h2>A diferença aparece <span class="mark">no seu pátio</span></h2>
     </div>
     <div class="compare">
       <div class="col before reveal">
         <h3>Sem a R3</h3>
         <ul>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#9AA094" stroke-width="2.4" stroke-linecap="round"/></svg>Lead respondido horas (ou dias) depois</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#9AA094" stroke-width="2.4" stroke-linecap="round"/></svg>Conversas espalhadas no celular de cada vendedor</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#9AA094" stroke-width="2.4" stroke-linecap="round"/></svg>Test-drive sem confirmação e cliente que não aparece</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#9AA094" stroke-width="2.4" stroke-linecap="round"/></svg>Follow-up depende da memória do vendedor</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#9AA094" stroke-width="2.4" stroke-linecap="round"/></svg>Gerente descobre o resultado só no fim do mês</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#9AA094" stroke-width="2.4" stroke-linecap="round"/></svg><div><b>Cliente que chama sábado à noite</b>Resposta na segunda. Ele já comprou em outra loja.</div></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#9AA094" stroke-width="2.4" stroke-linecap="round"/></svg><div><b>Quem atende</b>O vendedor, quando dá tempo.</div></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#9AA094" stroke-width="2.4" stroke-linecap="round"/></svg><div><b>Test-drive</b>Marcado no caderno. O cliente esquece e falta.</div></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#9AA094" stroke-width="2.4" stroke-linecap="round"/></svg><div><b>Contatos dos clientes</b>No celular do vendedor. Se ele sai, a carteira vai junto.</div></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#9AA094" stroke-width="2.4" stroke-linecap="round"/></svg><div><b>Anúncio</b>Você vê cliques e curtidas.</div></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#9AA094" stroke-width="2.4" stroke-linecap="round"/></svg><div><b>Quem cuida</b>Agência de um lado, sistema do outro.</div></li>
         </ul>
       </div>
       <div class="col after reveal">
         <h3>Com a R3</h3>
         <ul>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#11140F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Todo lead respondido em segundos, 24 horas por dia</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#11140F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Histórico de cada cliente guardado na empresa</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#11140F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Agenda organizada com lembrete automático</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#11140F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Follow-up que acontece sozinho, sem esquecer ninguém</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#11140F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Funil e desempenho de cada vendedor em tempo real</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#11140F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Cliente que chama sábado à noite</b>Atendido em segundos, a qualquer hora.</div></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#11140F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Quem atende</b>A IA responde, qualifica e passa para o vendedor com horário marcado.</div></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#11140F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Test-drive</b>Agendado, com lembrete para o cliente.</div></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#11140F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Contatos dos clientes</b>No nome da loja, com todo o histórico.</div></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#11140F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Anúncio</b>Você vê quantos clientes chegaram ao pátio e quanto custou cada um.</div></li>
+          <!-- PENDENTE: validar composição do time -->
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#11140F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Quem cuida</b>Um time só, do anúncio ao pátio.</div></li>
         </ul>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- PARA QUEM -->
-<section id="para-quem" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Para quem é</span>
-      <h2>Feito para quem vive de vender carro.</h2>
-    </div>
-    <div class="who-grid">
-      <div class="who reveal"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M3 15l2-6h14l2 6v4H3v-4z" stroke="#11140F" stroke-width="2" stroke-linejoin="round"/><circle cx="7.5" cy="15.5" r="1.3" fill="#11140F"/><circle cx="16.5" cy="15.5" r="1.3" fill="#11140F"/></svg><b>Concessionárias</b><span>Alto volume de leads de montadora e portais, com várias equipes.</span></div>
-      <div class="who reveal"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 20V10l8-6 8 6v10" stroke="#11140F" stroke-width="2" stroke-linejoin="round"/><path d="M9 20v-6h6v6" stroke="#11140F" stroke-width="2"/></svg><b>Multimarcas</b><span>Estoque variado e cliente que compara preço em várias lojas.</span></div>
-      <div class="who reveal"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M20 12a8 8 0 11-2.3-5.7M20 4v4h-4" stroke="#11140F" stroke-width="2" stroke-linecap="round"/></svg><b>Seminovos</b><span>Avaliação de troca e financiamento logo no primeiro contato.</span></div>
-      <div class="who reveal"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="#11140F" stroke-width="2"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="#11140F" stroke-width="2"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="#11140F" stroke-width="2"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="#11140F" stroke-width="2"/></svg><b>Grupos automotivos</b><span>Várias lojas, um painel. Compare resultados entre unidades.</span></div>
+    <!-- PENDENTE: provas reais (2 cases + 1 depoimento) -->
+    <div class="proofs">
+      <div class="proof reveal"><span class="k">Case 1</span><span class="pend">[INSERIR PROVA: Tipo de loja e cidade · Investiu R$ X em anúncio · Y clientes no pátio · Z carros vendidos · em N dias]</span></div>
+      <div class="proof reveal"><span class="k">Case 2</span><span class="pend">[INSERIR PROVA: mesmo formato]</span></div>
+      <div class="proof reveal"><span class="k">Depoimento</span><span class="pend">[INSERIR PROVA: 1 depoimento, de preferência em vídeo, com nome, cargo, loja e resultado]</span></div>
     </div>
   </div>
 </section>
@@ -495,11 +477,9 @@
       <h2>Perguntas frequentes</h2>
     </div>
     <div class="faq">
-      <details><summary>Preciso trocar o número de WhatsApp da loja?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#11140F" stroke-width="2.6" stroke-linecap="round"/></svg></span></summary><p>Na demonstração a nossa equipe avalia o número que você já usa e mostra o melhor caminho para conectar ao CRM.</p></details>
-      <details><summary>O atendimento automático parece robô?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#11140F" stroke-width="2.6" stroke-linecap="round"/></svg></span></summary><p>Não. As mensagens seguem o tom da sua loja, e sempre que o cliente pede um vendedor a conversa passa para uma pessoa, com todo o histórico.</p></details>
-      <details><summary>Meus vendedores vão conseguir usar?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#11140F" stroke-width="2.6" stroke-linecap="round"/></svg></span></summary><p>Sim. O sistema foi pensado para a rotina do salão de vendas e funciona no computador e no celular. A implantação inclui treinamento da equipe.</p></details>
-      <details><summary>Consigo ver os leads que vêm dos portais e das redes sociais?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#11140F" stroke-width="2.6" stroke-linecap="round"/></svg></span></summary><p>Sim. Os leads são centralizados no CRM com a origem identificada, para você saber qual canal traz mais vendas.</p></details>
-      <details><summary>Quanto tempo leva para começar?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#11140F" stroke-width="2.6" stroke-linecap="round"/></svg></span></summary><p>O prazo depende do tamanho da operação. Na demonstração a gente monta o plano de implantação para a sua loja.</p></details>
+      <details><summary>O cliente vai perceber que é robô?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#11140F" stroke-width="2.6" stroke-linecap="round"/></svg></span></summary><p>A conversa segue o tom da sua loja. Quando o cliente pede, um vendedor assume na hora, com todo o histórico.</p></details>
+      <details><summary>Preciso trocar o número do WhatsApp?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#11140F" stroke-width="2.6" stroke-linecap="round"/></svg></span></summary><p>Não. A R3 funciona com o número que a sua loja já usa.</p></details>
+      <details><summary>Vocês garantem a venda?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#11140F" stroke-width="2.6" stroke-linecap="round"/></svg></span></summary><p>A venda é fechada pelo seu time. O que a R3 garante é que todo lead seja atendido em segundos e qualificado pela IA, e que o cliente chegue ao vendedor com o test-drive agendado.</p></details>
     </div>
   </div>
 </section>
@@ -510,12 +490,10 @@
     <div class="cta-box reveal">
       <img class="bg" src="assets/simbolo-r3.png" alt="">
       <div style="position:relative">
-        <h2>O próximo lead da sua loja pode chegar <span style="color:var(--lime)">agora.</span></h2>
-        <p>Veja em uma demonstração rápida como o CRM da R3 responde, agenda e acompanha cada cliente.</p>
+        <h2>O próximo lead da sua loja pode chegar hoje à noite. <span style="color:var(--lime)">Quem vai responder?</span></h2>
       </div>
       <div class="cta-actions">
-        <a href="#formulario" class="btn btn-lime" data-open-form>Quero uma demonstração</a>
-        <a href="#como-funciona" class="btn btn-ghost">Ver como funciona</a>
+        <a href="#formulario" class="btn btn-lime" data-open-form>Quero clientes no meu pátio</a>
       </div>
     </div>
   </div>
@@ -526,7 +504,8 @@
 <footer>
   <div class="wrap foot">
     <img src="assets/logo-r3-escuro.png" alt="R3 Company">
-    <span>© <span id="ano"></span> R3 Company. Todos os direitos reservados.</span>
+    <!-- PENDENTE: razão social, CNPJ e link da política de privacidade -->
+    <span>Razão social · CNPJ <span class="pend">[INSERIR]</span> · <a href="#">Política de privacidade</a></span>
   </div>
 </footer>
 
@@ -540,7 +519,7 @@
   <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
     <div class="prog">
       <div class="prog-top">
-        <span class="prog-label" id="progLabel"><b>Etapa 1 de 3</b> · Sobre você</span>
+        <span class="prog-label" id="progLabel"><b>Etapa 1 de 3</b></span>
         <button type="button" class="modal-x" id="modalClose" aria-label="Fechar">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#11140F" stroke-width="2.6" stroke-linecap="round"/></svg>
         </button>
@@ -550,31 +529,33 @@
 
     <div class="modal-body">
       <form id="leadForm" novalidate>
-        <div class="pane active" data-title="Sobre você">
-          <h2 id="modalTitle">Veja o CRM funcionando na sua loja</h2>
-          <p class="sub">Responda 3 perguntas rápidas e um especialista te chama no WhatsApp para marcar a demonstração.</p>
+        <div class="pane active">
+          <h2 id="modalTitle">Veja como levar mais clientes ao seu pátio</h2>
           <div class="field">
-            <label for="nome">Seu nome</label>
+            <label for="nome">Nome</label>
             <input id="nome" name="nome" type="text" autocomplete="name" placeholder="Ex.: Carlos Almeida" required>
             <span class="msg">Informe seu nome.</span>
           </div>
           <div class="field">
-            <label for="whats">WhatsApp</label>
+            <label for="whats">WhatsApp com DDD</label>
             <input id="whats" name="whatsapp" type="tel" inputmode="numeric" autocomplete="tel" placeholder="(00) 00000-0000" required>
             <span class="msg">Informe um WhatsApp válido com DDD.</span>
           </div>
         </div>
 
-        <div class="pane" data-title="Sobre a loja">
-          <h2>Sobre a sua loja</h2>
-          <p class="sub">Assim a demonstração já vem com o cenário da sua concessionária.</p>
+        <div class="pane">
           <div class="field">
-            <label for="loja">Nome da concessionária</label>
+            <label for="loja">Nome da loja</label>
             <input id="loja" name="concessionaria" type="text" autocomplete="organization" placeholder="Ex.: Almeida Veículos" required>
             <span class="msg">Informe o nome da loja.</span>
           </div>
           <div class="field">
-            <label for="cargo">Seu cargo</label>
+            <label for="cidade">Cidade</label>
+            <input id="cidade" name="cidade" type="text" autocomplete="address-level2" placeholder="Ex.: Campinas" required>
+            <span class="msg">Informe a cidade da loja.</span>
+          </div>
+          <div class="field">
+            <label for="cargo">Cargo</label>
             <select id="cargo" name="cargo" required>
               <option value="">Selecione</option>
               <option>Dono / Sócio</option>
@@ -587,11 +568,21 @@
           </div>
         </div>
 
-        <div class="pane" data-title="Tamanho da operação">
-          <h2>Tamanho da operação</h2>
-          <p class="sub">Última etapa. Com isso a gente indica o plano certo para a sua loja.</p>
+        <div class="pane">
           <div class="field">
-            <label for="vend">Quantos vendedores</label>
+            <label for="leadsMes">Leads por mês</label>
+            <!-- Faixas provisórias: confirmar os valores com a R3 -->
+            <select id="leadsMes" name="leads_mes" required>
+              <option value="">Selecione</option>
+              <option>Até 100</option>
+              <option>100 a 300</option>
+              <option>300 a 600</option>
+              <option>Mais de 600</option>
+            </select>
+            <span class="msg">Selecione a quantidade de leads por mês.</span>
+          </div>
+          <div class="field">
+            <label for="vend">Número de vendedores</label>
             <select id="vend" name="vendedores" required>
               <option value="">Selecione</option>
               <option>1 a 5</option>
@@ -601,19 +592,6 @@
             </select>
             <span class="msg">Selecione a quantidade de vendedores.</span>
           </div>
-          <div class="field">
-            <label for="fat">Faturamento mensal da loja</label>
-            <!-- Faixas provisórias: confirmar os valores com a R3 -->
-            <select id="fat" name="faturamento" required>
-              <option value="">Selecione</option>
-              <option>Até R$ 500 mil</option>
-              <option>R$ 500 mil a R$ 1 milhão</option>
-              <option>R$ 1 milhão a R$ 3 milhões</option>
-              <option>R$ 3 milhões a R$ 5 milhões</option>
-              <option>Acima de R$ 5 milhões</option>
-            </select>
-            <span class="msg">Selecione a faixa de faturamento.</span>
-          </div>
         </div>
 
         <div class="step-btns">
@@ -622,13 +600,14 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#D6E30F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
         </div>
-        <p class="form-note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="4" y="10" width="16" height="11" rx="2" stroke="#6B7065" stroke-width="2"/><path d="M8 10V7a4 4 0 118 0v3" stroke="#6B7065" stroke-width="2"/></svg>Seus dados ficam com a gente. Sem spam.</p>
+        <!-- PENDENTE: link da política de privacidade -->
+        <p class="form-note"><span>Usamos seus dados só para falar com você sobre a R3. <a href="#">Política de privacidade</a></span></p>
       </form>
 
       <div class="success" role="status" aria-live="polite">
         <div class="ok"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#11140F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Recebemos seu contato!</h3>
-        <p>Em breve um especialista da R3 te chama no WhatsApp para marcar a demonstração.</p>
+        <h3>Recebemos!</h3>
+        <p>Um especialista da R3 vai falar com você pelo WhatsApp. Salve nosso número: <span class="pend">[INSERIR número]</span>.</p>
         <button type="button" class="btn btn-lime" id="btnDone">Continuar no site</button>
       </div>
     </div>
@@ -636,10 +615,8 @@
 </div>
 
 <script>
-  // Endpoint que recebe o formulário (webhook do CRM, n8n, Make, Formspree...). Deixe vazio para só exibir a mensagem de sucesso.
+  // Opcional: webhook extra que também recebe o lead (CRM, n8n, Make...). Os leads já vão para o Supabase via config.js.
   const FORM_ENDPOINT = "";
-
-  document.getElementById('ano').textContent = new Date().getFullYear();
 
   const nav = document.getElementById('nav');
   addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 10), {passive:true});
@@ -661,6 +638,7 @@
   let lastFocus = null;
 
   function openModal() {
+    track('form_open');
     lastFocus = document.activeElement;
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');
@@ -668,6 +646,7 @@
     setTimeout(() => card.focus(), 60);
   }
   function closeModal() {
+    if (!card.classList.contains('done')) track('form_close', {etapa: step});
     modal.classList.remove('open');
     modal.setAttribute('aria-hidden', 'true');
     document.documentElement.classList.remove('lock');
@@ -675,12 +654,13 @@
   }
   document.querySelectorAll('[data-open-form]').forEach(el => el.addEventListener('click', e => { e.preventDefault(); openModal(); }));
   document.getElementById('modalClose').addEventListener('click', closeModal);
+  document.getElementById('waFloat').addEventListener('click', () => track('whatsapp_click'));
   document.getElementById('btnDone').addEventListener('click', closeModal);
   document.addEventListener('keydown', e => {
     if (!modal.classList.contains('open')) return;
     if (e.key === 'Escape') closeModal();
     if (e.key === 'Tab') {
-      const els = [...card.querySelectorAll('button,input,select')].filter(el => el.offsetParent !== null);
+      const els = [...card.querySelectorAll('button,input,select,a[href]')].filter(el => el.offsetParent !== null);
       const first = els[0], last = els[els.length - 1];
       if (e.shiftKey && (document.activeElement === first || document.activeElement === card)) { e.preventDefault(); last.focus(); }
       else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
@@ -706,9 +686,9 @@
     step = n;
     panes.forEach((p, i) => p.classList.toggle('active', i === n - 1));
     setProgress(n / TOTAL * 100);
-    progLabel.innerHTML = `<b>Etapa ${n} de ${TOTAL}</b> · ${panes[n - 1].dataset.title}`;
+    progLabel.innerHTML = `<b>Etapa ${n} de ${TOTAL}</b>`;
     btnBack.hidden = n === 1;
-    btnNext.querySelector('span').textContent = n === TOTAL ? 'Quero minha demonstração' : 'Continuar';
+    btnNext.querySelector('span').textContent = n === TOTAL ? 'Quero clientes no meu pátio' : 'Continuar';
     card.scrollTop = 0;
     if (focus) panes[n - 1].querySelector('input,select').focus();
   }
@@ -718,6 +698,7 @@
       let valid = el.value.trim() !== '';
       if (el.id === 'whats') valid = el.value.replace(/\D/g,'').length >= 10;
       el.closest('.field').classList.toggle('err', !valid);
+      if (!valid) track('form_error', {etapa: step, campo: el.name});
       if (!valid && ok) { el.focus(); ok = false; }
     });
     return ok;
@@ -730,22 +711,32 @@
   }
   btnBack.addEventListener('click', () => setStep(step - 1, true));
 
+  // Mesmo id em todos os envios do visitante: o webhook atualiza o lead em vez de duplicar
+  const LEAD_ID = novoId();
+  function sendLead(status, etapa) {
+    const data = Object.fromEntries(new FormData(form));
+    Object.assign(data, {lead_id: LEAD_ID, status, etapa, origem: 'landing-crm-concessionarias'}, UTM);
+    const envios = [supabase('rpc/salvar_lead', {dados: data})];
+    if (FORM_ENDPOINT) envios.push(fetch(FORM_ENDPOINT, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data), keepalive:true})
+      .catch(err => console.error(err)));
+    return Promise.all(envios);
+  }
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (!validate(panes[step - 1])) return;
-    if (step < TOTAL) { setStep(step + 1, true); return; }
-
-    const data = Object.fromEntries(new FormData(form));
-    data.origem = 'landing-crm-concessionarias';
-    const params = new URLSearchParams(location.search);
-    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(k => { if (params.get(k)) data[k] = params.get(k); });
+    track('form_step_complete', {etapa: step});
+    if (step < TOTAL) {
+      // Lead parcial: com nome e WhatsApp em mãos, a R3 já consegue chamar mesmo se a pessoa desistir
+      sendLead('parcial', step);
+      setStep(step + 1, true);
+      return;
+    }
 
     btnNext.disabled = true; btnNext.style.opacity = .7;
-    try {
-      if (FORM_ENDPOINT) {
-        await fetch(FORM_ENDPOINT, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data)});
-      }
-    } catch (err) { console.error(err); }
+    await sendLead('completo', step);
+    const f = form.elements;
+    track('form_submit', {cargo: f.cargo.value, vendedores: f.vendedores.value, leads_mes: f.leads_mes.value});
     try { localStorage.setItem(DONE_KEY, '1'); } catch (err) {}
     markDone();
     document.getElementById('btnDone').focus();

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Painel de Leads | R3</title>
+<link rel="icon" href="assets/simbolo-r3.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --lime:#D6E30F;
+    --lime-soft:#F4F8C9;
+    --lime-deep:#9AA400;
+    --ink:#11140F;
+    --ink-2:#3B4036;
+    --muted:#6B7065;
+    --line:#E6E8E1;
+    --bg:#FFFFFF;
+    --bg-2:#F7F8F4;
+    --bar:#11140F;
+    --bar-soft:#C9CCC2;
+    --good:#2F8A3E;
+    --warn:#B26B00;
+    --wa:#25D366;
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg-2);line-height:1.5;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Unbounded,Inter,sans-serif;letter-spacing:-.02em;line-height:1.15}
+  button,input,select{font:inherit;color:inherit}
+  a{color:inherit}
+  [hidden]{display:none !important}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;font-size:14px;padding:11px 16px;border-radius:10px;border:1.5px solid var(--line);background:var(--bg);cursor:pointer;transition:border-color .15s,background .15s}
+  .btn:hover{border-color:var(--ink)}
+  .btn-ink{background:var(--ink);border-color:var(--ink);color:#fff}
+  .btn-ink:hover{background:#262b22}
+
+  /* LOGIN */
+  .login{min-height:100vh;display:grid;place-items:center;padding:24px}
+  .login-card{width:100%;max-width:400px;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:36px 32px}
+  .login-card .brand{margin-bottom:28px}
+  .login-card h1{font-size:22px;margin-bottom:6px}
+  .login-card p{color:var(--muted);font-size:14px;margin-bottom:24px}
+  .field{margin-bottom:14px}
+  .field label{display:block;font-size:13px;font-weight:600;margin-bottom:6px}
+  .field input{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--bg)}
+  .field input:focus{outline:none;border-color:var(--ink)}
+  .login-card .btn{width:100%;padding:14px;margin-top:6px}
+  .login-err{color:#B42318;font-size:13px;margin-top:12px}
+  .aviso{background:var(--lime-soft);border-radius:12px;padding:14px 16px;font-size:14px;color:var(--ink-2)}
+
+  /* TOPO */
+  .top{background:var(--bg);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+  .top-in{display:flex;align-items:center;gap:16px;height:68px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .sym{height:32px}
+  .brand .word{height:13px}
+  .top-title{font:600 14px Inter;color:var(--muted);padding-left:16px;border-left:1px solid var(--line)}
+  .top-actions{margin-left:auto;display:flex;gap:10px;align-items:center}
+
+  .filters{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:28px 0 20px}
+  .filters h1{font-size:24px;margin-right:auto}
+  .seg{display:inline-flex;background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:3px}
+  .seg button{border:0;background:transparent;padding:7px 13px;border-radius:7px;font-size:13px;font-weight:600;color:var(--ink-2);cursor:pointer}
+  .seg button.on{background:var(--ink);color:#fff}
+  .updated{font-size:12px;color:var(--muted)}
+
+  /* CARTÕES */
+  .grid{display:grid;gap:16px;margin-bottom:16px}
+  .kpis{grid-template-columns:repeat(4,1fr)}
+  .two{grid-template-columns:1.4fr 1fr}
+  .card{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:24px;min-width:0}
+  .card h2{font-size:16px;margin-bottom:4px}
+  .card .hint{font-size:13px;color:var(--muted);margin-bottom:20px}
+  .kpi .lbl{font-size:13px;font-weight:600;color:var(--muted)}
+  .kpi .val{font:700 34px Unbounded,Inter;letter-spacing:-.03em;margin:8px 0 2px}
+  .kpi .sub{font-size:13px;color:var(--muted)}
+  .kpi.hl{background:var(--ink);border-color:var(--ink);color:#fff}
+  .kpi.hl .lbl,.kpi.hl .sub{color:#C9CCC2}
+  .kpi.hl .val{color:var(--lime)}
+
+  /* FUNIL */
+  .funnel{display:grid;gap:14px}
+  .f-row{display:grid;grid-template-columns:190px 1fr 120px;gap:14px;align-items:center}
+  .f-name{font-size:14px;font-weight:600}
+  .f-name small{display:block;font-weight:500;color:var(--muted);font-size:12px}
+  .f-track{height:30px;background:var(--bg-2);border-radius:4px;position:relative}
+  .f-bar{height:100%;background:var(--bar);border-radius:4px;min-width:2px;transition:width .5s}
+  .f-row:first-child .f-bar{background:var(--bar-soft)}
+  .f-row:last-child .f-bar{background:var(--lime-deep)}
+  .f-num{text-align:right;font-variant-numeric:tabular-nums}
+  .f-num b{font-size:16px}
+  .f-num span{display:block;font-size:12px;color:var(--muted)}
+  .f-drop{grid-column:2/4;font-size:12px;color:var(--warn);margin-top:-8px;font-weight:600}
+
+  /* LISTAS DE BARRAS */
+  .hlist{display:grid;gap:12px}
+  .h-row{display:grid;grid-template-columns:1fr 44px;gap:4px 12px;align-items:center;font-size:14px}
+  .h-row .h-lbl{grid-column:1/3;display:flex;justify-content:space-between;color:var(--ink-2)}
+  .h-row .f-track{height:10px}
+  .h-row .f-num{font-weight:700}
+  .empty{color:var(--muted);font-size:14px;padding:12px 0}
+  .sub-h{font:600 13px Inter;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin:22px 0 12px}
+
+  /* GRÁFICO DIÁRIO */
+  .daily{display:flex;align-items:flex-end;gap:2px;height:180px;border-bottom:1px solid var(--line);position:relative}
+  .d-col{flex:1;height:100%;display:flex;align-items:flex-end;cursor:default;min-width:0}
+  .d-col i{display:block;width:100%;background:var(--bar);border-radius:4px 4px 0 0;min-height:1px}
+  .d-col:hover i{background:var(--lime-deep)}
+  .d-axis{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:8px}
+  .d-max{position:absolute;left:0;right:0;top:0;border-top:1px dashed var(--line);font-size:11px;color:var(--muted);pointer-events:none}
+
+  /* TABELAS */
+  .tbl-wrap{overflow-x:auto;margin:0 -24px;padding:0 24px}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th{text-align:left;font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+  td{padding:12px;border-bottom:1px solid var(--line);white-space:nowrap;font-variant-numeric:tabular-nums}
+  tr:last-child td{border-bottom:0}
+  td.num,th.num{text-align:right}
+  .tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:4px 10px;border-radius:99px}
+  .tag.ok{background:#E3F2E5;color:var(--good)}
+  .tag.part{background:#FDF0DC;color:var(--warn)}
+  .wa-link{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-weight:600}
+  .wa-link svg{flex:none}
+  .wa-link:hover{text-decoration:underline}
+  .leads-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+  .leads-head h2{margin:0 auto 0 0}
+  .search{padding:9px 12px;border:1.5px solid var(--line);border-radius:10px;min-width:220px}
+  .search:focus{outline:none;border-color:var(--ink)}
+
+  /* TOOLTIP */
+  .tip{position:fixed;z-index:99;pointer-events:none;background:var(--ink);color:#fff;font-size:13px;padding:8px 11px;border-radius:8px;box-shadow:0 10px 30px -10px rgba(0,0,0,.4);white-space:nowrap;opacity:0;transition:opacity .1s}
+  .tip.on{opacity:1}
+  .tip b{color:var(--lime)}
+
+  .loading{opacity:.5;pointer-events:none}
+
+  @media (max-width:900px){
+    .kpis{grid-template-columns:repeat(2,1fr)}
+    .two{grid-template-columns:1fr}
+    .top-title{display:none}
+  }
+  @media (max-width:560px){
+    .wrap{padding:0 16px}
+    .kpi .val{font-size:26px}
+    .f-row{grid-template-columns:1fr 90px}
+    .f-row .f-track{grid-column:1/3;grid-row:2}
+    .f-drop{grid-column:1/3;margin-top:-6px}
+    .card{padding:20px}
+    .tbl-wrap{margin:0 -20px;padding:0 20px}
+    .search{min-width:0;width:100%}
+    .brand .word{display:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<section class="login" id="telaLogin" hidden>
+  <form class="login-card" id="formLogin">
+    <div class="brand"><img class="sym" src="assets/simbolo-r3.png" alt=""><img class="word" src="assets/wordmark-escuro.png" alt="R3 Company"></div>
+    <h1>Painel de leads</h1>
+    <p>Entre com o e-mail e a senha cadastrados.</p>
+    <div class="field"><label for="email">E-mail</label><input id="email" type="email" autocomplete="username" required></div>
+    <div class="field"><label for="senha">Senha</label><input id="senha" type="password" autocomplete="current-password" required></div>
+    <button class="btn btn-ink" type="submit">Entrar</button>
+    <p class="login-err" id="loginErr" hidden></p>
+  </form>
+</section>
+
+<section class="login" id="telaConfig" hidden>
+  <div class="login-card">
+    <div class="brand"><img class="sym" src="assets/simbolo-r3.png" alt=""><img class="word" src="assets/wordmark-escuro.png" alt="R3 Company"></div>
+    <h1>Falta configurar</h1>
+    <p class="aviso">Preencha <b>SUPABASE_URL</b> e <b>SUPABASE_ANON_KEY</b> no arquivo <b>config.js</b> para o painel funcionar.</p>
+  </div>
+</section>
+
+<!-- PAINEL -->
+<div id="telaPainel" hidden>
+  <header class="top">
+    <div class="wrap top-in">
+      <div class="brand"><img class="sym" src="assets/simbolo-r3.png" alt=""><img class="word" src="assets/wordmark-escuro.png" alt="R3 Company"></div>
+      <span class="top-title">Painel de leads · Landing CRM</span>
+      <div class="top-actions">
+        <button class="btn" id="btnAtualizar" type="button">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M20 11a8 8 0 10-2.3 5.7M20 5v6h-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Atualizar
+        </button>
+        <button class="btn" id="btnSair" type="button">Sair</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap" id="conteudo">
+    <div class="filters">
+      <h1>Visão geral</h1>
+      <span class="updated" id="atualizadoEm"></span>
+      <div class="seg" id="periodo" role="group" aria-label="Período">
+        <button type="button" data-dias="0">Hoje</button>
+        <button type="button" data-dias="7" class="on">7 dias</button>
+        <button type="button" data-dias="30">30 dias</button>
+        <button type="button" data-dias="90">90 dias</button>
+      </div>
+    </div>
+
+    <div class="grid kpis">
+      <div class="card kpi"><div class="lbl">Visitantes</div><div class="val" id="kVis">–</div><div class="sub">pessoas que abriram a página</div></div>
+      <div class="card kpi"><div class="lbl">Contatos capturados</div><div class="val" id="kCap">–</div><div class="sub" id="kCapSub">deixaram nome e WhatsApp</div></div>
+      <div class="card kpi"><div class="lbl">Leads completos</div><div class="val" id="kLead">–</div><div class="sub">responderam as 3 etapas</div></div>
+      <div class="card kpi hl"><div class="lbl">Conversão</div><div class="val" id="kConv">–</div><div class="sub">de visitantes em leads completos</div></div>
+    </div>
+
+    <div class="grid two">
+      <div class="card">
+        <h2>Funil do formulário</h2>
+        <p class="hint">Quantas pessoas chegaram em cada passo e quantas ficaram pelo caminho.</p>
+        <div class="funnel" id="funil"></div>
+      </div>
+      <div class="card">
+        <h2>Onde desistem</h2>
+        <p class="hint">Pessoas que fecharam o formulário sem terminar, por etapa.</p>
+        <div class="hlist" id="desistencias"></div>
+        <h3 class="sub-h">Campos com erro</h3>
+        <div class="hlist" id="erros"></div>
+      </div>
+    </div>
+
+    <div class="grid two">
+      <div class="card">
+        <h2>Leads completos por dia</h2>
+        <p class="hint">Passe o mouse sobre as barras para ver visitantes e leads do dia.</p>
+        <div class="daily" id="diario"></div>
+        <div class="d-axis" id="diarioEixo"></div>
+      </div>
+      <div class="card">
+        <h2>De onde vêm</h2>
+        <p class="hint">Pela utm_source do link. Sem UTM conta como "direto".</p>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Origem</th><th class="num">Visitantes</th><th class="num">Leads</th><th class="num">Conversão</th></tr></thead>
+          <tbody id="origens"></tbody>
+        </table></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:40px">
+      <div class="leads-head">
+        <h2>Leads</h2>
+        <input class="search" id="busca" type="search" placeholder="Buscar lead" aria-label="Buscar leads">
+        <div class="seg" id="filtroStatus" role="group" aria-label="Status">
+          <button type="button" data-st="" class="on">Todos</button>
+          <button type="button" data-st="completo">Completos</button>
+          <button type="button" data-st="parcial">Incompletos</button>
+        </div>
+        <button class="btn" id="btnCsv" type="button">Exportar CSV</button>
+      </div>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Data</th><th>Status</th><th>Nome</th><th>WhatsApp</th><th>Loja</th><th>Cidade</th><th>Cargo</th><th>Leads/mês</th><th>Vendedores</th><th>Origem</th></tr></thead>
+        <tbody id="leads"></tbody>
+      </table></div>
+    </div>
+  </main>
+</div>
+
+<div class="tip" id="tip" role="tooltip"></div>
+
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script>
+  const CFG = window.R3_CONFIG || {};
+  const $ = id => document.getElementById(id);
+  const telas = {login: $('telaLogin'), config: $('telaConfig'), painel: $('telaPainel')};
+  const mostrar = nome => Object.entries(telas).forEach(([k, el]) => el.hidden = k !== nome);
+
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const fmt = n => Number(n || 0).toLocaleString('pt-BR');
+  const pct = (a, b) => b ? (a / b * 100).toLocaleString('pt-BR', {maximumFractionDigits: 1}) + '%' : '–';
+  const TOTAL_ETAPAS = 3;
+  const NOMES_ETAPA = {1: 'Contato', 2: 'Sobre a loja', 3: 'Tamanho da operação'};
+  const NOMES_CAMPO = {nome: 'Nome', whatsapp: 'WhatsApp', concessionaria: 'Nome da loja', cidade: 'Cidade', cargo: 'Cargo', leads_mes: 'Leads por mês', vendedores: 'Vendedores'};
+
+  if (!CFG.SUPABASE_URL || !CFG.SUPABASE_ANON_KEY) { mostrar('config'); throw new Error('config.js sem Supabase'); }
+  const db = window.supabase.createClient(CFG.SUPABASE_URL, CFG.SUPABASE_ANON_KEY);
+
+  // Login
+  $('formLogin').addEventListener('submit', async e => {
+    e.preventDefault();
+    const btn = e.target.querySelector('button'); btn.disabled = true;
+    const {error} = await db.auth.signInWithPassword({email: $('email').value.trim(), password: $('senha').value});
+    btn.disabled = false;
+    $('loginErr').hidden = !error;
+    if (error) $('loginErr').textContent = 'E-mail ou senha incorretos.';
+  });
+  $('btnSair').addEventListener('click', () => db.auth.signOut());
+  let iniciado = false;
+  db.auth.onAuthStateChange((_ev, sessao) => {
+    if (sessao) { mostrar('painel'); if (!iniciado) { iniciado = true; carregar(); } }
+    else { iniciado = false; mostrar('login'); }
+  });
+
+  // Período
+  let dias = 7;
+  try { dias = Number(localStorage.getItem('r3_painel_dias') ?? 7); } catch (err) {}
+  const segPeriodo = $('periodo');
+  const marcar = (seg, btn) => seg.querySelectorAll('button').forEach(b => b.classList.toggle('on', b === btn));
+  marcar(segPeriodo, segPeriodo.querySelector(`[data-dias="${dias}"]`) || segPeriodo.querySelector('[data-dias="7"]'));
+  segPeriodo.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    dias = Number(b.dataset.dias); marcar(segPeriodo, b);
+    try { localStorage.setItem('r3_painel_dias', dias); } catch (err) {}
+    carregar();
+  });
+  function inicioPeriodo() {
+    const d = new Date(); d.setHours(0, 0, 0, 0); d.setDate(d.getDate() - dias);
+    return d;
+  }
+  $('btnAtualizar').addEventListener('click', () => carregar());
+
+  // Carregamento
+  let LEADS = [];
+  async function carregar() {
+    const desde = inicioPeriodo().toISOString();
+    $('conteudo').classList.add('loading');
+    const [ev, di, or, ld] = await Promise.all([
+      db.rpc('painel_eventos', {desde}),
+      db.rpc('painel_diario', {desde}),
+      db.rpc('painel_origens', {desde}),
+      db.from('leads').select('*').gte('criado_em', desde).order('criado_em', {ascending: false}).limit(5000)
+    ]);
+    $('conteudo').classList.remove('loading');
+    const erro = [ev, di, or, ld].find(r => r.error);
+    if (erro) { alert('Não foi possível carregar os dados: ' + erro.error.message); return; }
+
+    renderResumo(ev.data);
+    renderDiario(di.data);
+    renderOrigens(or.data);
+    LEADS = ld.data;
+    renderLeads();
+    $('atualizadoEm').textContent = 'Atualizado às ' + new Date().toLocaleTimeString('pt-BR', {hour: '2-digit', minute: '2-digit'});
+  }
+
+  function contar(rows, evento, etapa) {
+    return rows.filter(r => r.evento === evento && (etapa === undefined || r.etapa === etapa))
+               .reduce((s, r) => s + Number(r.pessoas), 0);
+  }
+
+  function renderResumo(rows) {
+    const vis = contar(rows, 'page_view');
+    const passos = [
+      {nome: 'Entraram na página', v: vis},
+      {nome: 'Viram o formulário', v: contar(rows, 'form_open')},
+      ...Array.from({length: TOTAL_ETAPAS - 1}, (_, i) => ({nome: `Concluíram a etapa ${i + 1}`, det: NOMES_ETAPA[i + 1], v: contar(rows, 'form_step_complete', i + 1)})),
+      {nome: 'Enviaram o formulário', det: 'lead completo', v: contar(rows, 'form_submit')}
+    ];
+    const cap = passos[2].v, lead = passos.at(-1).v;
+    $('kVis').textContent = fmt(vis);
+    $('kCap').textContent = fmt(cap);
+    $('kCapSub').textContent = `deixaram nome e WhatsApp · ${fmt(Math.max(cap - lead, 0))} não terminaram`;
+    $('kLead').textContent = fmt(lead);
+    $('kConv').textContent = pct(lead, vis);
+
+    const max = Math.max(...passos.map(p => p.v), 1);
+    $('funil').innerHTML = passos.map((p, i) => {
+      const ant = passos[i - 1];
+      const perda = ant && ant.v > p.v ? ant.v - p.v : 0;
+      return `<div class="f-row" data-tip="<b>${fmt(p.v)}</b> pessoas · ${pct(p.v, vis)} dos visitantes">
+          <div class="f-name">${p.nome}${p.det ? `<small>${p.det}</small>` : ''}</div>
+          <div class="f-track"><div class="f-bar" style="width:${p.v / max * 100}%"></div></div>
+          <div class="f-num"><b>${fmt(p.v)}</b><span>${i ? pct(p.v, vis) + ' do total' : '100%'}</span></div>
+          ${perda ? `<div class="f-drop">↓ ${fmt(perda)} saíram aqui (${pct(perda, ant.v)} de quem estava no passo anterior)</div>` : ''}
+        </div>`;
+    }).join('');
+
+    // Desistências por etapa (fecharam sem enviar)
+    const des = Array.from({length: TOTAL_ETAPAS}, (_, i) => ({lbl: `Etapa ${i + 1} · ${NOMES_ETAPA[i + 1]}`, v: contar(rows, 'form_close', i + 1)}));
+    $('desistencias').innerHTML = hlist(des, 'fecharam nesta etapa');
+
+    // Erros por campo
+    const porCampo = {};
+    rows.filter(r => r.evento === 'form_error' && r.campo).forEach(r => porCampo[r.campo] = (porCampo[r.campo] || 0) + Number(r.pessoas));
+    const err = Object.entries(porCampo).sort((a, b) => b[1] - a[1]).map(([c, v]) => ({lbl: NOMES_CAMPO[c] || c, v}));
+    $('erros').innerHTML = err.length ? hlist(err, 'pessoas erraram este campo') : '<p class="empty">Nenhum erro no período.</p>';
+  }
+
+  function hlist(itens, textoTip) {
+    if (!itens.some(i => i.v)) return '<p class="empty">Nada no período.</p>';
+    const max = Math.max(...itens.map(i => i.v), 1);
+    return itens.map(i => `<div class="h-row" data-tip="<b>${fmt(i.v)}</b> ${textoTip}">
+        <div class="h-lbl"><span>${esc(i.lbl)}</span></div>
+        <div class="f-track"><div class="f-bar" style="width:${i.v / max * 100}%"></div></div>
+        <div class="f-num">${fmt(i.v)}</div>
+      </div>`).join('');
+  }
+
+  function renderDiario(rows) {
+    // Preenche os dias sem movimento para o eixo não pular datas
+    const porDia = Object.fromEntries(rows.map(r => [r.dia, r]));
+    const dias = [];
+    const d = inicioPeriodo(), hoje = new Date();
+    for (; d <= hoje; d.setDate(d.getDate() + 1)) {
+      const k = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+      dias.push({k, rot: d.toLocaleDateString('pt-BR', {day: '2-digit', month: '2-digit'}), vis: Number(porDia[k]?.visitantes || 0), leads: Number(porDia[k]?.leads || 0)});
+    }
+    const max = Math.max(...dias.map(x => x.leads), 1);
+    $('diario').innerHTML = `<div class="d-max">${fmt(max)}</div>` + dias.map(x =>
+      `<div class="d-col" data-tip="${x.rot} · <b>${fmt(x.leads)}</b> leads · ${fmt(x.vis)} visitantes"><i style="height:${x.leads / max * 100}%"></i></div>`).join('');
+    $('diarioEixo').innerHTML = `<span>${dias[0].rot}</span>${dias.length > 2 ? `<span>${dias[Math.floor(dias.length / 2)].rot}</span>` : ''}<span>${dias.at(-1).rot}</span>`;
+  }
+
+  function renderOrigens(rows) {
+    $('origens').innerHTML = rows.length ? rows.map(r => `<tr>
+        <td>${esc(r.origem)}</td><td class="num">${fmt(r.visitantes)}</td><td class="num">${fmt(r.leads)}</td><td class="num">${pct(r.leads, r.visitantes)}</td>
+      </tr>`).join('') : '<tr><td colspan="4" class="empty">Nenhuma visita no período.</td></tr>';
+  }
+
+  // Tabela de leads
+  let filtroSt = '';
+  $('filtroStatus').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    filtroSt = b.dataset.st; marcar($('filtroStatus'), b); renderLeads();
+  });
+  $('busca').addEventListener('input', renderLeads);
+
+  function leadsFiltrados() {
+    const q = $('busca').value.trim().toLowerCase();
+    const qNum = q.replace(/\D/g, '');
+    return LEADS.filter(l => (!filtroSt || l.status === filtroSt) &&
+      (!q || [l.nome, l.concessionaria, l.cidade].some(v => (v || '').toLowerCase().includes(q)) || (qNum && (l.whatsapp || '').replace(/\D/g, '').includes(qNum))));
+  }
+  const dataHora = s => new Date(s).toLocaleString('pt-BR', {day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'});
+  const statusTxt = l => l.status === 'completo' ? 'Completo' : `Parou na etapa ${Math.min((l.etapa || 1) + 1, TOTAL_ETAPAS)}`;
+
+  function renderLeads() {
+    const lista = leadsFiltrados();
+    $('leads').innerHTML = lista.length ? lista.map(l => {
+      const tel = (l.whatsapp || '').replace(/\D/g, '');
+      const msg = encodeURIComponent(`Olá, ${(l.nome || '').split(' ')[0]}! Aqui é da R3, vi seu interesse no CRM para concessionárias.`);
+      return `<tr>
+        <td>${dataHora(l.criado_em)}</td>
+        <td><span class="tag ${l.status === 'completo' ? 'ok' : 'part'}">${statusTxt(l)}</span></td>
+        <td>${esc(l.nome)}</td>
+        <td>${tel ? `<a class="wa-link" href="https://wa.me/55${tel}?text=${msg}" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 32 32" fill="#25D366"><path d="M16 3a13 13 0 00-11.2 19.6L3 29l6.6-1.7A13 13 0 1016 3z"/></svg>${esc(l.whatsapp)}</a>` : '–'}</td>
+        <td>${esc(l.concessionaria) || '–'}</td>
+        <td>${esc(l.cidade) || '–'}</td>
+        <td>${esc(l.cargo) || '–'}</td>
+        <td>${esc(l.leads_mes) || '–'}</td>
+        <td>${esc(l.vendedores) || '–'}</td>
+        <td>${esc(l.utm_source || 'direto')}${l.utm_campaign ? ` · ${esc(l.utm_campaign)}` : ''}</td>
+      </tr>`;
+    }).join('') : '<tr><td colspan="10" class="empty">Nenhum lead encontrado.</td></tr>';
+  }
+
+  $('btnCsv').addEventListener('click', () => {
+    const cols = ['criado_em','status','etapa','nome','whatsapp','concessionaria','cidade','cargo','leads_mes','vendedores','utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+    const cel = v => `"${String(v ?? '').replace(/"/g, '""')}"`;
+    const csv = [cols.join(';'), ...leadsFiltrados().map(l => cols.map(c => cel(c === 'criado_em' ? new Date(l[c]).toLocaleString('pt-BR') : l[c])).join(';'))].join('\r\n');
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob(['﻿' + csv], {type: 'text/csv;charset=utf-8'}));
+    a.download = `leads-r3-${new Date().toISOString().slice(0, 10)}.csv`;
+    a.click(); URL.revokeObjectURL(a.href);
+  });
+
+  // Tooltip compartilhado
+  const tip = $('tip');
+  document.addEventListener('mousemove', e => {
+    const alvo = e.target.closest('[data-tip]');
+    if (!alvo) { tip.classList.remove('on'); return; }
+    tip.innerHTML = alvo.dataset.tip;
+    tip.classList.add('on');
+    const w = tip.offsetWidth;
+    tip.style.left = Math.min(e.clientX + 14, innerWidth - w - 8) + 'px';
+    tip.style.top = (e.clientY - tip.offsetHeight - 12) + 'px';
+  });
+</script>
+</body>
+</html>
