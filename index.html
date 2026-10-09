@@ -3,254 +3,478 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>R3 Company | CRM com WhatsApp para concessionárias</title>
-<meta name="description" content="CRM para concessionárias com WhatsApp automatizado: responde leads em segundos, qualifica, agenda test-drive e faz follow-up sozinho.">
-<link rel="icon" href="assets/simbolo-r3.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>R3 Company | Anúncio, IA no WhatsApp e CRM para lojas de veículos</title>
+<meta name="description" content="A R3 junta anúncio, IA no WhatsApp e CRM para lojas de veículos: todo cliente é atendido em segundos, qualificado e chega ao vendedor com a visita marcada.">
+<meta name="theme-color" content="#00333D">
+<!-- Prévia do link no WhatsApp/Instagram (troque a URL pelo domínio final) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="R3 Company · Do anúncio ao pátio">
+<meta property="og:description" content="Seu cliente atendido em segundos, qualificado e com visita marcada. Anúncio, IA no WhatsApp e CRM para lojas de veículos.">
+<meta property="og:image" content="https://r3-teste.vercel.app/assets/og-r3.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/r3-simbolo-lime.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/Pinnacle-ExtraBold.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="assets/img/hero_jonas_full.webp" as="image">
 <style>
+  @font-face{font-family:Pinnacle;src:url(assets/fonts/Pinnacle-Bold.ttf) format("truetype");font-weight:700;font-display:swap}
+  @font-face{font-family:Pinnacle;src:url(assets/fonts/Pinnacle-ExtraBold.ttf) format("truetype");font-weight:800;font-display:swap}
+  @font-face{font-family:Montserrat;src:url(assets/fonts/Montserrat-Regular.ttf) format("truetype");font-weight:400;font-display:swap}
+  @font-face{font-family:Montserrat;src:url(assets/fonts/Montserrat-Medium.ttf) format("truetype");font-weight:500;font-display:swap}
+  @font-face{font-family:Montserrat;src:url(assets/fonts/Montserrat-SemiBold.ttf) format("truetype");font-weight:600;font-display:swap}
+  @font-face{font-family:Montserrat;src:url(assets/fonts/Montserrat-Bold.ttf) format("truetype");font-weight:700;font-display:swap}
+  @font-face{font-family:Montserrat;src:url(assets/fonts/Montserrat-ExtraBold.ttf) format("truetype");font-weight:800;font-display:swap}
+
   :root{
-    --lime:#D6E30F;
-    --lime-soft:#F4F8C9;
-    --lime-deep:#9AA400;
-    --ink:#11140F;
-    --ink-2:#3B4036;
-    --muted:#6B7065;
-    --line:#E6E8E1;
-    --bg:#FFFFFF;
-    --bg-2:#F7F8F4;
-    --wa:#25D366;
-    --radius:18px;
-    --shadow:0 24px 60px -24px rgba(17,20,15,.22);
-    --max:1180px;
+    --teal:#00333D; --teal-2:#0E4954; --deep:#00262E; --abyss:#001B21;
+    --lime:#D6E30F; --lime-soft:#F2F6C4;
+    --paper:#F1EEEE; --paper-2:#F7F5F2;
+    --mist:#C5D5D7; --ink-2:#3E6B73; --text:#10272C; --muted:#5B7175; --line:#DCD6D2; --line-dk:rgba(197,213,215,.14);
+    --wa:#25D366; --max:1200px; --cut:44px;
+    --shadow:0 30px 70px -30px rgba(0,30,36,.45);
+    --glow:0 0 0 1px rgba(214,227,15,.22),0 24px 60px -28px rgba(214,227,15,.35);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body{font-family:Montserrat,system-ui,sans-serif;color:var(--text);background:var(--paper);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   img{max-width:100%;display:block}
   a{color:inherit;text-decoration:none}
-  h1,h2,h3{font-family:Unbounded,Inter,sans-serif;line-height:1.12;letter-spacing:-.02em}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-  .mark{background:linear-gradient(transparent 58%,var(--lime) 58%,var(--lime) 92%,transparent 92%);padding:0 .08em}
-  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
-  .eyebrow::before{content:"";width:10px;height:10px;border-radius:3px;background:var(--lime)}
+  h1,h2,h3{font-family:Pinnacle,Montserrat,sans-serif;font-weight:800;line-height:1.05;letter-spacing:-.015em}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 32px}
+  .hl{position:relative;z-index:0;white-space:nowrap;color:var(--teal)}
+  .hl::before{content:"";position:absolute;left:-.08em;right:-.1em;top:.12em;bottom:.02em;background:var(--lime);transform:skewX(-10deg);z-index:-1}
+  .hl.dk{color:var(--lime)} .hl.dk::before{background:var(--teal)}
+  .eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-2)}
+  .eyebrow::before{content:"";width:30px;height:5px;background:currentColor;transform:skewX(-20deg)}
+  .dark .eyebrow,.eyebrow.lm{color:var(--lime)}
+  .pend{background:#FFF1C2;color:#7A4B00;font-weight:700;padding:0 .3em;border-radius:4px;font-size:13px;font-style:normal}
 
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:600 16px/1 Inter,sans-serif;padding:17px 26px;border-radius:12px;border:0;cursor:pointer;transition:transform .15s,box-shadow .15s,background .15s}
-  .btn-lime{background:var(--lime);color:var(--ink);box-shadow:0 10px 24px -10px rgba(154,164,0,.8)}
-  .btn-lime:hover{transform:translateY(-2px);box-shadow:0 16px 30px -12px rgba(154,164,0,.9)}
-  .btn-ink{background:var(--ink);color:#fff}
-  .btn-ink:hover{background:#262b22}
-  .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
-  .btn-ghost:hover{border-color:var(--ink)}
+  /* botões */
+  .btn{display:inline-flex;align-items:center;gap:14px;font:800 16px/1 Montserrat,sans-serif;letter-spacing:.02em;padding:8px 26px 8px 8px;border-radius:999px;border:0;cursor:pointer;transition:transform .18s,box-shadow .18s;white-space:nowrap}
+  .btn .ar{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;flex:none;transition:transform .18s}
+  .btn:hover{transform:translateY(-2px)} .btn:hover .ar{transform:translateX(3px)}
+  .btn-lime{background:var(--lime);color:var(--teal);box-shadow:0 14px 34px -14px rgba(214,227,15,.75)}
+  .btn-lime .ar{background:var(--teal)}
+  .btn-teal{background:var(--teal);color:var(--lime);box-shadow:0 14px 34px -16px rgba(0,51,61,.8)}
+  .btn-teal .ar{background:var(--lime)}
+  .ghost{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:15px;padding:14px 4px;border-bottom:1.5px solid rgba(197,213,215,.4)}
+  .ghost:hover{border-color:var(--lime)}
+
+  /* corte angular da marca (ângulo da perna do R) */
+  .cut{position:relative;clip-path:polygon(0 0,calc(100% - var(--cut)) 0,100% var(--cut),100% 100%,0 100%)}
+  .cut::after{content:"";position:absolute;top:0;right:0;width:var(--cut);height:var(--cut);background:var(--lime);clip-path:polygon(0 0,100% 100%,0 100%);opacity:.9}
+  .cut.br{clip-path:polygon(0 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%)}
+  .cut.br::after{top:auto;bottom:0;clip-path:polygon(0 0,100% 0,0 100%)}
 
   /* NAV */
-  header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .2s}
-  header.nav.scrolled{border-bottom-color:var(--line)}
-  .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
-  .brand{display:flex;align-items:center;gap:10px}
-  .brand .sym{height:36px;width:auto}
-  .brand .word{height:15px;width:auto}
-  .nav-links{display:flex;gap:30px;font-size:15px;font-weight:500;color:var(--ink-2)}
-  .nav-links a:hover{color:var(--ink)}
-  .nav .btn{padding:13px 20px;font-size:15px}
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .25s,box-shadow .25s}
+  header.nav.scrolled{background:rgba(0,38,46,.9);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line-dk)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:84px}
+  .brand img{height:34px;width:auto}
+  .nav-links{display:flex;gap:32px;font-size:14px;font-weight:600;color:var(--mist)}
+  .nav-links a:hover{color:#fff}
+  .nav .btn{font-size:14px;padding:6px 20px 6px 6px}
+  .nav .btn .ar{width:38px;height:38px}
 
   /* HERO */
-  .hero{position:relative;padding:56px 0 96px;overflow:hidden}
-  .hero::before{content:"";position:absolute;right:-220px;top:-180px;width:720px;height:720px;background:radial-gradient(circle,var(--lime-soft) 0%,rgba(244,248,201,0) 68%);z-index:-1}
-  .hero-sym{position:absolute;right:-60px;bottom:-40px;width:460px;opacity:.07;z-index:-1;pointer-events:none}
-  .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center}
-  .hero h1{font-size:clamp(30px,4.6vw,58px);font-weight:700;margin:18px 0 22px}
-  .hero .lead{font-size:clamp(17px,1.5vw,20px);color:var(--ink-2);max-width:560px}
-  .proof-line{margin-top:30px;font-size:15px;font-weight:600;color:var(--ink-2)}
-  .pend{background:#FFF1C2;color:#7A4B00;font-weight:700;padding:0 .25em;border-radius:4px}
+  .hero{position:relative;background:var(--deep);color:#fff;overflow:hidden;padding:150px 0 0}
+  .hero .bgimg{position:absolute;inset:0;background:url(assets/img/bg_noite.webp) center/cover;opacity:.26;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 60%);mask-image:linear-gradient(90deg,transparent 0%,#000 60%)}
+  .hero .wrap{max-width:1320px}
+  .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) 504px;gap:56px;align-items:center}
+  .chip{display:inline-flex;align-items:center;gap:12px;border:1.5px solid rgba(214,227,15,.55);color:var(--lime);border-radius:999px;padding:9px 18px;font-size:14px;font-weight:700}
+  .hero h1{font-size:clamp(36px,3.9vw,56px);margin:28px 0 24px;color:#fff;line-height:1.08}
+  .hero .lede{font-size:clamp(17px,1.35vw,19px);color:#D7E2E3;max-width:560px}
+  .hero .lede b{color:#fff}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:26px;margin-top:40px;align-items:center}
+  .hero-ctas .ghost{color:#E8EFEE}
+  .ticks{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:30px;font-size:13.5px;font-weight:600;color:var(--mist)}
+  .ticks span{display:inline-flex;align-items:center;gap:9px}
+  .hvbox{width:504px;height:594px}
+  .hv{position:relative;width:560px;height:660px;transform:scale(.9);transform-origin:top left}
+  .win{position:absolute;left:20px;top:84px;width:520px;height:560px;border-radius:40px;background:var(--teal);box-shadow:0 50px 90px -30px rgba(0,0,0,.7),0 0 0 1px rgba(197,213,215,.1),0 0 120px -20px rgba(214,227,15,.18)}
+  .wbar{position:absolute;left:0;right:0;top:0;height:58px}
+  .tog{position:absolute;left:28px;top:18px;width:58px;height:24px;border-radius:12px;background:var(--lime)}
+  .tog i{position:absolute;right:3px;top:3px;width:18px;height:18px;border-radius:50%;background:#F4F8C8;box-shadow:inset 0 0 0 2.5px var(--teal)}
+  .wx{position:absolute;right:28px;top:16px}
+  .win .wph{position:absolute;left:12px;right:12px;top:58px;height:406px;border-radius:12px;overflow:hidden;background:#0A3640}
+  .win .wph img{position:absolute;width:708px;max-width:none;left:-106px;top:-256px}
+  .win .wft{position:absolute;left:0;right:0;bottom:0;height:96px;display:flex;align-items:center;justify-content:center;font-family:Pinnacle;font-weight:800;font-size:28px;color:var(--lime)}
+  .win .wtab{position:absolute;left:50%;transform:translateX(-50%);bottom:84px;width:200px;height:56px;background:var(--teal);border-radius:24px 24px 0 0;display:grid;place-items:center}
+  .win .wtab img{height:28px;width:auto}
+  .pop{position:absolute;left:32px;top:0;width:496px;height:300px;overflow:hidden;pointer-events:none;z-index:3}
+  .pop img{position:absolute;width:708px;max-width:none;left:-106px;top:-114px}
+  .notif{position:absolute;z-index:5;left:-44px;top:330px;width:300px;padding:14px 16px;display:flex;gap:12px;background:rgba(244,248,247,.97);color:var(--text);border-radius:22px;box-shadow:0 26px 50px -18px rgba(0,0,0,.55)}
+  .notif .ic{flex:none;width:44px;height:44px;border-radius:12px;background:var(--wa);display:grid;place-items:center}
+  .notif p{font-size:13px;font-weight:800;display:flex;justify-content:space-between}
+  .notif p span{font-weight:600;color:var(--muted);font-size:12px}
+  .notif .msg{font-size:14px;font-weight:500;line-height:1.35;margin-top:2px}
+  .tg{display:inline-block;font-size:11px;font-weight:800;padding:4px 9px;border-radius:7px;margin-top:6px;white-space:nowrap}
+  .tg.go{background:var(--lime);color:var(--teal)} .tg.tl{background:var(--teal);color:var(--lime)}
+  .stk{position:absolute;z-index:6;border-radius:50%;box-shadow:0 18px 34px -10px rgba(0,0,0,.55);right:-6px;top:118px;width:128px;height:128px;transform:rotate(9deg)}
+  .stk svg{position:absolute;inset:0;width:100%;height:100%}
+  .mp{display:inline-flex;flex-direction:column;border:2px solid #0B2228;border-radius:5px;background:#F4F3EF;overflow:hidden;line-height:1;vertical-align:middle}
+  .mp i{display:block;height:5px;background:var(--teal)}
+  .mp b{font-family:Pinnacle;font-weight:700;font-size:11px;letter-spacing:.06em;color:#0B2228;padding:2px 5px 3px;display:block}
+  /* estrada: fluxo contínuo */
+  .road{position:relative;z-index:2;margin-top:70px}
+  .road svg{display:block;width:100%;height:auto}
+  .road img{position:absolute;right:4%;top:6px;height:100%;width:auto}
+  .flow{stroke-dasharray:34 22;animation:flow 1.4s linear infinite}
+  @keyframes flow{to{stroke-dashoffset:-56}}
 
-  /* FAIXA DE AUTORIDADE */
-  .authority{padding:28px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
-  .authority .wrap{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px 28px;text-align:center;font-size:14px;color:var(--muted)}
+  /* INTEGRAÇÕES */
+  .integr{background:var(--deep);color:var(--mist);padding:34px 0 40px}
+  .integr .wrap{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:14px 16px}
+  .integr p{width:100%;text-align:center;font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#7E9EA2;margin-bottom:4px}
+  .badge{display:inline-flex;align-items:center;gap:10px;padding:10px 18px 10px 12px;border-radius:999px;border:1px solid var(--line-dk);background:rgba(14,73,84,.5);font-size:14px;font-weight:700;color:#E3ECEB}
+  .badge svg{flex:none}
 
-  /* FORM */
-  .form-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:32px;box-shadow:var(--shadow);position:relative}
-  .form-card::before{content:"";position:absolute;inset:0 0 auto 0;height:6px;border-radius:24px 24px 0 0;background:var(--lime)}
-  .form-card h2{font-size:22px;margin-bottom:6px}
-  .form-card .sub{color:var(--muted);font-size:15px;margin-bottom:22px}
-  .field{display:grid;gap:6px;margin-bottom:14px}
-  .field label{font-size:13px;font-weight:600;color:var(--ink-2)}
-  .field input,.field select{width:100%;font:500 16px Inter,sans-serif;color:var(--ink);padding:14px 15px;border:1.5px solid var(--line);border-radius:12px;background:#fff;outline:none;transition:border-color .15s,box-shadow .15s;appearance:none}
-  .field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%2311140F' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center;padding-right:40px}
-  .field input:focus,.field select:focus{border-color:var(--ink);box-shadow:0 0 0 4px var(--lime-soft)}
-  .field.err input,.field.err select{border-color:#D14343}
-  .field .msg{font-size:12px;color:#D14343;display:none}
-  .field.err .msg{display:block}
-  .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  .form-card .btn{width:100%;margin-top:6px;font-size:17px;padding:19px}
+  /* DEMO (show, don't tell) */
+  .demo{background:var(--paper)}
+  .demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+  .demo h2{font-size:clamp(30px,3.4vw,46px);color:var(--teal);margin:18px 0 26px}
+  .bul{list-style:none;display:grid;gap:14px;margin-bottom:34px}
+  .bul li{display:flex;gap:14px;align-items:flex-start;font-size:17px;color:var(--ink-2)}
+  .bul li b{color:var(--teal)}
+  .bul .n{flex:none;width:30px;height:30px;border-radius:9px;background:var(--teal);color:var(--lime);display:grid;place-items:center;font:800 14px Pinnacle,sans-serif;transform:skewX(-8deg)}
+  .stage{position:relative;padding:24px 0}
+  .stage::before{content:"";position:absolute;inset:6% 4%;border-radius:40px;background:radial-gradient(ellipse at 50% 40%,rgba(214,227,15,.35),rgba(214,227,15,0) 65%);filter:blur(10px)}
+  .phone{position:relative;width:350px;max-width:100%;margin:0 auto;background:#0A1416;border-radius:48px;padding:12px;box-shadow:0 0 0 2px #22363A,var(--shadow)}
+  .screen{background:#E9EEEC;border-radius:38px;overflow:hidden}
+  .wa-top{background:var(--teal);color:#fff;display:flex;align-items:center;gap:10px;padding:22px 18px 14px}
+  .wa-top .av{width:38px;height:38px;border-radius:50%;background:var(--lime);display:grid;place-items:center}
+  .wa-top .av img{width:22px}
+  .wa-top b{font-size:15px;display:block}
+  .wa-top small{font-size:12px;color:var(--lime);font-weight:600}
+  .chat{padding:16px 12px 22px;display:flex;flex-direction:column;gap:8px;min-height:470px}
+  .bubble{max-width:84%;padding:9px 12px 18px;border-radius:14px;font-size:13.5px;line-height:1.4;position:relative;opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s;box-shadow:0 1px 1px rgba(0,0,0,.06)}
+  .bubble.show{opacity:1;transform:none}
+  .bubble time{position:absolute;right:10px;bottom:4px;font-size:10px;color:#6B7B7E}
+  .bubble.bi{background:#fff;align-self:flex-start;border-top-left-radius:4px}
+  .bubble.bo{background:#DDEAC0;align-self:flex-end;border-top-right-radius:4px}
+  .opts{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+  .opts span{font-size:12px;padding:5px 10px;border-radius:999px;background:#fff;color:var(--teal);font-weight:700;border:1px solid #C9D9B3}
+  .crmcard{position:absolute;z-index:3;right:-40px;bottom:30px;width:250px;background:var(--teal);color:#fff;border-radius:22px;padding:16px;box-shadow:var(--shadow)}
+  .crmcard .k{font-size:10.5px;font-weight:800;letter-spacing:.16em;color:var(--lime)}
+  .crmcard .v{font-family:Pinnacle;font-weight:800;font-size:22px;margin:6px 0 10px;display:flex;align-items:center;gap:8px}
+  .crmcard .row{display:flex;justify-content:space-between;font-size:12px;font-weight:600;color:var(--mist);padding:6px 0;border-top:1px solid var(--line-dk)}
+  .crmcard .row b{color:#fff}
+  .play{position:absolute;z-index:4;left:50%;top:44%;transform:translate(-50%,-50%);width:92px;height:92px;border-radius:50%;background:var(--lime);display:none;place-items:center;border:0;cursor:pointer;box-shadow:0 0 0 14px rgba(214,227,15,.25),0 20px 40px rgba(0,0,0,.35)}
+  .play.on{display:grid}
+  .vnote{margin-top:18px;font-size:13px}
+
+  /* DADOS */
+  .data{background:var(--deep);color:#fff;padding:96px 0}
+  .data-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:40px}
+  .data-head h2{font-size:clamp(26px,2.6vw,36px);max-width:640px}
+  .data-head p{color:var(--mist);font-size:15px;max-width:340px}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .stat{--cut:30px;background:linear-gradient(160deg,#0B3E48,#05272E);padding:26px 24px 24px}
+  .stat svg{display:block;margin-bottom:18px}
+  .stat b{display:block;font-family:Pinnacle;font-weight:800;font-size:clamp(38px,3.6vw,52px);line-height:1;color:var(--lime);letter-spacing:-.03em}
+  .stat p{font-size:14.5px;font-weight:600;color:#E3ECEB;margin-top:10px;line-height:1.4}
+  .stat small{display:block;font-size:11.5px;color:#7E9EA2;margin-top:12px;font-weight:600}
+
+  /* SEÇÕES */
+  section{padding:120px 0}
+  .sec-head{max-width:820px;margin-bottom:56px}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .sec-head h2{font-size:clamp(32px,3.8vw,52px);margin:18px 0 18px;color:var(--teal)}
+  .sec-head p{font-size:18px;color:var(--ink-2)}
+  .dark{background:var(--teal);color:#fff}
+  .dark .sec-head h2{color:#fff}
+  .dark .sec-head p{color:var(--mist)}
+  .cta-row{display:flex;justify-content:center;margin-top:52px}
+
+  /* ONDE A VENDA ESCAPA: cards escuros com corte angular */
+  .leaks{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .leak{filter:drop-shadow(0 30px 40px rgba(0,30,36,.28))}
+  .leak .in{--cut:46px;background:linear-gradient(170deg,#0C3F49 0%,#00262E 100%);color:#fff;padding:16px 16px 36px;height:100%}
+  .leak .vis{height:292px;border-radius:16px;position:relative;overflow:hidden}
+  .leak h3{font-size:24px;color:#fff;margin:24px 12px 14px}
+  .leak ul{list-style:none;display:grid;gap:8px;margin:0 12px}
+  .leak li{display:flex;gap:10px;font-size:14.5px;color:var(--mist)}
+  .leak li::before{content:"";flex:none;width:7px;height:7px;margin-top:8px;background:#7E9EA2;transform:skewX(-20deg)}
+  .leak li b{color:#fff}
+  .leak .fix{margin:18px 12px 0;padding:12px 14px;border-radius:12px;background:rgba(214,227,15,.12);border:1px solid rgba(214,227,15,.35);font-size:14px;font-weight:700;color:var(--lime);display:flex;gap:10px;align-items:flex-start}
+  .v-lock{background:linear-gradient(160deg,#0E4954,#001E24);padding:16px 14px}
+  .v-lock .d{text-align:center;font-size:12px;font-weight:600;color:rgba(255,255,255,.75)}
+  .v-lock .t{text-align:center;font-family:Pinnacle;font-weight:700;font-size:46px;line-height:1;margin:2px 0 10px;color:#fff}
+  .nt{display:flex;gap:10px;background:rgba(226,238,236,.12);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:9px 11px;margin-top:7px}
+  .nt .ic{flex:none;width:30px;height:30px;border-radius:9px;background:var(--wa);display:grid;place-items:center}
+  .nt p{font-size:11.5px;font-weight:800;display:flex;justify-content:space-between;gap:8px;color:#fff}
+  .nt p span{font-weight:600;opacity:.7}
+  .nt .m{font-size:12.5px;line-height:1.3;color:#fff}
+  .nt.hot{border-color:rgba(214,227,15,.6);background:rgba(214,227,15,.14)}
+  .v-gauge{background:radial-gradient(circle at 50% 60%,#0E4954,#001E24 75%);display:grid;place-items:center}
+  .v-post{background:#E8E4E1;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px}
+  .pi{font-family:"Ink Free","Segoe Print","Comic Sans MS",cursive;font-size:16px;line-height:1.15;color:var(--text);padding:12px 11px;box-shadow:0 10px 16px -8px rgba(0,0,0,.3);height:72px}
+  .crm{grid-column:2;grid-row:1/span 3;background:var(--teal);border-radius:12px;padding:11px;display:flex;flex-direction:column;gap:7px}
+  .crm h5{font-size:10px;letter-spacing:.16em;color:var(--lime);font-weight:800}
+  .crm div{background:#fff;border-radius:9px;padding:7px 9px;font-size:12px;font-weight:800;color:var(--text)}
+  .crm div span{display:block;font-size:10px;font-weight:700;color:var(--muted);margin-top:2px}
+
+  /* MÉTODO */
+  .how .roadline{margin:0 calc(50% - 50vw) 50px;position:relative}
+  .how .roadline svg{width:100%;height:auto;display:block}
+  .how .roadline img{position:absolute;right:3%;top:2px;height:96%;width:auto}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .step{--cut:34px;padding:28px 24px;background:linear-gradient(170deg,rgba(14,73,84,.95),rgba(0,38,46,.95))}
+  .step .num{font-family:Pinnacle;font-weight:800;font-size:58px;line-height:.9;color:var(--lime);letter-spacing:-.03em;margin-bottom:16px}
+  .step h3{font-size:21px;color:#fff;margin-bottom:10px}
+  .step p{color:var(--mist);font-size:14.5px}
+  .steps-close{margin-top:52px;text-align:center;font:800 clamp(22px,2.4vw,32px)/1.25 Pinnacle,sans-serif;color:#fff}
+
+  /* RESULTADOS: curioso x lead quente */
+  .leadx{display:grid;grid-template-columns:1fr 160px 1fr;align-items:center}
+  .lx{position:relative;padding:30px 30px 26px;border-radius:26px;height:100%}
+  .lx.cold{background:#fff;border:1px solid var(--line);color:var(--ink-2)}
+  .lx.hot{--cut:50px;border-radius:0;background:linear-gradient(165deg,#0C3F49,#00262E);color:#fff;box-shadow:var(--shadow)}
+  .lx-tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;padding:6px 11px;border-radius:7px;background:#ECE8E5;color:#6B7B7E}
+  .hot .lx-tag{background:var(--lime);color:var(--teal)}
+  .lx h3{font-size:22px;margin:14px 0 18px;color:var(--teal)}
+  .hot h3{color:#fff}
+  .lx-chat{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;min-height:44px}
+  .lx-chat span{background:#F1F2F0;border-radius:14px 14px 14px 4px;padding:9px 13px;font-size:14px;font-weight:600;color:#5B6E71}
+  .lx-name{font-family:Pinnacle;font-weight:800;font-size:22px;display:flex;align-items:center;gap:10px;margin-bottom:16px;min-height:44px}
+  .lx dl div{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-top:1px solid var(--line);font-size:14.5px}
+  .hot dl div{border-color:var(--line-dk)}
+  .lx dt{font-weight:600}
+  .lx dd{font-weight:800;color:#A7B2B4;text-align:right}
+  .hot dt{color:var(--mist)} .hot dd{color:#fff} .hot dd.ok{color:var(--lime)}
+  .lx-foot{margin-top:16px;font-size:14.5px;font-weight:700}
+  .cold .lx-foot{color:#86959A}
+  .hot .lx-foot{color:var(--lime)}
+  .lx-mid{position:relative;text-align:center;align-self:center}
+  .lx-mid::before{content:"";position:absolute;left:-6px;right:-6px;top:42px;height:5px;background:repeating-linear-gradient(90deg,var(--teal) 0 14px,transparent 14px 24px)}
+  .lx-ia{position:relative;width:88px;height:88px;border-radius:50%;background:var(--lime);display:grid;place-items:center;margin:0 auto;box-shadow:0 0 0 10px rgba(214,227,15,.28),0 18px 30px -12px rgba(0,51,61,.5)}
+  .lx-ia img{width:46px}
+  .lx-mid p{margin-top:18px;font-size:13px;font-weight:800;color:var(--teal);line-height:1.35}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);margin-top:26px;background:#fff;border-radius:24px;box-shadow:0 20px 50px -34px rgba(0,51,61,.45)}
+  .kpis>div{padding:24px;display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:center}
+  .kpis>div+div{border-left:1px solid var(--line)}
+  .kpis svg{grid-row:span 2}
+  .kpis b{font-family:Pinnacle;font-weight:800;font-size:23px;color:var(--teal);line-height:1.05}
+  .kpis span{font-size:13px;color:var(--ink-2);line-height:1.35}
+  /* SEM x COM */
+  .vs{background:#fff}
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .col{border-radius:30px;padding:40px 38px}
+  .col h3{font-size:26px;margin-bottom:26px;display:flex;align-items:center;gap:14px}
+  .col ul{list-style:none;display:grid;gap:18px}
+  .col li{display:flex;gap:14px;font-size:15.5px}
+  .col li svg{flex:none;margin-top:3px}
+  .col li b{display:block;margin-bottom:2px;font-weight:800}
+  .before{background:var(--paper-2);border:1px solid var(--line);color:var(--ink-2)}
+  .before h3{color:#7C8B8D}
+  .before li b{color:var(--text)}
+  .after{--cut:56px;background:var(--lime);color:var(--teal);border-radius:0}
+  .after::after{background:var(--teal)}
+  .after h3 img{height:30px;width:auto}
+
+  /* CALCULADORA */
+  .calc{background:var(--deep);color:#fff}
+  .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch}
+  .calc-in{background:rgba(14,73,84,.55);border:1px solid var(--line-dk);border-radius:28px;padding:34px}
+  .rg{margin-bottom:26px}
+  .rg label{display:flex;justify-content:space-between;font-size:15px;font-weight:700;color:#E3ECEB;margin-bottom:12px}
+  .rg label output{font-family:Pinnacle;font-weight:800;font-size:22px;color:var(--lime)}
+  .rg input{-webkit-appearance:none;appearance:none;width:100%;height:8px;border-radius:8px;background:rgba(197,213,215,.2);outline:none}
+  .rg input::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:var(--lime);border:5px solid var(--teal);box-shadow:0 0 0 2px var(--lime);cursor:pointer}
+  .rg input::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--lime);border:5px solid var(--teal);cursor:pointer}
+  .rg small{display:block;font-size:12px;color:#7E9EA2;margin-top:8px}
+  .calc-out{--cut:60px;background:var(--lime);color:var(--teal);padding:38px 36px;display:flex;flex-direction:column;justify-content:space-between}
+  .calc-out::after{background:var(--teal)}
+  .calc-out .k{font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase}
+  .trio{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0 20px}
+  .trio div{background:rgba(0,51,61,.09);border-radius:14px;padding:14px 16px}
+  .trio b{display:block;font-family:Pinnacle;font-weight:800;font-size:34px;line-height:1}
+  .trio span{display:block;font-size:12.5px;font-weight:600;margin-top:6px;line-height:1.35}
+  .calc-out .money{font-family:Pinnacle;font-weight:800;font-size:clamp(46px,4.6vw,66px);line-height:.95;letter-spacing:-.03em;margin:0 0 6px}
+  .calc-out .per{font-size:16px;font-weight:700}
+  .calc-out .how{font-size:13px;font-weight:600;color:var(--ink-2);margin:18px 0 24px;line-height:1.5}
+
+  /* FAQ */
+  .faq{max-width:860px;margin:0 auto}
+  details{background:#fff;border-radius:20px;padding:4px 26px;margin-bottom:12px;box-shadow:0 10px 30px -26px rgba(0,51,61,.5)}
+  summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;font-weight:800;font-size:18px;color:var(--teal);padding:20px 0}
+  summary::-webkit-details-marker{display:none}
+  summary .pm{flex:none;width:36px;height:36px;border-radius:50%;background:var(--paper);display:grid;place-items:center;transition:transform .2s,background .2s}
+  details[open] summary .pm{transform:rotate(45deg);background:var(--lime)}
+  details p{color:var(--ink-2);padding:0 0 22px;max-width:720px}
+
+  /* TIME (perto do rodapé) */
+  .team{background:#fff}
+  .team-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;max-width:none}
+  .people{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .person{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/5;background:#0A3640}
+  .person img{position:absolute;max-width:none;height:auto;transition:transform .5s;transform-origin:50% 30%}
+  .person:hover img{transform:scale(1.03)}
+  .person::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,27,33,0) 50%,rgba(0,27,33,.9) 90%)}
+  .person .cap{position:absolute;left:20px;right:20px;bottom:20px;z-index:2}
+  .person .cap b{display:block;font-family:Pinnacle;font-weight:800;font-size:24px;color:#fff;line-height:1.05}
+  .person .cap span{display:inline-block;margin-top:8px;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);background:var(--lime);padding:5px 10px;border-radius:6px}
+
+  /* CTA FINAL */
+  .cta{position:relative;background:var(--abyss);color:#fff;overflow:hidden}
+  .cta .bgimg{position:absolute;inset:0;background:url(assets/img/bg_garagem.webp) center/cover;opacity:.35}
+  .cta::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,27,33,.96) 30%,rgba(0,27,33,.55));z-index:1}
+  .cta-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+  .cta h2{font-size:clamp(34px,4vw,56px);margin:20px 0 22px}
+  .cta .sub{color:var(--mist);font-size:18px;max-width:520px}
+  .form-card{background:var(--teal);border-radius:36px;padding:0 0 26px;box-shadow:0 50px 90px -30px rgba(0,0,0,.7),0 0 0 1px rgba(197,213,215,.12),0 0 120px -30px rgba(214,227,15,.25);position:relative;overflow:hidden}
+  .form-card .wbar{position:relative;height:58px}
+  .fc-in{background:#fff;color:var(--text);margin:0 12px;border-radius:14px;padding:30px 28px 26px}
+  .form-card h3{font-size:26px;color:var(--teal);margin-bottom:6px}
+  .next-steps{list-style:none;counter-reset:ns;display:grid;gap:14px;margin:20px 0 20px}
+  .next-steps li{counter-increment:ns;display:flex;gap:14px;align-items:flex-start;font-size:15px;color:var(--ink-2)}
+  .next-steps li::before{content:counter(ns);flex:none;width:30px;height:30px;border-radius:9px;background:var(--lime);display:grid;place-items:center;font:800 15px Pinnacle,sans-serif;color:var(--teal);transform:skewX(-8deg)}
+  .fit{font-size:14px;color:var(--ink-2);padding:14px 16px;border-radius:14px;background:var(--paper-2);border:1px solid var(--line);margin-bottom:20px}
+  .fc-in .btn{width:100%;justify-content:space-between;font-size:16px;padding:8px 8px 8px 26px}
   .form-note{display:flex;gap:8px;align-items:center;justify-content:center;font-size:12.5px;color:var(--muted);margin-top:14px;text-align:center}
+  .form-note a{text-decoration:underline}
+  .fc-foot{text-align:center;font-family:Pinnacle;font-weight:800;font-size:22px;color:var(--lime);margin-top:20px}
   .success{display:none;text-align:center;padding:26px 6px}
-  .success .ok{width:64px;height:64px;border-radius:50%;background:var(--lime);display:grid;place-items:center;margin:0 auto 18px}
-  .success h3{font-size:22px;margin-bottom:10px}
+  .success .ok{width:68px;height:68px;border-radius:50%;background:var(--lime);display:grid;place-items:center;margin:0 auto 18px}
+  .success h3{font-size:26px;margin-bottom:10px;color:var(--teal)}
   .success p{color:var(--ink-2)}
   .form-card.done .hero-cta{display:none}
   .form-card.done .success{display:block}
-  .next-steps{list-style:none;counter-reset:ns;display:grid;gap:12px;margin:18px 0 18px}
-  .next-steps li{counter-increment:ns;display:flex;gap:12px;align-items:flex-start;font-size:15px;color:var(--ink-2)}
-  .next-steps li::before{content:counter(ns);flex:none;width:24px;height:24px;border-radius:7px;background:var(--lime);display:grid;place-items:center;font:700 12px Unbounded,sans-serif;color:var(--ink);margin-top:1px}
-  .fit{font-size:14px;color:var(--ink-2);padding:14px 16px;border-radius:12px;background:var(--bg-2);border:1px solid var(--line);margin-bottom:18px}
-  .form-note a{text-decoration:underline}
 
-  /* MODAL */
+  footer{background:var(--abyss);color:var(--mist);padding:54px 0 40px;border-top:1px solid var(--line-dk)}
+  .ft{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;font-size:14px}
+  .ft img{height:36px;width:auto}
+  .ft nav{display:flex;gap:26px;font-weight:600}
+  .ft a:hover{color:#fff}
+  .ft .legal{width:100%;border-top:1px solid var(--line-dk);padding-top:24px;margin-top:10px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px;color:#7E9EA2}
+  .ft .legal a{text-decoration:underline}
+
+  .wa-float{position:fixed;right:22px;bottom:22px;z-index:60;width:60px;height:60px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.7);transition:transform .15s}
+  .wa-float:hover{transform:scale(1.07)}
+  /* CTA fixo no celular */
+  .mbar{display:none}
+
+  /* MODAIS */
   html.lock{overflow:hidden}
-  .modal{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(11,13,9,.74);backdrop-filter:blur(3px);opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
-  .modal.open{opacity:1;visibility:visible}
-  .modal-card{position:relative;width:100%;max-width:520px;max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);overflow:auto;background:#fff;border-radius:24px;box-shadow:0 40px 90px -30px rgba(0,0,0,.6);transform:translateY(18px) scale(.98);transition:transform .3s ease;outline:none}
+  .modal,.vmodal{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(0,20,26,.78);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+  .modal.open,.vmodal.open{opacity:1;visibility:visible}
+  .vmodal video,.vmodal iframe{width:min(92vw,960px);aspect-ratio:16/9;border:0;border-radius:20px;background:#000}
+  .modal-card{position:relative;width:100%;max-width:540px;max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);overflow:auto;background:var(--teal);border-radius:32px;box-shadow:0 40px 90px -30px rgba(0,0,0,.7);transform:translateY(18px) scale(.98);transition:transform .3s ease;outline:none}
   .modal.open .modal-card{transform:none}
-  .prog{position:sticky;top:0;z-index:2;background:#fff;padding:22px 28px 16px;border-bottom:1px solid var(--line)}
+  .prog{position:sticky;top:0;z-index:2;background:var(--teal);padding:18px 26px 16px}
   .prog-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
-  .prog-label{font-size:13px;font-weight:600;color:var(--muted)}
-  .prog-label b{color:var(--ink)}
-  .prog-track{height:8px;border-radius:8px;background:var(--bg-2);border:1px solid var(--line);overflow:hidden}
+  .prog-top .tog{position:relative;left:auto;top:auto;flex:none}
+  .prog-label{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--mist);flex:1}
+  .prog-label b{color:var(--lime)}
+  .prog-track{height:8px;border-radius:8px;background:rgba(197,213,215,.18);overflow:hidden}
   .prog-fill{height:100%;width:0;background:var(--lime);border-radius:8px;transition:width .45s ease}
-  .modal-x{flex:none;width:34px;height:34px;border-radius:50%;border:0;background:var(--bg-2);display:grid;place-items:center;cursor:pointer}
-  .modal-x:hover{background:var(--line)}
-  .modal-body{padding:24px 28px 28px}
-  .modal-body h2{font-size:22px;margin-bottom:20px}
-  .modal-body .sub{color:var(--muted);font-size:15px;margin-bottom:22px}
+  .modal-x{flex:none;width:36px;height:36px;border-radius:50%;border:0;background:rgba(197,213,215,.14);display:grid;place-items:center;cursor:pointer}
+  .modal-x:hover{background:rgba(197,213,215,.28)}
+  .modal-body{background:#fff;margin:0 10px 10px;border-radius:22px;padding:28px 26px 26px}
+  .modal-body h2{font-size:26px;margin-bottom:20px;color:var(--teal)}
+  .field{display:grid;gap:7px;margin-bottom:15px}
+  .field label{font-size:13px;font-weight:700;color:var(--ink-2)}
+  .field input,.field select{width:100%;font:600 16px Montserrat,sans-serif;color:var(--text);padding:15px 16px;border:1.5px solid var(--line);border-radius:14px;background:#fff;outline:none;transition:border-color .15s,box-shadow .15s;appearance:none}
+  .field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%2300333D' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px}
+  .field input:focus,.field select:focus{border-color:var(--teal);box-shadow:0 0 0 4px var(--lime-soft)}
+  .field.err input,.field.err select{border-color:#D14343}
+  .field .msg{font-size:12px;color:#D14343;display:none}
+  .field.err .msg{display:block}
   .pane{display:none}
   .pane.active{display:block;animation:paneIn .3s ease}
   @keyframes paneIn{from{opacity:0;transform:translateX(12px)}to{opacity:1;transform:none}}
-  .step-btns{display:flex;gap:10px;margin-top:8px}
-  .step-btns .btn{flex:1;padding:18px;font-size:16px}
-  .step-btns .btn-ghost{flex:0 0 auto;padding:18px 20px}
+  .step-btns{display:flex;gap:10px;margin-top:10px}
+  .step-btns .btn{flex:1;justify-content:space-between}
+  .step-btns .btn-teal{padding:8px 8px 8px 24px}
+  .step-btns .btn-back{flex:0 0 auto;background:transparent;color:var(--teal);border:1.5px solid var(--line);padding:16px 22px}
   .step-btns .btn[hidden]{display:none}
+  .modal-card:focus,.modal-card:focus-visible{outline:none}
   .modal-card.done form{display:none}
   .modal-card.done .success{display:block}
   .success .btn{margin-top:22px}
 
-  /* SECTIONS */
-  section{padding:104px 0}
-  .sec-head{max-width:760px;margin-bottom:56px}
-  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
-  .sec-head h2{font-size:clamp(28px,3.4vw,42px);font-weight:600;margin:14px 0 16px}
-  .sec-head p{font-size:18px;color:var(--ink-2)}
-
-  /* COMO FUNCIONA */
-  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
-  .step{position:relative;padding:28px 24px;border-radius:var(--radius);background:var(--bg-2);border:1px solid var(--line)}
-  .step .num{width:44px;height:44px;border-radius:12px;background:var(--lime);display:grid;place-items:center;font:700 18px Unbounded;margin-bottom:20px}
-  .step h3{font-size:18px;font-weight:600;margin-bottom:10px}
-  .step p{color:var(--ink-2);font-size:15px}
-  .step:not(:last-child)::after{content:"";position:absolute;top:50px;right:-14px;width:10px;height:10px;border-top:2px solid var(--ink);border-right:2px solid var(--ink);transform:rotate(45deg);z-index:2}
-  .steps-close{margin-top:40px;text-align:center;font:600 clamp(18px,2vw,22px)/1.35 Unbounded,Inter,sans-serif;letter-spacing:-.01em}
-
-  /* DEMO */
-  .demo{background:var(--bg-2)}
-  .demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-  .demo-text p{font-size:18px;color:var(--ink-2)}
-  .demo-text p + p{margin-top:16px}
-  .mock{position:relative}
-  .phone{width:340px;max-width:100%;margin:0 auto;background:var(--ink);border-radius:40px;padding:12px;box-shadow:var(--shadow)}
-  .screen{background:#EFEAE2;border-radius:30px;overflow:hidden}
-  .wa-top{background:#075E54;color:#fff;display:flex;align-items:center;gap:10px;padding:16px 16px 14px}
-  .wa-top .av{width:36px;height:36px;border-radius:50%;background:var(--lime);display:grid;place-items:center;overflow:hidden}
-  .wa-top .av img{width:22px}
-  .wa-top b{font-size:15px;display:block}
-  .wa-top small{font-size:12px;opacity:.85}
-  .chat{padding:16px 12px 20px;display:flex;flex-direction:column;gap:8px;min-height:430px}
-  .bubble{max-width:84%;padding:8px 11px 16px;border-radius:10px;font-size:13.5px;line-height:1.4;position:relative;opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s}
-  .bubble.show{opacity:1;transform:none}
-  .bubble time{position:absolute;right:9px;bottom:3px;font-size:10px;color:#667}
-  .in{background:#fff;align-self:flex-start;border-top-left-radius:2px}
-  .out{background:#D9FDD3;align-self:flex-end;border-top-right-radius:2px}
-  .opts{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
-  .opts span{font-size:12px;padding:5px 9px;border-radius:999px;border:1px solid #BFD9B9;background:#fff;color:#0B6B55;font-weight:600}
-  .float{position:absolute;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:14px 16px;font-size:13px}
-  .float.cal{left:-10px;bottom:70px;width:220px}
-  .float.cal .t{font-weight:700;display:flex;gap:8px;align-items:center;margin-bottom:6px}
-  .float.cal .d{color:var(--muted)}
-  .float.cal .tag{display:inline-block;margin-top:8px;background:var(--lime);font-weight:700;font-size:11px;padding:4px 8px;border-radius:6px}
-  .float.lead{right:-6px;top:90px;width:200px}
-  .float.lead .k{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.06em;font-weight:600}
-  .float.lead .v{font-weight:700;font-size:15px;margin:2px 0 8px}
-  .bar{height:6px;border-radius:6px;background:var(--line);overflow:hidden}
-  .bar i{display:block;height:100%;width:82%;background:var(--lime-deep)}
-
-  /* ANTES x DEPOIS */
-  .compare{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-  .col{border-radius:24px;padding:36px 34px}
-  .col h3{font-size:20px;margin-bottom:22px;display:flex;align-items:center;gap:12px}
-  .col ul{list-style:none;display:grid;gap:14px}
-  .col li{display:flex;gap:12px;font-size:16px}
-  .col li svg{flex:none;margin-top:3px}
-  .col li b{display:block;color:var(--ink);margin-bottom:2px}
-  .before{background:var(--bg-2);border:1px solid var(--line);color:var(--ink-2)}
-  .after{background:var(--lime);color:var(--ink)}
-
-  /* PROVAS */
-  .proofs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
-  .proof{border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;background:#fff;font-size:15px;color:var(--ink-2)}
-  .proof .k{display:block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
-
-  /* FAQ */
-  .faq{max-width:820px;margin:0 auto}
-  details{border-bottom:1px solid var(--line);padding:22px 0}
-  summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;font-weight:600;font-size:18px}
-  summary::-webkit-details-marker{display:none}
-  summary .pm{flex:none;width:32px;height:32px;border-radius:50%;background:var(--bg-2);display:grid;place-items:center;transition:transform .2s,background .2s}
-  details[open] summary .pm{transform:rotate(45deg);background:var(--lime)}
-  details p{color:var(--ink-2);margin-top:12px;max-width:720px}
-
-  /* CTA FINAL */
-  .cta{padding:0 0 104px}
-  .cta-box{background:var(--ink);color:#fff;border-radius:32px;padding:72px 56px;display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center;position:relative;overflow:hidden}
-  .cta-box img.bg{position:absolute;right:-40px;bottom:-60px;width:360px;opacity:.14}
-  .cta-box h2{font-size:clamp(28px,3.4vw,44px);font-weight:600;margin-bottom:16px}
-  .cta-box p{color:#C9CDC2;font-size:18px}
-  .cta-actions{display:grid;gap:12px;position:relative}
-
-  footer{border-top:1px solid var(--line);padding:40px 0}
-  .foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:14px}
-  .foot a{text-decoration:underline}
-  .foot img{height:44px;width:auto}
-
-  .wa-float{position:fixed;right:20px;bottom:20px;z-index:60;width:58px;height:58px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.7);transition:transform .15s}
-  .wa-float:hover{transform:scale(1.07)}
-
-  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in-view{opacity:1;transform:none}
+  .grain{position:fixed;inset:0;pointer-events:none;z-index:200;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+  :focus-visible{outline:3px solid var(--lime);outline-offset:3px}
 
-  @media (max-width:1024px){
-    .hero-grid,.demo-grid{grid-template-columns:1fr;gap:48px}
-    .steps{grid-template-columns:repeat(2,1fr)}
-    .step::after{display:none}
-    .cta-box{grid-template-columns:1fr;padding:56px 36px}
+  .hero-grid>*,.demo-grid>*,.cta-grid>*,.calc-grid>*,.leadx>*,.compare>*,.leaks>*{min-width:0}
+  @media (max-width:1100px){
+    .hero-grid,.demo-grid,.cta-grid,.calc-grid{grid-template-columns:1fr;gap:48px}
+    .kpis{grid-template-columns:1fr 1fr}
+    .kpis>div:nth-child(3){border-left:0}
+    .kpis>div:nth-child(n+3){border-top:1px solid var(--line)}
+    .hvbox{margin:0 auto}
+    .steps,.people,.stats{grid-template-columns:repeat(2,1fr)}
+    .leaks{grid-template-columns:1fr 1fr} .leak:last-child{grid-column:1/-1}
     .nav-links{display:none}
-    .hero-grid{gap:0}
-    .hero-copy{display:contents}
-    .hero-copy .eyebrow{order:1}.hero-copy h1{order:2}.hero-copy .lead{order:3;margin-bottom:28px}
-    .form-card{order:4}
-    .proof-line{order:5;margin-top:28px}
+    .data-head{flex-direction:column;align-items:flex-start}
   }
   @media (max-width:640px){
-    .wrap{padding:0 16px}
-    .hero{padding:32px 0 72px}
-    section{padding:72px 0}
-    .steps,.compare,.proofs{grid-template-columns:1fr}
-    .row2{grid-template-columns:1fr}
-    .form-card{padding:26px 20px}
-    .brand .word{display:none}
-    .nav .btn{padding:11px 14px;font-size:13.5px}
-    .float.cal{left:0;bottom:30px;width:190px}
-    .float.lead{right:0;top:70px;width:170px}
-    .cta-box{padding:44px 24px;border-radius:24px}
-    .col{padding:28px 22px}
-    .hero-sym{width:300px}
-    .modal{padding:12px}
-    .modal-card{max-height:calc(100vh - 24px);max-height:calc(100dvh - 24px);border-radius:20px}
-    .prog{padding:18px 20px 14px}
-    .modal-body{padding:20px 20px 24px}
+    .wrap{padding:0 18px}
+    section{padding:80px 0}
+    .data{padding:80px 0}
+    .hero{padding:110px 0 0}
+    .hero h1{font-size:31px}
+    .hero-ctas{gap:14px}
+    .hero-ctas .btn{width:100%;justify-content:space-between;padding:8px 8px 8px 22px}
+    .hero-ctas .btn .ar{order:2}
+    .hvbox{width:336px;height:396px}
+    .hv{transform:scale(.6)}
+    .notif{left:-6px}
+    .nav-in{height:70px}
+    .brand img{height:28px}
+    .nav .btn{display:none}
+    .steps,.people,.leaks,.compare{grid-template-columns:1fr}
+    .leadx{grid-template-columns:1fr}
+    .lx{padding:26px 22px 22px}
+    .lx-mid{padding:20px 0}
+    .lx-mid::before{left:50%;right:auto;top:0;bottom:0;width:5px;height:auto;margin-left:-2px;background:repeating-linear-gradient(180deg,var(--teal) 0 12px,transparent 12px 20px)}
+    .lx-ia{width:72px;height:72px} .lx-ia img{width:38px}
+    .lx-mid p{display:inline-block;position:relative;background:var(--paper);padding:4px 10px;margin-top:10px}
+    .kpis>div{padding:18px 16px;grid-template-columns:1fr}
+    .kpis svg{grid-row:auto;margin-bottom:8px}
+    .kpis b{font-size:20px}
+    .trio b{font-size:28px}
+    .stats{grid-template-columns:1fr 1fr;gap:10px}
+    .stat{--cut:22px;padding:18px 16px}
+    .stat svg{width:32px;height:32px;margin-bottom:12px}
+    .stat b{font-size:30px}
+    .stat p{font-size:13px}
+    .stat small{font-size:10.5px}
+    .integr p{font-size:10.5px;letter-spacing:.12em}
+    .crmcard{width:220px}
+    .crmcard .v{font-size:18px;white-space:nowrap}
+    .cta-row .btn,.calc-out .btn,.demo .btn{width:100%;justify-content:space-between;white-space:normal;text-align:left;line-height:1.2;font-size:15px}
+    .cta-row .btn .ar,.calc-out .btn .ar,.demo .btn .ar{order:2}
+    .cta-row .btn,.calc-out .btn,.demo .btn{padding:7px 7px 7px 22px}
+    .calc-in{padding:24px 20px}
+    .calc-out{padding:30px 24px}
+    .person .cap span{letter-spacing:.05em}
+    .leak:last-child{grid-column:auto}
+    .col{padding:30px 22px}
+    .crmcard{right:0;bottom:-10px;width:210px}
+    .sec-head h2{font-size:30px}
+    .sec-head h2 br{display:none}
+    .team-head{flex-direction:column;align-items:flex-start;gap:0}
+    .team-head p{max-width:none!important}
+    .people{grid-template-columns:1fr 1fr;gap:12px}
+    .person .cap{left:12px;right:12px;bottom:12px} .person .cap b{font-size:18px} .person .cap span{font-size:9px;padding:4px 7px}
+    .modal{padding:10px}
+    .modal-card{max-height:calc(100vh - 20px);max-height:calc(100dvh - 20px);border-radius:26px}
+    .modal-body{padding:24px 20px 22px}
+    .fc-in{padding:24px 20px}
+    .fc-in .btn{white-space:normal;text-align:left;line-height:1.2;font-size:15px;padding:7px 7px 7px 20px}
+    .wa-float{display:none}
+    .mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:10px;transform:translateY(130%);transition:transform .3s ease}
+    .mbar.show{transform:none}
+    .mbar .btn{flex:1;justify-content:space-between;padding:7px 7px 7px 20px;font-size:15px;box-shadow:0 14px 34px -10px rgba(0,0,0,.45)}
+    .mbar .btn .ar{width:42px;height:42px}
+    .mbar .wa{flex:none;width:56px;height:56px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 14px 34px -10px rgba(0,0,0,.45)}
+    footer{padding-bottom:100px}
   }
   @media (prefers-reduced-motion:reduce){
-    *{transition:none!important;scroll-behavior:auto!important}
-    .pane.active{animation:none}
+    *{transition:none!important;scroll-behavior:auto!important;animation:none!important}
     .reveal,.bubble{opacity:1;transform:none}
   }
 </style>
@@ -308,193 +532,424 @@
 </script>
 </head>
 <body>
+<div class="grain" aria-hidden="true"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <filter id="crumple" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency=".02" numOctaves="4" seed="7" result="n"/>
+    <feDiffuseLighting in="n" surfaceScale="4" diffuseConstant="1.15" lighting-color="#ffffff" result="l"><feDistantLight azimuth="225" elevation="54"/></feDiffuseLighting>
+    <feComposite in="l" in2="SourceGraphic" operator="arithmetic" k1="1.1" k2="0" k3="0" k4="-.02" result="m"/>
+    <feComposite in="m" in2="SourceAlpha" operator="in"/>
+  </filter>
+  <filter id="puff" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="b"/>
+    <feSpecularLighting in="b" surfaceScale="6" specularConstant="1" specularExponent="16" lighting-color="#EAF5B0" result="s"><fePointLight x="10" y="-30" z="140"/></feSpecularLighting>
+    <feComposite in="s" in2="SourceAlpha" operator="in" result="s2"/>
+    <feComposite in="SourceGraphic" in2="s2" operator="arithmetic" k1="0" k2="1" k3=".6" k4="0" result="lit"/>
+    <feDropShadow in="lit" dx="2" dy="4" stdDeviation="3" flood-color="#00262E" flood-opacity=".4"/>
+  </filter>
+  <symbol id="wa" viewBox="0 0 24 24"><path d="M12 2.5a9.5 9.5 0 0 0-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1 0 12 2.5z" fill="#fff"/><path d="M8.6 7.4c.3-.6.6-.6.9-.6h.6c.2 0 .5 0 .7.5l.9 2.1c.1.2.1.5 0 .7l-.5.7c-.1.2-.2.4 0 .6.6 1 1.4 1.8 2.4 2.4.2.1.4.1.6 0l.7-.8c.2-.2.4-.2.7-.1l2 .9c.3.1.4.3.4.6 0 .9-.6 1.8-1.5 2.1-1 .3-2.4.1-4.3-1.1-1.9-1.2-3.2-3.1-3.6-4.1-.4-1-.4-2.1.2-2.9z" fill="#25D366"/></symbol>
+  <symbol id="arr" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="chk" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="nox" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+  <!-- ícones próprios R3: traço teal/claro + acento lima em corte angular -->
+  <symbol id="i-car" viewBox="0 0 48 48"><path d="M5 31v-6l5-10a4 4 0 0 1 3.6-2.2h20.8A4 4 0 0 1 38 15l5 10v6z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M14 22h20l-3-6H17z" fill="#D6E30F"/><circle cx="14" cy="33" r="4.5" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="34" cy="33" r="4.5" fill="none" stroke="currentColor" stroke-width="3"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 48 48"><rect x="13" y="4" width="22" height="40" rx="5" fill="none" stroke="currentColor" stroke-width="3"/><path d="M19 14h10l-3 6h-10z" fill="#D6E30F"/><path d="M19 27h10M19 33h6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
+  <symbol id="i-timer" viewBox="0 0 48 48"><circle cx="24" cy="27" r="16" fill="none" stroke="currentColor" stroke-width="3"/><path d="M24 27V17" stroke="#D6E30F" stroke-width="4" stroke-linecap="round"/><path d="M20 5h8M24 5v6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M24 27 L33 33" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 48 48"><path d="M27 4 10 27h12l-3 17 19-25H26z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M24 14l-6 9h6z" fill="#D6E30F"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 48 48"><path d="M8 10h32v22H22l-9 8v-8H8z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M15 19h18l-2 5H15z" fill="#D6E30F"/></symbol>
+  <symbol id="i-funnel" viewBox="0 0 48 48"><path d="M6 8h36L28 25v13l-8 4V25z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M13 14h22l-4 5H17z" fill="#D6E30F"/></symbol>
+  <symbol id="i-clock24" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18" fill="none" stroke="currentColor" stroke-width="3"/><path d="M24 6a18 18 0 0 1 18 18H24z" fill="#D6E30F"/><path d="M24 14v10l7 5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 48 48"><rect x="9" y="20" width="30" height="22" rx="5" fill="none" stroke="currentColor" stroke-width="3"/><path d="M16 20v-6a8 8 0 0 1 16 0v6" fill="none" stroke="currentColor" stroke-width="3"/><path d="M20 28h8l-2 6h-6z" fill="#D6E30F"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="32" rx="5" fill="none" stroke="currentColor" stroke-width="3"/><path d="M6 19h36M16 5v9M32 5v9" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M15 26h9l-2 7h-9z" fill="#D6E30F"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M13.3 19v-6h2.1l.4-2.5h-2.5V9.1c0-.7.3-1.2 1.3-1.2h1.3V5.7c-.3 0-1-.1-1.8-.1-1.9 0-3.1 1.1-3.1 3.2v1.7H8.9V13H11v6" fill="currentColor"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></symbol>
+  <symbol id="i-mega" viewBox="0 0 24 24"><path d="M3 10v4h3l8 5V5L6 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M17 9a4 4 0 0 1 0 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M3 9l2-5h14l2 5M4 9v11h16V9M3 9h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 20v-6h6v6" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+</defs></svg>
 
 <header class="nav" id="nav">
   <div class="wrap nav-in">
-    <a href="#topo" class="brand" aria-label="R3 Company">
-      <img class="sym" src="assets/simbolo-r3.png" alt="">
-      <img class="word" src="assets/wordmark-escuro.png" alt="R3 Company">
-    </a>
+    <a href="#topo" class="brand" aria-label="R3 Company"><img src="assets/r3-logo-ondark.svg" alt="R3 Company"></a>
     <nav class="nav-links">
+      <a href="#demo">Veja funcionando</a>
       <a href="#como-funciona">Como funciona</a>
-      <a href="#faq">Perguntas frequentes</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#calculadora">Calculadora</a>
+      <a href="#faq">Dúvidas</a>
     </nav>
-    <a href="#formulario" class="btn btn-lime" data-open-form>Quero clientes no meu pátio</a>
+    <a href="#formulario" class="btn btn-lime" data-open-form><span class="ar"><svg width="18" height="18" style="color:#D6E30F"><use href="#arr"/></svg></span>Quero clientes no meu pátio</a>
   </div>
 </header>
 
 <main id="topo">
 
-<!-- HERO -->
-<section class="hero">
-  <img class="hero-sym" src="assets/simbolo-r3.png" alt="">
+<!-- 1 · HERO: uma mensagem, um CTA, um visual -->
+<section class="hero" style="padding-bottom:0">
+  <div class="bgimg" aria-hidden="true"></div>
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <span class="eyebrow" style="justify-self:start">Dono de loja,</span>
-      <h1>Você paga pelo lead, o vendedor demora e o cliente <span class="mark">nunca aparece na loja.</span></h1>
-      <p class="lead">A R3 coloca o cliente pronto pra comprar no seu pátio. Todo lead é atendido no WhatsApp em segundos, qualificado e com test-drive agendado.</p>
-      <!-- PENDENTE: números reais de prova -->
-      <p class="proof-line"><span class="pend">[INSERIR PROVA: nº]</span> lojas atendidas · <span class="pend">[INSERIR PROVA: nº]</span> leads atendidos</p>
+      <span class="chip"><svg width="26" height="16" viewBox="0 0 34 22" aria-hidden="true"><path d="M3 15 V11 Q3 8 6 8 L10 2 H24 L28 8 Q31 8 31 11 V15 Z M7 15 v4 h4 v-4 M23 15 v4 h4 v-4" fill="none" stroke="#D6E30F" stroke-width="2.6" stroke-linejoin="round"/></svg>Para lojas de veículos e revendas</span>
+      <h1>Você paga pelo lead, o vendedor demora e o cliente <span class="hl">não aparece.</span></h1>
+      <p class="lede">A R3 atende o seu cliente <b>em segundos</b>, no WhatsApp da loja, e entrega ele ao vendedor <b>com a visita marcada.</b></p>
+      <div class="hero-ctas">
+        <a href="#formulario" class="btn btn-lime" data-open-form><span class="ar"><svg width="20" height="20" style="color:#D6E30F"><use href="#arr"/></svg></span>Quero clientes no meu pátio</a>
+        <a href="#demo" class="ghost">Ver funcionando <svg width="16" height="16"><use href="#arr"/></svg></a>
+      </div>
+      <div class="ticks">
+        <span><svg width="17" height="17" style="color:#D6E30F"><use href="#chk"/></svg>Atende 24h, inclusive no fim de semana</span>
+        <span><svg width="17" height="17" style="color:#D6E30F"><use href="#chk"/></svg>No WhatsApp que a loja já usa</span>
+      </div>
     </div>
 
-    <div class="form-card" id="formulario">
-      <div class="hero-cta">
-        <h2>Veja como levar mais clientes ao seu pátio</h2>
-        <ol class="next-steps">
-          <li>Você preenche o formulário, em menos de 1 minuto.</li>
-          <li>Um especialista da R3 chama você no WhatsApp para entender a sua loja e o que ela precisa.</li>
-          <li>Marcamos uma reunião para mostrar como a R3 vai levar clientes ao pátio da sua loja.</li>
-        </ol>
-        <!-- PENDENTE: validar critério mínimo (nº de vendedores ou de leads por mês) -->
-        <p class="fit">É para você se sua loja recebe contatos todos os dias pelo WhatsApp, portais ou anúncios e quer que eles virem cliente no pátio.</p>
-        <button type="button" class="btn btn-ink" data-open-form>Quero clientes no meu pátio
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#D6E30F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <p class="form-note">Leva 1 minuto. Um especialista da R3 entra em contato pelo WhatsApp.</p>
+    <div class="hvbox"><div class="hv" aria-hidden="true">
+      <div class="win">
+        <div class="wbar"><div class="tog"><i></i></div><svg class="wx" width="26" height="26" viewBox="0 0 26 26"><path d="M5 5 L21 21 M21 5 L5 21" stroke="#D6E30F" stroke-width="4" stroke-linecap="round"/></svg></div>
+        <div class="wph"><img src="assets/img/hero_jonas_full.webp" alt=""></div>
+        <div class="wtab"><img src="assets/r3-logo-ondark.svg" alt=""></div>
+        <div class="wft">Do anúncio ao pátio.</div>
       </div>
-      <div class="success" role="status" aria-live="polite">
-        <div class="ok"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#11140F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Recebemos!</h3>
-        <p>Um especialista da R3 vai falar com você pelo WhatsApp. Salve nosso número: <span class="pend">[INSERIR número]</span>.</p>
-      </div>
-    </div>
+      <div class="pop"><img src="assets/img/hero_jonas.webp" alt=""></div>
+      <div class="notif"><div class="ic"><svg width="28" height="28"><use href="#wa"/></svg></div><div><p>Cliente do anúncio <span>dom, 22:08</span></p><div class="msg">Oi! O SUV ainda tá disponível?</div><span class="tg go">✓ respondido em 12s</span></div></div>
+      <div class="stk"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#D6E30F" filter="url(#crumple)"/><g transform="translate(19 19) scale(.52)" filter="url(#puff)"><path fill="#00333D" d="M16 28 Q16 14 30 14 H90 Q104 14 104 28 V70 Q104 84 90 84 H54 L32 104 V84 H30 Q16 84 16 70 Z"/><path d="M24 30 Q24 22 32 22 H88 Q96 22 96 30 V68 Q96 76 88 76 H51 L39 87 V76 H32 Q24 76 24 68 Z" fill="none" stroke="#E6F27A" stroke-width="2.4" stroke-dasharray="5 6"/><g fill="#D6E30F"><circle cx="40" cy="49" r="7"/><circle cx="60" cy="49" r="7"/><circle cx="80" cy="49" r="7"/></g></g></svg></div>
+    </div></div>
+  </div>
+  <div class="road" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <rect x="0" y="30" width="1440" height="70" fill="#00333D"/>
+      <line x1="0" y1="34" x2="1440" y2="34" stroke="#C5D5D7" stroke-opacity=".22" stroke-width="2"/>
+      <line x1="0" y1="96" x2="1440" y2="96" stroke="#C5D5D7" stroke-opacity=".22" stroke-width="2"/>
+      <line class="flow" x1="0" y1="65" x2="760" y2="65" stroke="#D6E30F" stroke-width="7"/>
+      <line x1="760" y1="65" x2="1300" y2="65" stroke="#D6E30F" stroke-width="7"/>
+    </svg>
+    <img src="assets/r3-simbolo-lime.svg" alt="">
   </div>
 </section>
 
-<!-- FAIXA DE AUTORIDADE (PENDENTE: se a prova vier só como números agregados, esta faixa pode sair) -->
-<div class="authority">
+<!-- 2 · INTEGRAÇÕES -->
+<div class="integr">
   <div class="wrap">
-    <span class="pend">[INSERIR PROVA: logos de clientes em escala de cinza ou números agregados]</span>
+    <p>Funciona com o que a sua loja já usa</p>
+    <span class="badge"><svg width="22" height="22"><use href="#wa"/></svg>WhatsApp da loja</span>
+    <span class="badge"><svg width="20" height="20" style="color:#D6E30F"><use href="#i-ig"/></svg>Instagram</span>
+    <span class="badge"><svg width="20" height="20" style="color:#D6E30F"><use href="#i-fb"/></svg>Facebook</span>
+    <span class="badge"><svg width="20" height="20" style="color:#D6E30F"><use href="#i-mega"/></svg>Anúncios Meta</span>
   </div>
 </div>
 
-<!-- COMO FUNCIONA -->
-<section id="como-funciona">
+<!-- 3 · ONDE A VENDA ESCAPA (dor) -->
+<section id="onde-escapa">
   <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow">Como funciona</span>
-      <h2>Do anúncio ao pátio, <span class="mark">em 4 passos</span></h2>
+    <div class="sec-head reveal">
+      <span class="eyebrow">Onde a venda escapa</span>
+      <h2>O anúncio traz o cliente. <br>A demora <span class="hl">leva embora.</span></h2>
     </div>
-    <div class="steps">
-      <div class="step reveal"><div class="num">1</div><h3>Atrair</h3><p>Anúncios e portais com o seu estoque real.</p></div>
-      <div class="step reveal"><div class="num">2</div><h3>Atender em segundos</h3><p>A IA responde no WhatsApp da loja 24 horas por dia.</p></div>
-      <div class="step reveal"><div class="num">3</div><h3>Qualificar e agendar</h3><p>O cliente informa modelo, troca e forma de pagamento, escolhe o horário do test-drive e recebe lembrete.</p></div>
-      <div class="step reveal"><div class="num">4</div><h3>Medir</h3><p>Todo mês você vê quantos clientes chegaram ao pátio e quanto custou cada um.</p></div>
+    <div class="leaks">
+      <article class="leak reveal"><div class="in cut br">
+        <div class="vis v-lock">
+          <p class="d">sexta-feira</p><p class="t">19:40</p>
+          <div class="nt"><div class="ic"><svg width="18" height="18"><use href="#wa"/></svg></div><div><p>Cliente do anúncio <span>19:40</span></p><div class="m">Boa noite! A picape ainda tá à venda?</div></div></div>
+          <div class="nt"><div class="ic"><svg width="18" height="18"><use href="#wa"/></svg></div><div><p>Cliente do anúncio <span>20:52</span></p><div class="m">Consegue me mandar mais fotos?</div></div></div>
+          <div class="nt hot"><div class="ic"><svg width="18" height="18"><use href="#wa"/></svg></div><div><p>Cliente do anúncio <span>sáb, 09:15</span></p><div class="m">Obrigado, já resolvi em outra loja.</div></div></div>
+        </div>
+        <h3>A loja fecha. O cliente continua chamando.</h3>
+        <ul><li><span>Ele chama <b>várias lojas</b> ao mesmo tempo.</span></li><li><span>Quem <b>responde primeiro</b> sai na frente.</span></li></ul>
+        <div class="fix"><svg width="18" height="18" style="flex:none"><use href="#chk"/></svg>A IA da R3 responde na hora, até de madrugada.</div>
+      </div></article>
+      <article class="leak reveal"><div class="in cut br">
+        <div class="vis v-gauge">
+          <svg width="290" height="230" viewBox="0 0 290 230" aria-hidden="true">
+            <path d="M 46.7 186.8 A 115 115 0 1 1 243.3 186.8" fill="none" stroke="#2F5A62" stroke-width="18"/>
+            <path d="M 46.7 186.8 A 115 115 0 0 1 48.5 74.6" fill="none" stroke="#D6E30F" stroke-width="18"/>
+            <g stroke="#F1EEEE" stroke-linecap="round" stroke-opacity=".5"><path d="M71 168 l10 -7" stroke-width="3"/><path d="M60 100 l12 4" stroke-width="3"/><path d="M145 47 v13" stroke-width="3"/><path d="M230 100 l-12 4" stroke-width="3"/><path d="M219 168 l-10 -7" stroke-width="3"/></g>
+            <polygon points="196,82 152,137 140,125" fill="#F1EEEE"/><circle cx="145" cy="130" r="12" fill="#00333D" stroke="#F1EEEE" stroke-width="4"/>
+            <text x="145" y="198" text-anchor="middle" font-family="Pinnacle" font-weight="800" font-size="46" fill="#F1EEEE">só 12%</text>
+            <text x="145" y="222" text-anchor="middle" font-family="Montserrat" font-weight="700" font-size="12" fill="#C5D5D7">respondem em até 10 min</text>
+            <text x="30" y="60" font-family="Montserrat" font-weight="800" font-size="12" fill="#D6E30F">10 min</text>
+            <text x="246" y="210" font-family="Montserrat" font-weight="800" font-size="12" fill="#C5D5D7">1 dia</text>
+          </svg>
+        </div>
+        <h3>Quanto tempo sua loja leva pra responder?</h3>
+        <ul><li><span>Depois de <b>1 hora</b>, o cliente esfria.</span></li><li><span>Vendedor no pátio <b>não vê</b> o WhatsApp.</span></li></ul>
+        <div class="fix"><svg width="18" height="18" style="flex:none"><use href="#chk"/></svg>Com a R3, a resposta sai em segundos.</div>
+      </div></article>
+      <article class="leak reveal"><div class="in cut br">
+        <div class="vis v-post">
+          <div class="pi" style="background:#D6E30F;transform:rotate(-5deg)">ligar pro cliente do sábado!!</div>
+          <div class="crm"><h5>COM O CRM DA R3</h5><div>Juliana R.<span>Visita seg · 10:30 ✓</span></div><div>Paulo S.<span>Retorno hoje · 14h</span></div><div>Lucas A.<span>Proposta enviada ✓</span></div></div>
+          <div class="pi" style="background:#fff;transform:rotate(4deg)">quem era o da picape??</div>
+          <div class="pi" style="background:#C5D5D7;transform:rotate(-2deg)">proposta pro... esqueci</div>
+        </div>
+        <h3>Seu CRM ainda é um post-it?</h3>
+        <ul><li><span>Contato salvo no <b>celular do vendedor</b>.</span></li><li><span>Se ele sai, <b>a carteira vai junto.</b></span></li></ul>
+        <div class="fix"><svg width="18" height="18" style="flex:none"><use href="#chk"/></svg>No CRM da R3, nenhum cliente fica esquecido.</div>
+      </div></article>
     </div>
-    <p class="steps-close reveal">Seu vendedor para de correr atrás de lead e faz o que sabe: vender.</p>
   </div>
 </section>
 
-<!-- DEMO -->
-<section class="demo">
-  <div class="wrap demo-grid">
-    <div class="demo-text reveal">
-      <span class="eyebrow">Na prática</span>
-      <h2 style="font-size:clamp(28px,3.4vw,42px);font-weight:600;margin:14px 0 16px">Você já tentou agência. Já tentou sistema. O cliente continuou sem aparecer.</h2>
-      <p>A agência entrega lead e para por ali. O sistema organiza, mas não responde ninguém. No fim do mês, cada um culpa o outro, e quem paga é você.</p>
-      <p>Na R3, o mesmo time faz o anúncio, atende em segundos e só passa o cliente para o vendedor quando ele já tem horário marcado no pátio.</p>
+<!-- 4 · DADOS DE MERCADO (prova de que a dor é real) -->
+<div class="data" id="dados">
+  <div class="wrap">
+    <div class="data-head reveal">
+      <h2>O cliente existe e está comprando. A pergunta é quem <span class="hl dk">responde primeiro.</span></h2>
+      <p>Números públicos do mercado, com fonte.</p>
     </div>
+    <div class="stats">
+      <div class="stat cut reveal"><svg width="44" height="44" style="color:#F1EEEE"><use href="#i-car"/></svg><b>18,5 mi</b><p>carros usados trocaram de dono no Brasil em 2025.</p><small>Fenauto, jan/2026</small></div>
+      <div class="stat cut reveal"><svg width="44" height="44" style="color:#F1EEEE"><use href="#i-eye"/></svg><b>147 mi</b><p>de pessoas podem ver anúncios no Instagram no Brasil.</p><small>DataReportal, Digital 2026</small></div>
+      <div class="stat cut reveal"><svg width="44" height="44" style="color:#F1EEEE"><use href="#i-timer"/></svg><b>só 12%</b><p>das empresas respondem o primeiro contato em até 10 min.</p><small>Ramper, 1,9 mil empresas</small></div>
+      <div class="stat cut reveal"><svg width="44" height="44" style="color:#F1EEEE"><use href="#i-bolt"/></svg><b>7x</b><p>mais chance de qualificar quem é atendido em até 1 hora.</p><small>Harvard Business Review, 2011</small></div>
+    </div>
+  </div>
+</div>
 
-    <div class="mock reveal">
+<!-- 5 · VEJA FUNCIONANDO (solução mostrada, não contada) -->
+<section class="demo" id="demo">
+  <div class="wrap demo-grid">
+    <div class="reveal">
+      <span class="eyebrow">Veja funcionando</span>
+      <h2>Domingo, 22h08. <span class="hl">Loja fechada.</span> Visita marcada.</h2>
+      <ul class="bul">
+        <li><span class="n">1</span><span>A IA responde <b>em segundos</b>, no tom da sua loja.</span></li>
+        <li><span class="n">2</span><span>Pergunta <b>modelo, troca e pagamento.</b></span></li>
+        <li><span class="n">3</span><span>Marca a visita e <b>avisa o seu vendedor</b> no CRM.</span></li>
+      </ul>
+      <a href="#formulario" class="btn btn-teal" data-open-form><span class="ar"><svg width="20" height="20" style="color:#00333D"><use href="#arr"/></svg></span>Quero isso na minha loja</a>
+    </div>
+    <div class="stage reveal">
       <div class="phone">
         <div class="screen">
           <div class="wa-top">
-            <div class="av"><img src="assets/simbolo-r3.png" alt=""></div>
-            <div><b>Sua Concessionária</b><small>online</small></div>
+            <div class="av"><img src="assets/r3-simbolo-teal.svg" alt=""></div>
+            <div><b>Sua Loja de Veículos</b><small>online</small></div>
           </div>
           <div class="chat" id="chat">
-            <div class="bubble in">Oi! Vi o SUV no anúncio. Ainda tem?<time>21:47</time></div>
-            <div class="bubble out">Oi, Juliana! Temos sim 🚗 Você procura a versão automática ou a manual?<time>21:47</time></div>
-            <div class="bubble in">Automática. E tenho um carro pra dar na troca.<time>21:48</time></div>
-            <div class="bubble out">Perfeito, a gente avalia seu carro na hora. Quer fazer um test-drive? Escolha um horário:
-              <div class="opts"><span>Sáb 09:00</span><span>Sáb 10:30</span><span>Seg 18:00</span></div><time>21:48</time></div>
-            <div class="bubble in">Sábado 10:30 🙌<time>21:49</time></div>
-            <div class="bubble out">Agendado! O Rafael vai te receber. Mando um lembrete na sexta ✅<time>21:49</time></div>
+            <div class="bubble bi">Boa noite! Vi o SUV no anúncio. Ainda tem?<time>22:08</time></div>
+            <div class="bubble bo">Boa noite, Juliana! Temos sim. Você procura a versão automática ou a manual?<time>22:08</time></div>
+            <div class="bubble bi">Automática. E tenho um carro pra dar na troca.<time>22:09</time></div>
+            <div class="bubble bo">Perfeito, a gente avalia seu carro na hora. Quer ver o SUV pessoalmente? Escolha um horário:
+              <div class="opts"><span>Seg 09:00</span><span>Seg 10:30</span><span>Ter 18:00</span></div><time>22:09</time></div>
+            <div class="bubble bi">Segunda 10:30 🙌<time>22:10</time></div>
+            <div class="bubble bo">Agendado! O Rafael vai te receber. Te mando um lembrete na segunda cedo ✅<time>22:10</time></div>
           </div>
         </div>
       </div>
-      <div class="float lead">
-        <div class="k">Lead qualificado</div>
-        <div class="v">Juliana · SUV automático</div>
-        <div class="k">Chance de fechar</div>
-        <div class="bar" style="margin-top:6px"><i></i></div>
+      <div class="crmcard">
+        <div class="k">NO CRM DA LOJA</div>
+        <div class="v">Juliana R. <span class="mp"><i></i><b>ROT 4H21</b></span></div>
+        <div class="row"><span>Interesse</span><b>SUV automático</b></div>
+        <div class="row"><span>Troca</span><b>Sim</b></div>
+        <div class="row"><span>Visita</span><b style="color:#D6E30F">Seg · 10:30</b></div>
       </div>
-      <div class="float cal">
-        <div class="t"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="#11140F" stroke-width="2"/><path d="M3 10h18" stroke="#11140F" stroke-width="2"/></svg>Test-drive agendado</div>
-        <div class="d">Sábado, 10:30 · Vendedor: Rafael</div>
-        <span class="tag">Carro na troca</span>
-      </div>
+      <!-- Botão do vídeo demo: aparece sozinho quando DEMO_VIDEO_URL (no fim da página) for preenchido -->
+      <button type="button" class="play" id="playDemo" aria-label="Assistir à demonstração"><svg width="30" height="30" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#00333D"/></svg></button>
     </div>
   </div>
 </section>
 
-<!-- ANTES x DEPOIS -->
-<section>
+<!-- 6 · MÉTODO -->
+<section id="como-funciona" class="dark how">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Método R3auto</span>
+      <h2>Do anúncio ao pátio, <span class="hl">em 4 passos.</span></h2>
+      <p>Um time só cuida do caminho inteiro do cliente.</p>
+    </div>
+    <div class="roadline reveal" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <rect x="0" y="26" width="1440" height="70" fill="#00262E"/>
+        <line class="flow" x1="0" y1="61" x2="1300" y2="61" stroke="#D6E30F" stroke-width="6"/>
+        <g fill="#00262E" stroke="#D6E30F" stroke-width="6"><circle cx="270" cy="61" r="20"/><circle cx="570" cy="61" r="20"/><circle cx="870" cy="61" r="20"/><circle cx="1170" cy="61" r="20"/></g>
+      </svg>
+      <img src="assets/r3-simbolo-lime.svg" alt="">
+    </div>
+    <div class="steps">
+      <div class="step cut reveal"><div class="num">01</div><h3>Atrair</h3><p>Anúncio com o carro do seu pátio, com preço, pra quem procura carro na sua região.</p></div>
+      <div class="step cut reveal"><div class="num">02</div><h3>Atender</h3><p>A IA responde no WhatsApp da loja em segundos, 24 horas por dia.</p></div>
+      <div class="step cut reveal"><div class="num">03</div><h3>Agendar</h3><p>Modelo, troca e pagamento na conversa. Visita marcada, com lembrete.</p></div>
+      <div class="step cut reveal"><div class="num">04</div><h3>Medir e ajustar</h3><p>Toda semana: quem chegou, quem visitou e quanto custou cada cliente.</p></div>
+    </div>
+    <p class="steps-close reveal">Seu vendedor para de correr atrás de lead e faz o que sabe: <span class="hl">vender.</span></p>
+  </div>
+</section>
+
+<!-- 7 · RESULTADOS: o que muda pro vendedor (capacidade do produto, sem promessa de faturamento) -->
+<section id="resultados">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">O que a sua loja ganha</span>
+      <h2>O que muda quando ninguém fica <span class="hl">sem resposta.</span></h2>
+      <p>A IA faz as perguntas que separam o curioso de quem quer comprar. Seu vendedor só entra quando vale a pena.</p>
+    </div>
+    <div class="leadx">
+      <div class="lx cold reveal">
+        <span class="lx-tag">Sem filtro</span>
+        <h3>O que chega hoje pro vendedor</h3>
+        <div class="lx-chat"><span>qual o valor?</span><span>faz mais barato?</span><span>vou ver e te falo</span></div>
+        <dl>
+          <div><dt>Modelo</dt><dd>?</dd></div>
+          <div><dt>Troca</dt><dd>?</dd></div>
+          <div><dt>Pagamento</dt><dd>?</dd></div>
+          <div><dt>Visita</dt><dd>não marcada</dd></div>
+        </dl>
+        <p class="lx-foot">Ele gasta o dia respondendo e não sabe quem é cliente.</p>
+      </div>
+      <div class="lx-mid reveal" aria-hidden="true">
+        <div class="lx-ia"><img src="assets/r3-simbolo-teal.svg" alt=""></div>
+        <p>A IA pergunta,<br>filtra e agenda</p>
+      </div>
+      <div class="lx hot cut reveal">
+        <span class="lx-tag">Lead quente</span>
+        <h3>O que chega com a R3</h3>
+        <p class="lx-name">Juliana R. <span class="mp"><i></i><b>ROT 4H21</b></span></p>
+        <dl>
+          <div><dt>Modelo</dt><dd>SUV automático</dd></div>
+          <div><dt>Troca</dt><dd>Sim, avaliar na visita</dd></div>
+          <div><dt>Pagamento</dt><dd>Entrada + financiamento</dd></div>
+          <div><dt>Visita</dt><dd class="ok">Seg · 10:30 ✓</dd></div>
+        </dl>
+        <p class="lx-foot">Chega pronto pra negociar.</p>
+      </div>
+    </div>
+    <div class="kpis reveal">
+      <div><svg width="40" height="40" style="color:#00333D"><use href="#i-chat"/></svg><b>Segundos</b><span>para a primeira resposta, a qualquer hora</span></div>
+      <div><svg width="40" height="40" style="color:#00333D"><use href="#i-clock24"/></svg><b>24h, 7 dias</b><span>de atendimento, sem folga e sem fila</span></div>
+      <div><svg width="40" height="40" style="color:#00333D"><use href="#i-funnel"/></svg><b>100%</b><span>dos leads registrados no CRM da loja</span></div>
+      <div><svg width="40" height="40" style="color:#00333D"><use href="#i-cal"/></svg><b>Toda semana</b><span>relatório de leads, visitas e custo por visita</span></div>
+    </div>
+  </div>
+</section>
+<!-- 8 · SEM x COM + CTA -->
+<section class="vs">
   <div class="wrap">
     <div class="sec-head center reveal">
       <span class="eyebrow">O que muda</span>
-      <h2>A diferença aparece <span class="mark">no seu pátio</span></h2>
+      <h2>A diferença aparece <span class="hl">no seu pátio.</span></h2>
     </div>
     <div class="compare">
       <div class="col before reveal">
         <h3>Sem a R3</h3>
         <ul>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#9AA094" stroke-width="2.4" stroke-linecap="round"/></svg><div><b>Cliente que chama sábado à noite</b>Resposta na segunda. Ele já comprou em outra loja.</div></li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#9AA094" stroke-width="2.4" stroke-linecap="round"/></svg><div><b>Quem atende</b>O vendedor, quando dá tempo.</div></li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#9AA094" stroke-width="2.4" stroke-linecap="round"/></svg><div><b>Test-drive</b>Marcado no caderno. O cliente esquece e falta.</div></li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#9AA094" stroke-width="2.4" stroke-linecap="round"/></svg><div><b>Contatos dos clientes</b>No celular do vendedor. Se ele sai, a carteira vai junto.</div></li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#9AA094" stroke-width="2.4" stroke-linecap="round"/></svg><div><b>Anúncio</b>Você vê cliques e curtidas.</div></li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#9AA094" stroke-width="2.4" stroke-linecap="round"/></svg><div><b>Quem cuida</b>Agência de um lado, sistema do outro.</div></li>
+          <li><svg width="20" height="20" style="color:#9AA6A8"><use href="#nox"/></svg><div><b>Sábado à noite</b>Resposta na segunda. Ele já comprou em outra loja.</div></li>
+          <li><svg width="20" height="20" style="color:#9AA6A8"><use href="#nox"/></svg><div><b>Quem atende</b>O vendedor, quando dá tempo.</div></li>
+          <li><svg width="20" height="20" style="color:#9AA6A8"><use href="#nox"/></svg><div><b>Visita</b>Marcada no caderno. O cliente esquece e falta.</div></li>
+          <li><svg width="20" height="20" style="color:#9AA6A8"><use href="#nox"/></svg><div><b>Contatos</b>No celular do vendedor. Se ele sai, vão junto.</div></li>
+          <li><svg width="20" height="20" style="color:#9AA6A8"><use href="#nox"/></svg><div><b>Anúncio</b>Você vê cliques e curtidas.</div></li>
         </ul>
       </div>
-      <div class="col after reveal">
-        <h3>Com a R3</h3>
+      <div class="col after cut reveal">
+        <h3><img src="assets/r3-logo-onlight.svg" alt="Com a R3"></h3>
         <ul>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#11140F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Cliente que chama sábado à noite</b>Atendido em segundos, a qualquer hora.</div></li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#11140F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Quem atende</b>A IA responde, qualifica e passa para o vendedor com horário marcado.</div></li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#11140F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Test-drive</b>Agendado, com lembrete para o cliente.</div></li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#11140F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Contatos dos clientes</b>No nome da loja, com todo o histórico.</div></li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#11140F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Anúncio</b>Você vê quantos clientes chegaram ao pátio e quanto custou cada um.</div></li>
-          <!-- PENDENTE: validar composição do time -->
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#11140F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Quem cuida</b>Um time só, do anúncio ao pátio.</div></li>
+          <li><svg width="20" height="20" style="color:#00333D"><use href="#chk"/></svg><div><b>Sábado à noite</b>Atendido em segundos, a qualquer hora.</div></li>
+          <li><svg width="20" height="20" style="color:#00333D"><use href="#chk"/></svg><div><b>Quem atende</b>A IA responde, qualifica e passa o cliente pronto.</div></li>
+          <li><svg width="20" height="20" style="color:#00333D"><use href="#chk"/></svg><div><b>Visita</b>Agendada, com lembrete para o cliente.</div></li>
+          <li><svg width="20" height="20" style="color:#00333D"><use href="#chk"/></svg><div><b>Contatos</b>No nome da loja, com todo o histórico.</div></li>
+          <li><svg width="20" height="20" style="color:#00333D"><use href="#chk"/></svg><div><b>Anúncio</b>Você vê quantos clientes chegaram ao pátio.</div></li>
         </ul>
       </div>
     </div>
-    <!-- PENDENTE: provas reais (2 cases + 1 depoimento) -->
-    <div class="proofs">
-      <div class="proof reveal"><span class="k">Case 1</span><span class="pend">[INSERIR PROVA: Tipo de loja e cidade · Investiu R$ X em anúncio · Y clientes no pátio · Z carros vendidos · em N dias]</span></div>
-      <div class="proof reveal"><span class="k">Case 2</span><span class="pend">[INSERIR PROVA: mesmo formato]</span></div>
-      <div class="proof reveal"><span class="k">Depoimento</span><span class="pend">[INSERIR PROVA: 1 depoimento, de preferência em vídeo, com nome, cargo, loja e resultado]</span></div>
+    <div class="cta-row reveal"><a href="#formulario" class="btn btn-lime" data-open-form><span class="ar"><svg width="20" height="20" style="color:#D6E30F"><use href="#arr"/></svg></span>Quero a minha loja do lado verde</a></div>
+  </div>
+</section>
+
+<!-- 9 · CALCULADORA DE DINHEIRO NA MESA -->
+<section id="calculadora" class="calc">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Calculadora</span>
+      <h2 style="color:#fff">Quanto a demora está <span class="hl">custando à sua loja?</span></h2>
+      <p style="color:var(--mist)">Ajuste com os números da sua loja. Leva 20 segundos.</p>
+    </div>
+    <div class="calc-grid">
+      <div class="calc-in reveal">
+        <div class="rg"><label for="cLeads">Leads por mês <output id="oLeads">150</output></label><input type="range" id="cLeads" min="20" max="1000" step="10" value="150"></div>
+        <div class="rg"><label for="cPerda">Leads sem resposta em até 1 hora <output id="oPerda">40%</output></label><input type="range" id="cPerda" min="5" max="90" step="5" value="40"><small>Inclui noite, fim de semana e horário de pico no pátio.</small></div>
+        <div class="rg"><label for="cConv">Leads que viram venda <output id="oConv">5%</output></label><input type="range" id="cConv" min="1" max="20" step="1" value="5"></div>
+        <div class="rg" style="margin-bottom:0"><label for="cLucro">Lucro médio por carro <output id="oLucro">R$ 3.000</output></label><input type="range" id="cLucro" min="500" max="15000" step="500" value="3000"></div>
+      </div>
+      <div class="calc-out cut reveal">
+        <div>
+          <span class="k">Na sua loja, por mês</span>
+          <div class="trio">
+            <div><b id="oAt">60</b><span>clientes passariam a ser atendidos em segundos, e não depois de 1 hora</span></div>
+            <div><b id="oVend">3</b><span>vendas em jogo nesse grupo de clientes</span></div>
+          </div>
+          <p class="money" id="oMoney">R$ 9.000</p>
+          <p class="per">de lucro que pode estar indo pra concorrência.</p>
+          <p class="how">Estimativa feita com os seus números: leads × % sem resposta rápida × taxa de venda × lucro por carro. Não é promessa de resultado, é o tamanho do problema.</p>
+        </div>
+        <a href="#formulario" class="btn btn-teal" data-open-form style="align-self:flex-start"><span class="ar"><svg width="20" height="20" style="color:#00333D"><use href="#arr"/></svg></span>Quero recuperar esse dinheiro</a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section id="faq" style="background:var(--bg-2)">
+<!-- 10 · QUEM SOMOS (desceu para perto do rodapé) -->
+<section id="time" class="team">
+  <div class="wrap">
+    <div class="sec-head team-head reveal">
+      <div style="max-width:640px"><span class="eyebrow">Quem somos</span><h2>Gente de verdade cuidando <span class="hl">da sua loja.</span></h2></div>
+      <p style="max-width:380px">A R3 nasceu em São Luís, há mais de 4 anos. Hoje leva o mesmo jeito de trabalhar pra lojas de todo o Brasil.</p>
+    </div>
+    <div class="people">
+      <div class="person reveal"><img src="assets/img/time_joao.webp" alt="João Vitor, CEO da R3" style="width:156.3%;left:-33.3%;top:-37.6%"><div class="cap"><b>João Vitor</b><span>CEO</span></div></div>
+      <div class="person reveal"><img src="assets/img/time_italo.webp" alt="Italo Matheus, Diretor Comercial da R3" style="width:104%;left:-4.1%;top:-7.9%"><div class="cap"><b>Italo Matheus</b><span>Diretor Comercial</span></div></div>
+      <div class="person reveal"><img src="assets/img/time_jordan.webp" alt="Jordan, Diretor Operacional da R3" style="width:204.5%;left:-49.4%;top:-13.1%"><div class="cap"><b>Jordan</b><span>Diretor Operacional</span></div></div>
+      <div class="person reveal"><img src="assets/img/time_jonas.webp" alt="Jonas, Head de Expansão da R3" style="width:108.5%;left:-6.1%;top:-6.6%"><div class="cap"><b>Jonas</b><span>Head de Expansão</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 · FAQ -->
+<section id="faq" style="padding-top:40px;background:#fff">
   <div class="wrap">
     <div class="sec-head center reveal">
       <span class="eyebrow">Dúvidas</span>
       <h2>Perguntas frequentes</h2>
     </div>
     <div class="faq">
-      <details><summary>O cliente vai perceber que é robô?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#11140F" stroke-width="2.6" stroke-linecap="round"/></svg></span></summary><p>A conversa segue o tom da sua loja. Quando o cliente pede, um vendedor assume na hora, com todo o histórico.</p></details>
-      <details><summary>Preciso trocar o número do WhatsApp?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#11140F" stroke-width="2.6" stroke-linecap="round"/></svg></span></summary><p>Não. A R3 funciona com o número que a sua loja já usa.</p></details>
-      <details><summary>Vocês garantem a venda?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#11140F" stroke-width="2.6" stroke-linecap="round"/></svg></span></summary><p>A venda é fechada pelo seu time. O que a R3 garante é que todo lead seja atendido em segundos e qualificado pela IA, e que o cliente chegue ao vendedor com o test-drive agendado.</p></details>
+      <details><summary>O cliente vai perceber que é robô?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#00333D" stroke-width="2.6" stroke-linecap="round"/></svg></span></summary><p>A conversa segue o tom da sua loja. Quando o cliente pede, ou a negociação esquenta, um vendedor assume na hora, com todo o histórico.</p></details>
+      <details><summary>Preciso trocar o número do WhatsApp?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#00333D" stroke-width="2.6" stroke-linecap="round"/></svg></span></summary><p>Não. A R3 funciona com o número que a sua loja já usa.</p></details>
+      <details><summary>A IA atende no fim de semana e à noite?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#00333D" stroke-width="2.6" stroke-linecap="round"/></svg></span></summary><p>Sim. Ela responde 24 horas por dia, tira as dúvidas do cliente e deixa a visita marcada para o próximo horário da loja.</p></details>
+      <details><summary>Quem faz os anúncios?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#00333D" stroke-width="2.6" stroke-linecap="round"/></svg></span></summary><p>O mesmo time da R3 que cuida do atendimento e do CRM. Assim, anúncio, conversa e visita são medidos juntos, e a gente ajusta o que não está funcionando.</p></details>
+      <details><summary>Vocês garantem a venda?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#00333D" stroke-width="2.6" stroke-linecap="round"/></svg></span></summary><p>A venda é fechada pelo seu time. O que a R3 garante é que todo lead seja atendido em segundos e qualificado, e que o cliente chegue ao vendedor com a visita agendada.</p></details>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta" style="background:var(--bg-2)">
-  <div class="wrap">
-    <div class="cta-box reveal">
-      <img class="bg" src="assets/simbolo-r3.png" alt="">
-      <div style="position:relative">
-        <h2>O próximo lead da sua loja pode chegar hoje à noite. <span style="color:var(--lime)">Quem vai responder?</span></h2>
+<!-- 12 · MEGA CTA + FORMULÁRIO -->
+<section class="cta">
+  <div class="bgimg" aria-hidden="true"></div>
+  <div class="wrap cta-grid">
+    <div class="reveal">
+      <span class="eyebrow" style="color:#D6E30F">Próximo passo</span>
+      <h2>O próximo lead da sua loja pode chegar hoje à noite. <span style="color:var(--lime)">Quem vai responder?</span></h2>
+      <p class="sub">Conte um pouco sobre a sua loja. Um especialista da R3 chama você no WhatsApp para mostrar como levar mais clientes ao pátio.</p>
+    </div>
+
+    <div class="form-card reveal" id="formulario">
+      <div class="wbar"><div class="tog"><i></i></div><svg class="wx" width="26" height="26" viewBox="0 0 26 26"><path d="M5 5 L21 21 M21 5 L5 21" stroke="#D6E30F" stroke-width="4" stroke-linecap="round"/></svg></div>
+      <div class="fc-in">
+        <div class="hero-cta">
+          <h3>Veja como levar mais clientes ao seu pátio</h3>
+          <ol class="next-steps">
+            <li>Você preenche o formulário, em menos de 1 minuto.</li>
+            <li>Um especialista da R3 chama você no WhatsApp.</li>
+            <li>Marcamos uma conversa para mostrar a R3 funcionando.</li>
+          </ol>
+          <!-- PENDENTE: validar critério mínimo (nº de vendedores ou de leads por mês) -->
+          <p class="fit">É para você se a sua loja recebe contatos todos os dias pelo WhatsApp, Instagram ou anúncios.</p>
+          <button type="button" class="btn btn-teal" data-open-form>Quero clientes no meu pátio<span class="ar"><svg width="20" height="20" style="color:#00333D"><use href="#arr"/></svg></span></button>
+          <p class="form-note">Leva 1 minuto. Um especialista da R3 entra em contato pelo WhatsApp.</p>
+        </div>
+        <div class="success" role="status" aria-live="polite">
+          <div class="ok"><svg width="30" height="30" style="color:#00333D"><use href="#chk"/></svg></div>
+          <h3>Recebemos!</h3>
+          <p>Um especialista da R3 vai falar com você pelo WhatsApp. Salve nosso número: <span class="pend">[INSERIR número]</span>.</p>
+        </div>
       </div>
-      <div class="cta-actions">
-        <a href="#formulario" class="btn btn-lime" data-open-form>Quero clientes no meu pátio</a>
-      </div>
+      <p class="fc-foot">Do anúncio ao pátio.</p>
     </div>
   </div>
 </section>
@@ -502,26 +957,37 @@
 </main>
 
 <footer>
-  <div class="wrap foot">
-    <img src="assets/logo-r3-escuro.png" alt="R3 Company">
+  <div class="wrap ft">
+    <img src="assets/r3-logo-ondark.svg" alt="R3 Company">
+    <nav><a href="#demo">Veja funcionando</a><a href="#como-funciona">Como funciona</a><a href="#faq">Dúvidas</a></nav>
     <!-- PENDENTE: razão social, CNPJ e link da política de privacidade -->
-    <span>Razão social · CNPJ <span class="pend">[INSERIR]</span> · <a href="#">Política de privacidade</a></span>
+    <div class="legal"><span>R3 Company · São Luís, MA · Razão social · CNPJ <span class="pend">[INSERIR]</span></span><a href="#">Política de privacidade</a></div>
   </div>
 </footer>
 
 <!-- Troque o número abaixo pelo WhatsApp comercial da R3 (formato 55 + DDD + número) -->
-<a class="wa-float" id="waFloat" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Quero%20conhecer%20o%20CRM%20da%20R3%20para%20minha%20concession%C3%A1ria." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+<a class="wa-float" id="waFloat" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Quero%20conhecer%20a%20R3%20para%20minha%20loja." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
   <svg width="30" height="30" viewBox="0 0 32 32" fill="#fff"><path d="M16 3a13 13 0 00-11.2 19.6L3 29l6.6-1.7A13 13 0 1016 3zm0 23.7a10.7 10.7 0 01-5.5-1.5l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1116 26.7zm5.9-8c-.3-.2-1.9-1-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.8 8.8 0 01-4.4-3.8c-.3-.6.3-.5 1-1.8a.6.6 0 000-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 00-.9.4 3.6 3.6 0 00-1.1 2.7 6.3 6.3 0 001.3 3.3 14.4 14.4 0 005.5 4.9c2 .9 2.9 1 3.9.8a3.3 3.3 0 002.2-1.5 2.7 2.7 0 00.2-1.5c-.1-.2-.3-.3-.6-.4z"/></svg>
 </a>
 
-<!-- MODAL DO FORMULÁRIO (abre ao entrar na página) -->
+<!-- CTA fixo no celular -->
+<div class="mbar" id="mbar">
+  <a href="#formulario" class="btn btn-lime" data-open-form>Quero clientes no meu pátio<span class="ar"><svg width="18" height="18" style="color:#D6E30F"><use href="#arr"/></svg></span></a>
+  <a class="wa" id="waBar" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Quero%20conhecer%20a%20R3%20para%20minha%20loja." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg width="30" height="30"><use href="#wa"/></svg></a>
+</div>
+
+<!-- VÍDEO DEMO (lightbox) -->
+<div class="vmodal" id="vModal" aria-hidden="true"><div id="vSlot"></div></div>
+
+<!-- MODAL DO FORMULÁRIO -->
 <div class="modal" id="leadModal" aria-hidden="true">
   <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
     <div class="prog">
       <div class="prog-top">
+        <div class="tog"><i></i></div>
         <span class="prog-label" id="progLabel"><b>Etapa 1 de 3</b></span>
         <button type="button" class="modal-x" id="modalClose" aria-label="Fechar">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#11140F" stroke-width="2.6" stroke-linecap="round"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#D6E30F" stroke-width="2.8" stroke-linecap="round"/></svg>
         </button>
       </div>
       <div class="prog-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progBar"><div class="prog-fill" id="progFill"></div></div>
@@ -551,7 +1017,7 @@
           </div>
           <div class="field">
             <label for="cidade">Cidade</label>
-            <input id="cidade" name="cidade" type="text" autocomplete="address-level2" placeholder="Ex.: Campinas" required>
+            <input id="cidade" name="cidade" type="text" autocomplete="address-level2" placeholder="Ex.: São Luís" required>
             <span class="msg">Informe a cidade da loja.</span>
           </div>
           <div class="field">
@@ -595,20 +1061,18 @@
         </div>
 
         <div class="step-btns">
-          <button type="button" class="btn btn-ghost" id="btnBack" hidden>Voltar</button>
-          <button type="submit" class="btn btn-ink" id="btnNext"><span>Continuar</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#D6E30F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
+          <button type="button" class="btn btn-back" id="btnBack" hidden>Voltar</button>
+          <button type="submit" class="btn btn-teal" id="btnNext"><span>Continuar</span><b class="ar"><svg width="20" height="20" style="color:#00333D"><use href="#arr"/></svg></b></button>
         </div>
         <!-- PENDENTE: link da política de privacidade -->
         <p class="form-note"><span>Usamos seus dados só para falar com você sobre a R3. <a href="#">Política de privacidade</a></span></p>
       </form>
 
       <div class="success" role="status" aria-live="polite">
-        <div class="ok"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#11140F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="ok"><svg width="30" height="30" style="color:#00333D"><use href="#chk"/></svg></div>
         <h3>Recebemos!</h3>
         <p>Um especialista da R3 vai falar com você pelo WhatsApp. Salve nosso número: <span class="pend">[INSERIR número]</span>.</p>
-        <button type="button" class="btn btn-lime" id="btnDone">Continuar no site</button>
+        <button type="button" class="btn btn-lime" id="btnDone"><span class="ar"><svg width="18" height="18" style="color:#D6E30F"><use href="#arr"/></svg></span>Continuar no site</button>
       </div>
     </div>
   </div>
@@ -617,9 +1081,18 @@
 <script>
   // Opcional: webhook extra que também recebe o lead (CRM, n8n, Make...). Os leads já vão para o Supabase via config.js.
   const FORM_ENDPOINT = "";
+  // Vídeo demo (opcional, para o futuro): link do .mp4 ou do embed do YouTube/Vimeo. Vazio = botão de play escondido.
+  const DEMO_VIDEO_URL = "";
+  // Abertura automática do formulário:
+  //   'saida'   (padrão) no computador, abre 1 vez quando o mouse sai da página (intenção de saída). No celular, quem faz esse papel é a barra fixa.
+  //   'rolagem' abre após 45% da página ou 25s · 'entrada' abre ao entrar (como era antes) · 'nunca' só pelos botões
+  // Link com ?form abre o formulário direto (bom para a bio do Instagram e para remarketing).
+  const MODAL_AUTO = 'saida';
 
   const nav = document.getElementById('nav');
-  addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 10), {passive:true});
+  const mbar = document.getElementById('mbar');
+  const onScroll = () => { nav.classList.toggle('scrolled', scrollY > 10); mbar.classList.toggle('show', scrollY > innerHeight * .8 && !document.documentElement.classList.contains('lock')); };
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
 
   // Máscara de telefone
   const whats = document.getElementById('whats');
@@ -631,7 +1104,7 @@
     else whats.value = d;
   });
 
-  // Modal do formulário: abre sozinho ao entrar e pelos botões de CTA
+  // Modal do formulário: abre pelos botões de CTA e, conforme MODAL_AUTO, sozinho
   const DONE_KEY = 'r3_lead_enviado';
   const modal = document.getElementById('leadModal');
   const card = modal.querySelector('.modal-card');
@@ -643,6 +1116,7 @@
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');
     document.documentElement.classList.add('lock');
+    mbar.classList.remove('show');
     setTimeout(() => card.focus(), 60);
   }
   function closeModal() {
@@ -651,11 +1125,14 @@
     modal.setAttribute('aria-hidden', 'true');
     document.documentElement.classList.remove('lock');
     if (lastFocus) lastFocus.focus();
+    onScroll();
   }
   document.querySelectorAll('[data-open-form]').forEach(el => el.addEventListener('click', e => { e.preventDefault(); openModal(); }));
   document.getElementById('modalClose').addEventListener('click', closeModal);
   document.getElementById('waFloat').addEventListener('click', () => track('whatsapp_click'));
+  document.getElementById('waBar').addEventListener('click', () => track('whatsapp_click'));
   document.getElementById('btnDone').addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
   document.addEventListener('keydown', e => {
     if (!modal.classList.contains('open')) return;
     if (e.key === 'Escape') closeModal();
@@ -747,7 +1224,45 @@
   let jaEnviou = false;
   try { jaEnviou = localStorage.getItem(DONE_KEY) === '1'; } catch (err) {}
   if (jaEnviou) markDone();
-  else setTimeout(openModal, 300);
+  if (/[?&]form\b/.test(location.search)) setTimeout(openModal, 300);
+  else if (!jaEnviou && !/[?&]semmodal/.test(location.search)) {
+    let autoAberto = false;
+    const autoOpen = () => { if (autoAberto || modal.classList.contains('open')) return; autoAberto = true; openModal(); };
+    if (MODAL_AUTO === 'entrada') setTimeout(autoOpen, 300);
+    else if (MODAL_AUTO === 'rolagem') {
+      setTimeout(autoOpen, 25000);
+      addEventListener('scroll', () => { if (scrollY / Math.max(1, document.body.scrollHeight - innerHeight) > .45) autoOpen(); }, {passive:true});
+    }
+    else if (MODAL_AUTO === 'saida' && matchMedia('(pointer:fine)').matches) {
+      const t0 = Date.now();
+      document.addEventListener('mouseout', e => { if (!e.relatedTarget && e.clientY <= 0 && Date.now() - t0 > 8000) autoOpen(); });
+    }
+  }
+
+  // Calculadora de dinheiro na mesa
+  const brl = v => 'R$ ' + Math.round(v).toLocaleString('pt-BR');
+  const calc = () => {
+    const L = +cLeads.value, P = +cPerda.value / 100, C = +cConv.value / 100, M = +cLucro.value;
+    oLeads.textContent = L; oPerda.textContent = Math.round(P * 100) + '%'; oConv.textContent = Math.round(C * 100) + '%'; oLucro.textContent = brl(M);
+    oAt.textContent = Math.round(L * P).toLocaleString('pt-BR');
+    oVend.textContent = (L * P * C).toLocaleString('pt-BR', {maximumFractionDigits: 1});
+    oMoney.textContent = brl(L * P * C * M);
+  };
+  let calcTocada = false;
+  ['cLeads','cPerda','cConv','cLucro'].forEach(id => document.getElementById(id).addEventListener('input', () => { calc(); if (!calcTocada) { calcTocada = true; track('calc_use'); } }));
+  calc();
+
+  // Vídeo demo
+  const play = document.getElementById('playDemo'), vModal = document.getElementById('vModal'), vSlot = document.getElementById('vSlot');
+  if (DEMO_VIDEO_URL) {
+    play.classList.add('on');
+    play.addEventListener('click', () => {
+      track('video_play');
+      vSlot.innerHTML = /youtube|vimeo/.test(DEMO_VIDEO_URL) ? `<iframe src="${DEMO_VIDEO_URL}" allow="autoplay; fullscreen" allowfullscreen></iframe>` : `<video src="${DEMO_VIDEO_URL}" controls autoplay playsinline></video>`;
+      vModal.classList.add('open'); document.documentElement.classList.add('lock');
+    });
+    vModal.addEventListener('click', e => { if (e.target === vModal) { vModal.classList.remove('open'); vSlot.innerHTML = ''; document.documentElement.classList.remove('lock'); } });
+  }
 
   // Animações de entrada
   const io = new IntersectionObserver(entries => entries.forEach(en => {
