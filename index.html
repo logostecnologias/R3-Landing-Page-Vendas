@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>R3 Company | Anúncio, IA no WhatsApp e CRM para lojas de veículos</title>
-<meta name="description" content="A R3 junta anúncio, IA no WhatsApp e CRM para lojas de veículos: todo cliente é atendido em segundos, qualificado e chega ao vendedor com a visita marcada.">
+<title>R3 Company | Do anúncio ao pátio: mais clientes na sua loja de veículos</title>
+<meta name="description" content="A R3 faz o anúncio da sua loja de veículos, responde cada cliente em segundos, marca a visita com o seu vendedor e mostra toda semana o que o investimento trouxe.">
 <meta name="theme-color" content="#00333D">
 <!-- Prévia do link no WhatsApp/Instagram (troque a URL pelo domínio final) -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="R3 Company · Do anúncio ao pátio">
-<meta property="og:description" content="Seu cliente atendido em segundos, qualificado e com visita marcada. Anúncio, IA no WhatsApp e CRM para lojas de veículos.">
+<meta property="og:description" content="Anúncio, atendimento em segundos, visita marcada e relatório semanal. Um time só, do anúncio ao pátio.">
 <meta property="og:image" content="https://r3-teste.vercel.app/assets/og-r3.jpg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -477,6 +477,129 @@
     *{transition:none!important;scroll-behavior:auto!important;animation:none!important}
     .reveal,.bubble{opacity:1;transform:none}
   }
+
+  /* ===== v4 ===== */
+  /* um botão no topo: o do menu e o do WhatsApp só aparecem depois do hero */
+  .nav .btn{opacity:0;pointer-events:none;transform:translateY(-6px);transition:opacity .25s,transform .25s}
+  html.past-hero .nav .btn{opacity:1;pointer-events:auto;transform:none}
+  .wa-float{opacity:0;pointer-events:none;transition:opacity .25s,transform .15s}
+  html.past-hero .wa-float{opacity:1;pointer-events:auto}
+  .hero .micro{margin-top:16px;font-size:13.5px;font-weight:600;color:var(--mist)}
+  /* formulário no topo (etapa 1) */
+  .hform{margin-top:34px;max-width:580px;background:rgba(0,26,32,.6);border:1px solid rgba(197,213,215,.2);border-radius:26px;padding:20px 20px 22px;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+  .hf-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:14px}
+  .hf-top b{font:800 19px Pinnacle,sans-serif;color:#fff}
+  .hf-top span{font-size:12.5px;font-weight:700;color:var(--lime);white-space:nowrap}
+  .hf-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+  .hf span{display:block;font-size:12px;font-weight:700;color:var(--mist);margin-bottom:6px}
+  .hf input{width:100%;height:54px;border-radius:14px;border:2px solid transparent;background:#F4F8F7;padding:0 16px;font:600 16px Montserrat,sans-serif;color:var(--teal)}
+  .hf input::placeholder{color:#8AA0A3;font-weight:500}
+  .hf input:focus{outline:none;border-color:var(--lime);box-shadow:0 0 0 4px rgba(214,227,15,.25)}
+  .hf.err input{border-color:#E5533D}
+  .hform .btn{width:100%;justify-content:space-between;padding:8px 8px 8px 24px;font-size:17px}
+  .trust{display:flex;align-items:center;gap:14px;margin-top:22px}
+  .faces{display:flex;flex:none}
+  .faces img{width:42px;height:42px;border-radius:50%;object-fit:cover;object-position:50% 22%;border:2px solid var(--deep);background:var(--teal-2)}
+  .faces img+img{margin-left:-11px}
+  .trust p{font-size:13.5px;font-weight:600;color:var(--mist);line-height:1.35}
+  /* dor por etapa do produto */
+  .leaks.l4{grid-template-columns:repeat(2,1fr);gap:22px;max-width:1000px;margin:0 auto}
+  .leaks.l4 .leak .vis{height:270px}
+  .leaks.l4 .leak .vis.v-lock{height:296px}
+  .leaks.l4 .leak h3{font-size:21px;margin:6px 12px 0}
+  .leaks.l4 .leak .in{padding-bottom:30px}
+  .lk{display:block;margin:20px 12px 0;font-size:11.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--lime)}
+  .v-ads{background:#000;display:grid;place-items:center}
+  .v-ads img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45}
+  .ads-n{position:relative;text-align:center;color:#fff}
+  .ads-n b{display:block;font:800 46px/1 Pinnacle,sans-serif}
+  .ads-n span{font-size:13px;font-weight:700;color:var(--mist)}
+  .ads-m{position:absolute;left:12px;right:12px;bottom:12px;background:rgba(0,26,32,.88);border:1px solid rgba(197,213,215,.25);border-radius:12px;padding:9px 12px;font-size:13px;font-weight:700;color:var(--mist)}
+  .ads-m b{color:var(--lime);font-size:15px}
+  .v-blame{background:linear-gradient(160deg,#0E4954,#001E24);padding:18px 14px;display:flex;flex-direction:column;justify-content:center;gap:10px}
+  .bq{max-width:82%;padding:9px 13px 11px;border-radius:15px;font-weight:700;font-size:14.5px;line-height:1.3;color:var(--teal)}
+  .bq small{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;opacity:.65;margin-bottom:2px}
+  .bq.l{background:#F4F8F7;align-self:flex-start;border-top-left-radius:4px}
+  .bq.r{background:var(--mist);align-self:flex-end;border-top-right-radius:4px}
+  .bq.y{background:var(--lime);align-self:center}
+  .stats.s3{grid-template-columns:repeat(3,1fr)}
+  .data-head h2{min-width:0;max-width:100%}
+  .leak h3{margin-bottom:0}
+  /* método: uma linha por passo, texto curto + visual */
+  .method{background:var(--paper)}
+  .mrow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:64px;align-items:center;padding:36px 0}
+  .mrow+.mrow{border-top:1px solid var(--line)}
+  .mrow.rev .mtx{order:2}
+  .mtx{max-width:470px}
+  .mn{display:block;font:800 72px/.9 Pinnacle,sans-serif;color:transparent;-webkit-text-stroke:2px var(--teal);letter-spacing:-.03em;margin-bottom:14px;text-shadow:5px 5px 0 var(--lime)}
+  .mtx h3{font-size:clamp(26px,2.6vw,36px);color:var(--teal);margin-bottom:14px}
+  .mtx p{font-size:17px;color:var(--ink-2)}
+  .mrow>*{min-width:0}
+  .mvis{position:relative;display:flex;justify-content:center}
+  .admock{width:340px;max-width:100%;background:#fff;border-radius:22px;overflow:hidden;box-shadow:var(--shadow)}
+  .adh{display:flex;gap:10px;align-items:center;padding:12px 14px}
+  .adh .av{width:36px;height:36px;border-radius:50%;background:var(--teal);display:grid;place-items:center}
+  .adh .av img{width:20px}
+  .adh b{display:block;font-size:13.5px;color:var(--teal)} .adh small{font-size:11.5px;color:var(--muted)}
+  .adimg{position:relative;aspect-ratio:1/1;overflow:hidden}
+  .adimg img{width:100%;height:100%;object-fit:cover}
+  .adchip{position:absolute;right:12px;top:12px;background:var(--lime);color:var(--teal);font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:8px 14px;border-radius:999px;transform:rotate(4deg);box-shadow:0 10px 20px -10px rgba(0,0,0,.5)}
+  .adlike{position:absolute;left:12px;bottom:12px;background:rgba(0,26,32,.85);color:var(--mist);font-size:13px;font-weight:700;padding:8px 14px;border-radius:999px}
+  .adlike s{text-decoration-color:var(--lime);text-decoration-thickness:3px}
+  .adbtn{margin:12px;background:var(--teal);color:#fff;text-align:center;font-weight:800;font-size:14px;padding:13px;border-radius:12px}
+  .method .stage{position:relative}
+  .method .chat{min-height:0}
+  .crmstage{position:relative;width:380px;max-width:100%;height:300px}
+  .crmcard.big{position:absolute;right:auto;left:0;top:0;bottom:auto;width:300px}
+  .vcard{position:absolute;z-index:4;right:0;bottom:0;width:230px;background:var(--lime);color:var(--teal);border-radius:20px;padding:16px 18px;box-shadow:var(--shadow);transform:rotate(-3deg)}
+  .vcard span{display:block;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+  .vcard b{display:block;font:800 30px/1.1 Pinnacle,sans-serif;margin:4px 0 2px}
+  .vcard small{font-size:12.5px;font-weight:700}
+  .dash{width:100%;max-width:380px;background:#fff;border-radius:22px;padding:20px;box-shadow:var(--shadow)}
+  .dhk{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);margin-bottom:12px}
+  .dhk.sm{margin:18px 0 10px}
+  .dt{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .dt>div{background:var(--teal);border-radius:14px;padding:10px 10px 6px}
+  .dt span{font-size:11.5px;font-weight:700;color:var(--mist)}
+  .dt svg{display:block;width:100%;height:34px;margin-top:4px}
+  .dt path{fill:none;stroke:var(--lime);stroke-width:3.5;stroke-linejoin:round;stroke-linecap:round}
+  .ds{display:grid;grid-template-columns:62px 1fr;grid-template-rows:auto auto;column-gap:10px;row-gap:4px;align-items:center;margin-bottom:10px}
+  .ds b{grid-row:span 2;font-size:13px;color:var(--teal)}
+  .ds i{display:block;height:9px;border-radius:5px;background:linear-gradient(90deg,var(--teal) var(--w),#E9EEEC var(--w))}
+  .ds i.l{background:linear-gradient(90deg,var(--lime) var(--w),#E9EEEC var(--w))}
+  .dl{display:flex;gap:16px;font-size:11.5px;font-weight:600;color:var(--ink-2);margin-top:6px}
+  .dl em{display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--teal);margin-right:6px;vertical-align:-1px} .dl em.l{background:var(--lime)}
+  .method .steps-close{color:var(--teal);margin-top:40px}
+  .method .kpis{margin-top:40px}
+  @media (max-width:1100px){
+    .leaks.l4{grid-template-columns:1fr 1fr}
+    .leaks.l4 .leak:last-child{grid-column:auto}
+    .mrow{grid-template-columns:1fr;gap:28px;padding:30px 0}
+    .mrow.rev .mtx{order:0}
+    .stats.s3{grid-template-columns:repeat(3,1fr)}
+  }
+  @media (max-width:640px){
+    .mn{font-size:56px}
+    .mtx h3{font-size:26px}
+    .mtx p{font-size:16px}
+    .stats.s3{grid-template-columns:1fr;gap:10px}
+    .stats.s3 .stat{display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:center;padding:16px 18px}
+    .stats.s3 .stat svg{display:none}
+    .stats.s3 .stat b{font-size:34px;grid-row:span 2}
+    .stats.s3 .stat p{margin-top:0;font-size:13.5px}
+    .stats.s3 .stat small{margin-top:4px}
+    .crmstage{width:330px;height:290px}
+    .crmcard.big{width:260px}
+    .vcard{width:200px}
+    .hero .micro{text-align:center}
+    .hform{padding:16px 14px 16px;margin-top:26px}
+    .hf-row{grid-template-columns:1fr;gap:10px}
+    .hf-top b{font-size:17px}
+    .hform .btn{font-size:16px}
+    .leaks.l4{grid-template-columns:1fr}
+    .leaks.l4 .leak .vis{height:240px}
+    .leaks.l4 .leak .vis.v-lock{height:296px}
+  }
 </style>
 <script src="config.js"></script>
 <script>
@@ -571,37 +694,35 @@
 <header class="nav" id="nav">
   <div class="wrap nav-in">
     <a href="#topo" class="brand" aria-label="R3 Company"><img src="assets/r3-logo-ondark.svg" alt="R3 Company"></a>
-    <nav class="nav-links">
-      <a href="#demo">Veja funcionando</a>
-      <a href="#como-funciona">Como funciona</a>
-      <a href="#resultados">Resultados</a>
-      <a href="#calculadora">Calculadora</a>
-      <a href="#faq">Dúvidas</a>
-    </nav>
+    <!-- Só aparece depois que o visitante passa do topo: no começo, um botão só -->
     <a href="#formulario" class="btn btn-lime" data-open-form><span class="ar"><svg width="18" height="18" style="color:#D6E30F"><use href="#arr"/></svg></span>Quero clientes no meu pátio</a>
   </div>
 </header>
 
 <main id="topo">
 
-<!-- 1 · HERO: uma mensagem, um CTA, um visual -->
+<!-- 1 · HERO: uma promessa, um botão -->
 <section class="hero" style="padding-bottom:0">
   <div class="bgimg" aria-hidden="true"></div>
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <span class="chip"><svg width="26" height="16" viewBox="0 0 34 22" aria-hidden="true"><path d="M3 15 V11 Q3 8 6 8 L10 2 H24 L28 8 Q31 8 31 11 V15 Z M7 15 v4 h4 v-4 M23 15 v4 h4 v-4" fill="none" stroke="#D6E30F" stroke-width="2.6" stroke-linejoin="round"/></svg>Para lojas de veículos e revendas</span>
-      <h1>Você paga pelo lead, o vendedor demora e o cliente <span class="hl">não aparece.</span></h1>
-      <p class="lede">A R3 atende o seu cliente <b>em segundos</b>, no WhatsApp da loja, e entrega ele ao vendedor <b>com a visita marcada.</b></p>
-      <div class="hero-ctas">
-        <a href="#formulario" class="btn btn-lime" data-open-form><span class="ar"><svg width="20" height="20" style="color:#D6E30F"><use href="#arr"/></svg></span>Quero clientes no meu pátio</a>
-        <a href="#demo" class="ghost">Ver funcionando <svg width="16" height="16"><use href="#arr"/></svg></a>
-      </div>
-      <div class="ticks">
-        <span><svg width="17" height="17" style="color:#D6E30F"><use href="#chk"/></svg>Atende 24h, inclusive no fim de semana</span>
-        <span><svg width="17" height="17" style="color:#D6E30F"><use href="#chk"/></svg>No WhatsApp que a loja já usa</span>
+      <span class="chip">Para donos de lojas de veículos</span>
+      <h1>Mais clientes no seu pátio, <span class="hl">do anúncio à visita.</span></h1>
+      <p class="lede">A R3 faz o anúncio, responde cada cliente <b>em segundos</b>, marca a visita com o seu vendedor e mostra <b>o que cada real trouxe.</b></p>
+      <!-- Etapa 1 do formulário já no topo (como a Lure), com um botão só. Ao enviar, segue nas etapas 2 e 3 do formulário principal. -->
+      <form class="hform" id="heroForm" novalidate>
+        <div class="hf-top"><b>Fale com a R3</b><span>Etapa 1 de 3 · leva 1 minuto</span></div>
+        <div class="hf-row">
+          <label class="hf"><span>Nome</span><input id="heroNome" type="text" autocomplete="name" placeholder="Seu nome" required></label>
+          <label class="hf"><span>WhatsApp com DDD</span><input id="heroWhats" type="tel" inputmode="numeric" autocomplete="tel" placeholder="(00) 00000-0000" required></label>
+        </div>
+        <button type="submit" class="btn btn-lime">Quero clientes no meu pátio<span class="ar"><svg width="20" height="20" style="color:#D6E30F"><use href="#arr"/></svg></span></button>
+      </form>
+      <div class="trust">
+        <span class="faces"><img src="assets/img/time_joao.webp" alt=""><img src="assets/img/time_italo.webp" alt=""><img src="assets/img/time_jordan.webp" alt=""><img src="assets/img/time_jonas.webp" alt=""></span>
+        <p>Um time de verdade, de São Luís, há mais de 4 anos.</p>
       </div>
     </div>
-
     <div class="hvbox"><div class="hv" aria-hidden="true">
       <div class="win">
         <div class="wbar"><div class="tog"><i></i></div><svg class="wx" width="26" height="26" viewBox="0 0 26 26"><path d="M5 5 L21 21 M21 5 L5 21" stroke="#D6E30F" stroke-width="4" stroke-linecap="round"/></svg></div>
@@ -610,7 +731,7 @@
         <div class="wft">Do anúncio ao pátio.</div>
       </div>
       <div class="pop"><img src="assets/img/hero_jonas.webp" alt=""></div>
-      <div class="notif"><div class="ic"><svg width="28" height="28"><use href="#wa"/></svg></div><div><p>Cliente do anúncio <span>dom, 22:08</span></p><div class="msg">Oi! O SUV ainda tá disponível?</div><span class="tg go">✓ respondido em 12s</span></div></div>
+      <div class="notif"><div class="ic"><svg width="22" height="22"><use href="#wa"/></svg></div><div><p>Cliente do anúncio <span>dom, 22:08</span></p><div class="msg">Oi! O SUV ainda tá disponível?</div><span class="tg go">✓ Visita marcada · seg 10:30</span></div></div>
       <div class="stk"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#D6E30F" filter="url(#crumple)"/><g transform="translate(19 19) scale(.52)" filter="url(#puff)"><path fill="#00333D" d="M16 28 Q16 14 30 14 H90 Q104 14 104 28 V70 Q104 84 90 84 H54 L32 104 V84 H30 Q16 84 16 70 Z"/><path d="M24 30 Q24 22 32 22 H88 Q96 22 96 30 V68 Q96 76 88 76 H51 L39 87 V76 H32 Q24 76 24 68 Z" fill="none" stroke="#E6F27A" stroke-width="2.4" stroke-dasharray="5 6"/><g fill="#D6E30F"><circle cx="40" cy="49" r="7"/><circle cx="60" cy="49" r="7"/><circle cx="80" cy="49" r="7"/></g></g></svg></div>
     </div></div>
   </div>
@@ -637,14 +758,20 @@
   </div>
 </div>
 
-<!-- 3 · ONDE A VENDA ESCAPA (dor) -->
+
+<!-- 3 · A DOR, na mesma estrutura do produto: anúncio, atendimento, visita, controle -->
 <section id="onde-escapa">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Onde a venda escapa</span>
-      <h2>O anúncio traz o cliente. <br>A demora <span class="hl">leva embora.</span></h2>
+      <h2>O WhatsApp enche. <br>O pátio continua <span class="hl">cheio.</span></h2>
     </div>
-    <div class="leaks">
+    <div class="leaks l4">
+      <article class="leak reveal"><div class="in cut br">
+        <div class="vis v-ads"><img src="assets/img/anuncio_carro.jpg" alt="" loading="lazy"><div class="ads-n"><b>♥ 1.284</b><span>curtidas</span></div><div class="ads-m"><b>2</b> pediram o preço</div></div>
+        <span class="lk">01 · Anúncio</span>
+        <h3>O anúncio dá curtida. Não dá cliente.</h3>
+      </div></article>
       <article class="leak reveal"><div class="in cut br">
         <div class="vis v-lock">
           <p class="d">sexta-feira</p><p class="t">19:40</p>
@@ -652,26 +779,8 @@
           <div class="nt"><div class="ic"><svg width="18" height="18"><use href="#wa"/></svg></div><div><p>Cliente do anúncio <span>20:52</span></p><div class="m">Consegue me mandar mais fotos?</div></div></div>
           <div class="nt hot"><div class="ic"><svg width="18" height="18"><use href="#wa"/></svg></div><div><p>Cliente do anúncio <span>sáb, 09:15</span></p><div class="m">Obrigado, já resolvi em outra loja.</div></div></div>
         </div>
+        <span class="lk">02 · Atendimento</span>
         <h3>A loja fecha. O cliente continua chamando.</h3>
-        <ul><li><span>Ele chama <b>várias lojas</b> ao mesmo tempo.</span></li><li><span>Quem <b>responde primeiro</b> sai na frente.</span></li></ul>
-        <div class="fix"><svg width="18" height="18" style="flex:none"><use href="#chk"/></svg>A IA da R3 responde na hora, até de madrugada.</div>
-      </div></article>
-      <article class="leak reveal"><div class="in cut br">
-        <div class="vis v-gauge">
-          <svg width="290" height="230" viewBox="0 0 290 230" aria-hidden="true">
-            <path d="M 46.7 186.8 A 115 115 0 1 1 243.3 186.8" fill="none" stroke="#2F5A62" stroke-width="18"/>
-            <path d="M 46.7 186.8 A 115 115 0 0 1 48.5 74.6" fill="none" stroke="#D6E30F" stroke-width="18"/>
-            <g stroke="#F1EEEE" stroke-linecap="round" stroke-opacity=".5"><path d="M71 168 l10 -7" stroke-width="3"/><path d="M60 100 l12 4" stroke-width="3"/><path d="M145 47 v13" stroke-width="3"/><path d="M230 100 l-12 4" stroke-width="3"/><path d="M219 168 l-10 -7" stroke-width="3"/></g>
-            <polygon points="196,82 152,137 140,125" fill="#F1EEEE"/><circle cx="145" cy="130" r="12" fill="#00333D" stroke="#F1EEEE" stroke-width="4"/>
-            <text x="145" y="198" text-anchor="middle" font-family="Pinnacle" font-weight="800" font-size="46" fill="#F1EEEE">só 12%</text>
-            <text x="145" y="222" text-anchor="middle" font-family="Montserrat" font-weight="700" font-size="12" fill="#C5D5D7">respondem em até 10 min</text>
-            <text x="30" y="60" font-family="Montserrat" font-weight="800" font-size="12" fill="#D6E30F">10 min</text>
-            <text x="246" y="210" font-family="Montserrat" font-weight="800" font-size="12" fill="#C5D5D7">1 dia</text>
-          </svg>
-        </div>
-        <h3>Quanto tempo sua loja leva pra responder?</h3>
-        <ul><li><span>Depois de <b>1 hora</b>, o cliente esfria.</span></li><li><span>Vendedor no pátio <b>não vê</b> o WhatsApp.</span></li></ul>
-        <div class="fix"><svg width="18" height="18" style="flex:none"><use href="#chk"/></svg>Com a R3, a resposta sai em segundos.</div>
       </div></article>
       <article class="leak reveal"><div class="in cut br">
         <div class="vis v-post">
@@ -680,44 +789,53 @@
           <div class="pi" style="background:#fff;transform:rotate(4deg)">quem era o da picape??</div>
           <div class="pi" style="background:#C5D5D7;transform:rotate(-2deg)">proposta pro... esqueci</div>
         </div>
+        <span class="lk">03 · Visita</span>
         <h3>Seu CRM ainda é um post-it?</h3>
-        <ul><li><span>Contato salvo no <b>celular do vendedor</b>.</span></li><li><span>Se ele sai, <b>a carteira vai junto.</b></span></li></ul>
-        <div class="fix"><svg width="18" height="18" style="flex:none"><use href="#chk"/></svg>No CRM da R3, nenhum cliente fica esquecido.</div>
+      </div></article>
+      <article class="leak reveal"><div class="in cut br">
+        <div class="vis v-blame"><div class="bq l"><small>Vendedor</small>O lead é fraco.</div><div class="bq r"><small>Agência</small>A gente entregou.</div><div class="bq y"><small>Você</small>E o meu dinheiro?</div></div>
+        <span class="lk">04 · Controle</span>
+        <h3>Você paga, mas não sabe o que voltou.</h3>
       </div></article>
     </div>
   </div>
 </section>
 
-<!-- 4 · DADOS DE MERCADO (prova de que a dor é real) -->
+<!-- 4 · DADOS DE MERCADO (com fonte) -->
 <div class="data" id="dados">
   <div class="wrap">
     <div class="data-head reveal">
-      <h2>O cliente existe e está comprando. A pergunta é quem <span class="hl dk">responde primeiro.</span></h2>
-      <p>Números públicos do mercado, com fonte.</p>
+      <h2>O cliente está comprando. Quem responde <span class="hl dk">primeiro leva.</span></h2>
     </div>
-    <div class="stats">
+    <div class="stats s3">
       <div class="stat cut reveal"><svg width="44" height="44" style="color:#F1EEEE"><use href="#i-car"/></svg><b>18,5 mi</b><p>carros usados trocaram de dono no Brasil em 2025.</p><small>Fenauto, jan/2026</small></div>
-      <div class="stat cut reveal"><svg width="44" height="44" style="color:#F1EEEE"><use href="#i-eye"/></svg><b>147 mi</b><p>de pessoas podem ver anúncios no Instagram no Brasil.</p><small>DataReportal, Digital 2026</small></div>
       <div class="stat cut reveal"><svg width="44" height="44" style="color:#F1EEEE"><use href="#i-timer"/></svg><b>só 12%</b><p>das empresas respondem o primeiro contato em até 10 min.</p><small>Ramper, 1,9 mil empresas</small></div>
       <div class="stat cut reveal"><svg width="44" height="44" style="color:#F1EEEE"><use href="#i-bolt"/></svg><b>7x</b><p>mais chance de qualificar quem é atendido em até 1 hora.</p><small>Harvard Business Review, 2011</small></div>
     </div>
   </div>
 </div>
 
-<!-- 5 · VEJA FUNCIONANDO (solução mostrada, não contada) -->
-<section class="demo" id="demo">
-  <div class="wrap demo-grid">
-    <div class="reveal">
-      <span class="eyebrow">Veja funcionando</span>
-      <h2>Domingo, 22h08. <span class="hl">Loja fechada.</span> Visita marcada.</h2>
-      <ul class="bul">
-        <li><span class="n">1</span><span>A IA responde <b>em segundos</b>, no tom da sua loja.</span></li>
-        <li><span class="n">2</span><span>Pergunta <b>modelo, troca e pagamento.</b></span></li>
-        <li><span class="n">3</span><span>Marca a visita e <b>avisa o seu vendedor</b> no CRM.</span></li>
-      </ul>
-      <a href="#formulario" class="btn btn-teal" data-open-form><span class="ar"><svg width="20" height="20" style="color:#00333D"><use href="#arr"/></svg></span>Quero isso na minha loja</a>
+<!-- 5 · O PRODUTO: o método inteiro, um passo por vez (mesma ordem do vídeo) -->
+<section id="como-funciona" class="method">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Método R3</span>
+      <h2>Uma solução pra <span class="hl">cada etapa.</span></h2>
+      <p>Um time só cuida do anúncio, do atendimento, da visita e dos números.</p>
     </div>
-    <div class="stage reveal">
+
+    <div class="mrow reveal">
+      <div class="mtx"><span class="mn">01</span><h3>Anúncio pra quem procura carro</h3><p>Os carros do seu pátio, com preço, pra quem está procurando carro na sua região. Não pra quem só curte foto.</p></div>
+      <div class="mvis"><div class="admock">
+        <div class="adh"><span class="av"><img src="assets/r3-simbolo-lime.svg" alt=""></span><div><b>sualoja.seminovos</b><small>Patrocinado</small></div></div>
+        <div class="adimg"><img src="assets/img/anuncio_carro.jpg" alt="" loading="lazy"><span class="adchip">Procurando carro</span><span class="adlike"><s>só curtiu</s></span></div>
+        <div class="adbtn">Enviar mensagem</div>
+      </div></div>
+    </div>
+
+    <div class="mrow rev reveal">
+      <div class="mtx"><span class="mn">02</span><h3>Resposta em segundos, 24 horas</h3><p>No WhatsApp que a loja já usa. A conversa já descobre modelo, entrada e troca.</p></div>
+      <div class="mvis stage">
       <div class="phone">
         <div class="screen">
           <div class="wa-top">
@@ -726,92 +844,44 @@
           </div>
           <div class="chat" id="chat">
             <div class="bubble bi">Boa noite! Vi o SUV no anúncio. Ainda tem?<time>22:08</time></div>
-            <div class="bubble bo">Boa noite, Juliana! Temos sim. Você procura a versão automática ou a manual?<time>22:08</time></div>
-            <div class="bubble bi">Automática. E tenho um carro pra dar na troca.<time>22:09</time></div>
-            <div class="bubble bo">Perfeito, a gente avalia seu carro na hora. Quer ver o SUV pessoalmente? Escolha um horário:
+            <div class="bubble bo">Boa noite, Juliana! Temos sim. É automático. Vai dar algum carro na troca?<time>22:08</time></div>
+                        <div class="bubble bo">Perfeito, avaliamos na hora. Qual horário fica bom pra você?
               <div class="opts"><span>Seg 09:00</span><span>Seg 10:30</span><span>Ter 18:00</span></div><time>22:09</time></div>
-            <div class="bubble bi">Segunda 10:30 🙌<time>22:10</time></div>
-            <div class="bubble bo">Agendado! O Rafael vai te receber. Te mando um lembrete na segunda cedo ✅<time>22:10</time></div>
+                        <div class="bubble bo">Agendado pra segunda, 10:30. O Rafael vai te receber ✅<time>22:10</time></div>
           </div>
         </div>
+      </div>      <button type="button" class="play" id="playDemo" aria-label="Assistir à demonstração"><svg width="30" height="30" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#00333D"/></svg></button>
       </div>
-      <div class="crmcard">
+    </div>
+
+    <div class="mrow reveal">
+      <div class="mtx"><span class="mn">03</span><h3>Visita marcada, conversa inteira no CRM</h3><p>Quem está pronto sai com dia e hora. O vendedor recebe o cliente com todo o histórico.</p></div>
+      <div class="mvis"><div class="crmstage">
+      <div class="crmcard big">
         <div class="k">NO CRM DA LOJA</div>
         <div class="v">Juliana R. <span class="mp"><i></i><b>ROT 4H21</b></span></div>
         <div class="row"><span>Interesse</span><b>SUV automático</b></div>
         <div class="row"><span>Troca</span><b>Sim</b></div>
         <div class="row"><span>Visita</span><b style="color:#D6E30F">Seg · 10:30</b></div>
       </div>
-      <!-- Botão do vídeo demo: aparece sozinho quando DEMO_VIDEO_URL (no fim da página) for preenchido -->
-      <button type="button" class="play" id="playDemo" aria-label="Assistir à demonstração"><svg width="30" height="30" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#00333D"/></svg></button>
+        <div class="vcard"><span>Lembrete enviado</span><b>Seg · 10:30</b><small>Juliana R. · com Rafael</small></div>
+      </div></div>
     </div>
-  </div>
-</section>
 
-<!-- 6 · MÉTODO -->
-<section id="como-funciona" class="dark how">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow">Método R3auto</span>
-      <h2>Do anúncio ao pátio, <span class="hl">em 4 passos.</span></h2>
-      <p>Um time só cuida do caminho inteiro do cliente.</p>
+    <div class="mrow rev reveal">
+      <div class="mtx"><span class="mn">04</span><h3>Você enxerga tudo</h3><p>Toda semana: quanto investiu, quantos clientes chegaram, quantos visitaram e o que cada vendedor fez.</p></div>
+      <div class="mvis"><div class="dash">
+        <div class="dhk">Relatório da semana</div>
+        <div class="dt"><div><span>Investido</span><svg viewBox="0 0 120 40"><path d="M2 30 L24 24 L46 27 L68 15 L90 18 L118 6" /></svg></div><div><span>Clientes</span><svg viewBox="0 0 120 40"><path d="M2 32 L24 26 L46 20 L68 22 L90 12 L118 8" /></svg></div><div><span>Visitas</span><svg viewBox="0 0 120 40"><path d="M2 34 L24 30 L46 24 L68 25 L90 16 L118 10" /></svg></div></div>
+        <div class="dhk sm">Por vendedor</div>
+        <div class="ds"><b>Bruno</b><i style="--w:92%"></i><i class="l" style="--w:56%"></i></div>
+        <div class="ds"><b>Léo</b><i style="--w:74%"></i><i class="l" style="--w:38%"></i></div>
+        <div class="ds"><b>Rafael</b><i style="--w:61%"></i><i class="l" style="--w:30%"></i></div>
+        <div class="dl"><span><em></em>atendeu</span><span><em class="l"></em>levou à visita</span></div>
+      </div></div>
     </div>
-    <div class="roadline reveal" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <rect x="0" y="26" width="1440" height="70" fill="#00262E"/>
-        <line class="flow" x1="0" y1="61" x2="1300" y2="61" stroke="#D6E30F" stroke-width="6"/>
-        <g fill="#00262E" stroke="#D6E30F" stroke-width="6"><circle cx="270" cy="61" r="20"/><circle cx="570" cy="61" r="20"/><circle cx="870" cy="61" r="20"/><circle cx="1170" cy="61" r="20"/></g>
-      </svg>
-      <img src="assets/r3-simbolo-lime.svg" alt="">
-    </div>
-    <div class="steps">
-      <div class="step cut reveal"><div class="num">01</div><h3>Atrair</h3><p>Anúncio com o carro do seu pátio, com preço, pra quem procura carro na sua região.</p></div>
-      <div class="step cut reveal"><div class="num">02</div><h3>Atender</h3><p>A IA responde no WhatsApp da loja em segundos, 24 horas por dia.</p></div>
-      <div class="step cut reveal"><div class="num">03</div><h3>Agendar</h3><p>Modelo, troca e pagamento na conversa. Visita marcada, com lembrete.</p></div>
-      <div class="step cut reveal"><div class="num">04</div><h3>Medir e ajustar</h3><p>Toda semana: quem chegou, quem visitou e quanto custou cada cliente.</p></div>
-    </div>
-    <p class="steps-close reveal">Seu vendedor para de correr atrás de lead e faz o que sabe: <span class="hl">vender.</span></p>
-  </div>
-</section>
 
-<!-- 7 · RESULTADOS: o que muda pro vendedor (capacidade do produto, sem promessa de faturamento) -->
-<section id="resultados">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">O que a sua loja ganha</span>
-      <h2>O que muda quando ninguém fica <span class="hl">sem resposta.</span></h2>
-      <p>A IA faz as perguntas que separam o curioso de quem quer comprar. Seu vendedor só entra quando vale a pena.</p>
-    </div>
-    <div class="leadx">
-      <div class="lx cold reveal">
-        <span class="lx-tag">Sem filtro</span>
-        <h3>O que chega hoje pro vendedor</h3>
-        <div class="lx-chat"><span>qual o valor?</span><span>faz mais barato?</span><span>vou ver e te falo</span></div>
-        <dl>
-          <div><dt>Modelo</dt><dd>?</dd></div>
-          <div><dt>Troca</dt><dd>?</dd></div>
-          <div><dt>Pagamento</dt><dd>?</dd></div>
-          <div><dt>Visita</dt><dd>não marcada</dd></div>
-        </dl>
-        <p class="lx-foot">Ele gasta o dia respondendo e não sabe quem é cliente.</p>
-      </div>
-      <div class="lx-mid reveal" aria-hidden="true">
-        <div class="lx-ia"><img src="assets/r3-simbolo-teal.svg" alt=""></div>
-        <p>A IA pergunta,<br>filtra e agenda</p>
-      </div>
-      <div class="lx hot cut reveal">
-        <span class="lx-tag">Lead quente</span>
-        <h3>O que chega com a R3</h3>
-        <p class="lx-name">Juliana R. <span class="mp"><i></i><b>ROT 4H21</b></span></p>
-        <dl>
-          <div><dt>Modelo</dt><dd>SUV automático</dd></div>
-          <div><dt>Troca</dt><dd>Sim, avaliar na visita</dd></div>
-          <div><dt>Pagamento</dt><dd>Entrada + financiamento</dd></div>
-          <div><dt>Visita</dt><dd class="ok">Seg · 10:30 ✓</dd></div>
-        </dl>
-        <p class="lx-foot">Chega pronto pra negociar.</p>
-      </div>
-    </div>
+    <p class="steps-close reveal">Seu vendedor para de correr atrás de cliente e faz o que sabe: <span class="hl">vender.</span></p>
     <div class="kpis reveal">
       <div><svg width="40" height="40" style="color:#00333D"><use href="#i-chat"/></svg><b>Segundos</b><span>para a primeira resposta, a qualquer hora</span></div>
       <div><svg width="40" height="40" style="color:#00333D"><use href="#i-clock24"/></svg><b>24h, 7 dias</b><span>de atendimento, sem folga e sem fila</span></div>
@@ -820,7 +890,8 @@
     </div>
   </div>
 </section>
-<!-- 8 · SEM x COM + CTA -->
+
+<!-- 6 · SEM × COM -->
 <section class="vs">
   <div class="wrap">
     <div class="sec-head center reveal">
@@ -831,21 +902,19 @@
       <div class="col before reveal">
         <h3>Sem a R3</h3>
         <ul>
-          <li><svg width="20" height="20" style="color:#9AA6A8"><use href="#nox"/></svg><div><b>Sábado à noite</b>Resposta na segunda. Ele já comprou em outra loja.</div></li>
-          <li><svg width="20" height="20" style="color:#9AA6A8"><use href="#nox"/></svg><div><b>Quem atende</b>O vendedor, quando dá tempo.</div></li>
-          <li><svg width="20" height="20" style="color:#9AA6A8"><use href="#nox"/></svg><div><b>Visita</b>Marcada no caderno. O cliente esquece e falta.</div></li>
-          <li><svg width="20" height="20" style="color:#9AA6A8"><use href="#nox"/></svg><div><b>Contatos</b>No celular do vendedor. Se ele sai, vão junto.</div></li>
-          <li><svg width="20" height="20" style="color:#9AA6A8"><use href="#nox"/></svg><div><b>Anúncio</b>Você vê cliques e curtidas.</div></li>
+          <li><svg width="22" height="22" style="color:#B44A3E"><use href="#nox"/></svg><div><b>Sábado à noite</b>Resposta na segunda. Ele já comprou.</div></li>
+          <li><svg width="22" height="22" style="color:#B44A3E"><use href="#nox"/></svg><div><b>Visita</b>Marcada no caderno, se for marcada.</div></li>
+          <li><svg width="22" height="22" style="color:#B44A3E"><use href="#nox"/></svg><div><b>Contatos</b>No celular do vendedor.</div></li>
+          <li><svg width="22" height="22" style="color:#B44A3E"><use href="#nox"/></svg><div><b>Anúncio</b>Você vê curtidas.</div></li>
         </ul>
       </div>
       <div class="col after cut reveal">
         <h3><img src="assets/r3-logo-onlight.svg" alt="Com a R3"></h3>
         <ul>
-          <li><svg width="20" height="20" style="color:#00333D"><use href="#chk"/></svg><div><b>Sábado à noite</b>Atendido em segundos, a qualquer hora.</div></li>
-          <li><svg width="20" height="20" style="color:#00333D"><use href="#chk"/></svg><div><b>Quem atende</b>A IA responde, qualifica e passa o cliente pronto.</div></li>
-          <li><svg width="20" height="20" style="color:#00333D"><use href="#chk"/></svg><div><b>Visita</b>Agendada, com lembrete para o cliente.</div></li>
-          <li><svg width="20" height="20" style="color:#00333D"><use href="#chk"/></svg><div><b>Contatos</b>No nome da loja, com todo o histórico.</div></li>
-          <li><svg width="20" height="20" style="color:#00333D"><use href="#chk"/></svg><div><b>Anúncio</b>Você vê quantos clientes chegaram ao pátio.</div></li>
+          <li><svg width="22" height="22" style="color:#00333D"><use href="#chk"/></svg><div><b>Sábado à noite</b>Atendido em segundos.</div></li>
+          <li><svg width="22" height="22" style="color:#00333D"><use href="#chk"/></svg><div><b>Visita</b>Marcada, com lembrete.</div></li>
+          <li><svg width="22" height="22" style="color:#00333D"><use href="#chk"/></svg><div><b>Contatos</b>No CRM da loja, com o histórico.</div></li>
+          <li><svg width="22" height="22" style="color:#00333D"><use href="#chk"/></svg><div><b>Anúncio</b>Você vê quantos chegaram ao pátio.</div></li>
         </ul>
       </div>
     </div>
@@ -853,13 +922,12 @@
   </div>
 </section>
 
-<!-- 9 · CALCULADORA DE DINHEIRO NA MESA -->
 <section id="calculadora" class="calc">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Calculadora</span>
       <h2 style="color:#fff">Quanto a demora está <span class="hl">custando à sua loja?</span></h2>
-      <p style="color:var(--mist)">Ajuste com os números da sua loja. Leva 20 segundos.</p>
+      
     </div>
     <div class="calc-grid">
       <div class="calc-in reveal">
@@ -872,12 +940,12 @@
         <div>
           <span class="k">Na sua loja, por mês</span>
           <div class="trio">
-            <div><b id="oAt">60</b><span>clientes passariam a ser atendidos em segundos, e não depois de 1 hora</span></div>
+            <div><b id="oAt">60</b><span>clientes atendidos em segundos, e não depois de 1 hora</span></div>
             <div><b id="oVend">3</b><span>vendas em jogo nesse grupo de clientes</span></div>
           </div>
           <p class="money" id="oMoney">R$ 9.000</p>
-          <p class="per">de lucro que pode estar indo pra concorrência.</p>
-          <p class="how">Estimativa feita com os seus números: leads × % sem resposta rápida × taxa de venda × lucro por carro. Não é promessa de resultado, é o tamanho do problema.</p>
+          <p class="per">de lucro indo pra concorrência todo mês.</p>
+          <p class="how">Conta feita com os seus números. Não é promessa: é o tamanho do problema.</p>
         </div>
         <a href="#formulario" class="btn btn-teal" data-open-form style="align-self:flex-start"><span class="ar"><svg width="20" height="20" style="color:#00333D"><use href="#arr"/></svg></span>Quero recuperar esse dinheiro</a>
       </div>
@@ -885,12 +953,12 @@
   </div>
 </section>
 
-<!-- 10 · QUEM SOMOS (desceu para perto do rodapé) -->
+
 <section id="time" class="team">
   <div class="wrap">
     <div class="sec-head team-head reveal">
       <div style="max-width:640px"><span class="eyebrow">Quem somos</span><h2>Gente de verdade cuidando <span class="hl">da sua loja.</span></h2></div>
-      <p style="max-width:380px">A R3 nasceu em São Luís, há mais de 4 anos. Hoje leva o mesmo jeito de trabalhar pra lojas de todo o Brasil.</p>
+      <p style="max-width:380px">Nascemos em São Luís, há mais de 4 anos. Hoje atendemos lojas de todo o Brasil.</p>
     </div>
     <div class="people">
       <div class="person reveal"><img src="assets/img/time_joao.webp" alt="João Vitor, CEO da R3" style="width:156.3%;left:-33.3%;top:-37.6%"><div class="cap"><b>João Vitor</b><span>CEO</span></div></div>
@@ -901,7 +969,7 @@
   </div>
 </section>
 
-<!-- 11 · FAQ -->
+
 <section id="faq" style="padding-top:40px;background:#fff">
   <div class="wrap">
     <div class="sec-head center reveal">
@@ -909,23 +977,21 @@
       <h2>Perguntas frequentes</h2>
     </div>
     <div class="faq">
-      <details><summary>O cliente vai perceber que é robô?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#00333D" stroke-width="2.6" stroke-linecap="round"/></svg></span></summary><p>A conversa segue o tom da sua loja. Quando o cliente pede, ou a negociação esquenta, um vendedor assume na hora, com todo o histórico.</p></details>
-      <details><summary>Preciso trocar o número do WhatsApp?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#00333D" stroke-width="2.6" stroke-linecap="round"/></svg></span></summary><p>Não. A R3 funciona com o número que a sua loja já usa.</p></details>
-      <details><summary>A IA atende no fim de semana e à noite?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#00333D" stroke-width="2.6" stroke-linecap="round"/></svg></span></summary><p>Sim. Ela responde 24 horas por dia, tira as dúvidas do cliente e deixa a visita marcada para o próximo horário da loja.</p></details>
-      <details><summary>Quem faz os anúncios?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#00333D" stroke-width="2.6" stroke-linecap="round"/></svg></span></summary><p>O mesmo time da R3 que cuida do atendimento e do CRM. Assim, anúncio, conversa e visita são medidos juntos, e a gente ajusta o que não está funcionando.</p></details>
-      <details><summary>Vocês garantem a venda?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#00333D" stroke-width="2.6" stroke-linecap="round"/></svg></span></summary><p>A venda é fechada pelo seu time. O que a R3 garante é que todo lead seja atendido em segundos e qualificado, e que o cliente chegue ao vendedor com a visita agendada.</p></details>
+            <details><summary>Preciso trocar o número do WhatsApp?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#00333D" stroke-width="2.6" stroke-linecap="round"/></svg></span></summary><p>Não. A R3 funciona com o número que a sua loja já usa.</p></details>
+      <details><summary>Atende no fim de semana e à noite?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#00333D" stroke-width="2.6" stroke-linecap="round"/></svg></span></summary><p>Sim. O cliente é respondido a qualquer hora, e a visita fica marcada para o próximo horário da loja.</p></details>
+      <details><summary>Quem faz os anúncios?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#00333D" stroke-width="2.6" stroke-linecap="round"/></svg></span></summary><p>A própria R3. O mesmo time cuida do anúncio, do atendimento e do CRM, então tudo é medido junto.</p></details>
+      <details><summary>Vocês garantem a venda?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#00333D" stroke-width="2.6" stroke-linecap="round"/></svg></span></summary><p>A venda é do seu time. A R3 garante que todo cliente seja atendido em segundos, qualificado e entregue ao vendedor com a visita marcada.</p></details>
     </div>
   </div>
 </section>
 
-<!-- 12 · MEGA CTA + FORMULÁRIO -->
 <section class="cta">
   <div class="bgimg" aria-hidden="true"></div>
   <div class="wrap cta-grid">
     <div class="reveal">
       <span class="eyebrow" style="color:#D6E30F">Próximo passo</span>
-      <h2>O próximo lead da sua loja pode chegar hoje à noite. <span style="color:var(--lime)">Quem vai responder?</span></h2>
-      <p class="sub">Conte um pouco sobre a sua loja. Um especialista da R3 chama você no WhatsApp para mostrar como levar mais clientes ao pátio.</p>
+      <h2>O próximo cliente da sua loja pode chegar hoje à noite. <span style="color:var(--lime)">Quem vai responder?</span></h2>
+      <p class="sub">Conte um pouco sobre a sua loja. A gente chama você no WhatsApp e mostra a R3 funcionando.</p>
     </div>
 
     <div class="form-card reveal" id="formulario">
@@ -955,11 +1021,10 @@
 </section>
 
 </main>
-
 <footer>
   <div class="wrap ft">
     <img src="assets/r3-logo-ondark.svg" alt="R3 Company">
-    <nav><a href="#demo">Veja funcionando</a><a href="#como-funciona">Como funciona</a><a href="#faq">Dúvidas</a></nav>
+    <nav><a href="#como-funciona">Como funciona</a><a href="#faq">Dúvidas</a></nav>
     <!-- PENDENTE: razão social, CNPJ e link da política de privacidade -->
     <div class="legal"><span>R3 Company · São Luís, MA · Razão social · CNPJ <span class="pend">[INSERIR]</span></span><a href="#">Política de privacidade</a></div>
   </div>
@@ -1087,11 +1152,12 @@
   //   'saida'   (padrão) no computador, abre 1 vez quando o mouse sai da página (intenção de saída). No celular, quem faz esse papel é a barra fixa.
   //   'rolagem' abre após 45% da página ou 25s · 'entrada' abre ao entrar (como era antes) · 'nunca' só pelos botões
   // Link com ?form abre o formulário direto (bom para a bio do Instagram e para remarketing).
-  const MODAL_AUTO = 'entrada';
+  const MODAL_AUTO = 'saida';
 
   const nav = document.getElementById('nav');
   const mbar = document.getElementById('mbar');
-  const onScroll = () => { nav.classList.toggle('scrolled', scrollY > 10); mbar.classList.toggle('show', scrollY > innerHeight * .8 && !document.documentElement.classList.contains('lock')); };
+  const heroEl = document.querySelector('.hero');
+  const onScroll = () => { nav.classList.toggle('scrolled', scrollY > 10); const past = scrollY > heroEl.offsetHeight - 90; document.documentElement.classList.toggle('past-hero', past); mbar.classList.toggle('show', past && !document.documentElement.classList.contains('lock')); };
   addEventListener('scroll', onScroll, {passive:true}); onScroll();
 
   // Máscara de telefone
@@ -1278,6 +1344,23 @@
     chatIo.disconnect();
   }, {threshold:.3});
   chatIo.observe(document.getElementById('chat'));
+
+  // Formulário do topo (etapa 1): copia nome e WhatsApp para o formulário principal e segue para a etapa 2
+  const heroForm = document.getElementById('heroForm'), heroNome = document.getElementById('heroNome'), heroWhats = document.getElementById('heroWhats');
+  heroWhats.addEventListener('input', () => {
+    let d = heroWhats.value.replace(/\D/g,'').slice(0,11);
+    heroWhats.value = d.length > 10 ? `(${d.slice(0,2)}) ${d.slice(2,7)}-${d.slice(7)}` : d.length > 6 ? `(${d.slice(0,2)}) ${d.slice(2,6)}-${d.slice(6)}` : d.length > 2 ? `(${d.slice(0,2)}) ${d.slice(2)}` : d;
+  });
+  [heroNome, heroWhats].forEach(el => el.addEventListener('input', () => el.closest('.hf').classList.remove('err')));
+  heroForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const okNome = heroNome.value.trim() !== '', okWa = heroWhats.value.replace(/\D/g,'').length >= 10;
+    heroNome.closest('.hf').classList.toggle('err', !okNome); heroWhats.closest('.hf').classList.toggle('err', !okWa);
+    if (!okNome || !okWa) { track('form_error', {etapa: 1, campo: !okNome ? 'nome' : 'whatsapp', origem: 'topo'}); (!okNome ? heroNome : heroWhats).focus(); return; }
+    form.elements.nome.value = heroNome.value.trim(); whats.value = heroWhats.value;
+    openModal();
+    if (!card.classList.contains('done') && step === 1) form.requestSubmit();
+  });
 </script>
 </body>
 </html>
