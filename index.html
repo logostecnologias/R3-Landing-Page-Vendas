@@ -1269,7 +1269,7 @@
     };
     Object.keys(dados).forEach(k => { if (dados[k] === undefined || dados[k] === '') delete dados[k]; });
     // Se o script ainda não carregou, ou se o envio dele falhar na rede, manda direto para o endereço (com as UTM da URL)
-    const direto = () => fetch(ZAPPZEN_URL, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({...dados, ...UTM}), keepalive:true})
+    const direto = () => fetch(ZAPPZEN_URL, {method:'POST', headers:{'Content-Type':'text/plain;charset=UTF-8'}, body:JSON.stringify({...dados, ...UTM}), keepalive:true})
       .then(r => r.json().catch(() => ({ok: r.ok})));
     const envio = window.ZappZen ? Promise.resolve(window.ZappZen.enviar(dados)).catch(direto) : direto();
     envio.then(r => { if (r && r.ok === false) console.warn('ZappZen:', r.erro || r); }).catch(err => console.error(err));
