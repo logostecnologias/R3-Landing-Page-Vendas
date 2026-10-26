@@ -603,23 +603,11 @@
 </style>
 <script src="config.js"></script>
 <script>
-  // Tracking: grava cada passo do visitante no Supabase (painel.html) e nas ferramentas externas configuradas em config.js
+  // Tracking: envia cada passo do visitante para as ferramentas externas configuradas em config.js
   const CFG = window.R3_CONFIG || {};
   const UTM = {};
   new URLSearchParams(location.search).forEach((v, k) => { if (k.startsWith('utm_')) UTM[k] = v; });
   const novoId = () => crypto.randomUUID ? crypto.randomUUID() : Date.now() + '-' + Math.random().toString(36).slice(2);
-  let VISITANTE_ID;
-  try { VISITANTE_ID = localStorage.getItem('r3_visitante') || novoId(); localStorage.setItem('r3_visitante', VISITANTE_ID); }
-  catch (err) { VISITANTE_ID = novoId(); }
-
-  function supabase(path, body) {
-    if (!CFG.SUPABASE_URL || !CFG.SUPABASE_ANON_KEY) return Promise.resolve();
-    return fetch(CFG.SUPABASE_URL + '/rest/v1/' + path, {
-      method: 'POST', keepalive: true, body: JSON.stringify(body),
-      headers: {'Content-Type': 'application/json', apikey: CFG.SUPABASE_ANON_KEY,
-                Authorization: 'Bearer ' + CFG.SUPABASE_ANON_KEY, Prefer: 'return=minimal'}
-    }).catch(err => console.error(err));
-  }
 
   window.dataLayer = window.dataLayer || [];
   if (CFG.GA4_ID) {
@@ -633,14 +621,19 @@
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', CFG.META_PIXEL_ID); fbq('track', 'PageView');
   }
+  // ZappZen: o script guarda UTM e ids de clique (gclid, fbclid...) e acrescenta página e referrer em cada envio
+  const ZAPPZEN_URL = CFG.ZAPPZEN_DOMINIO && CFG.ZAPPZEN_CHAVE ? CFG.ZAPPZEN_DOMINIO.replace(/\/+$/, '') + '/api/f/' + CFG.ZAPPZEN_CHAVE : '';
+  if (ZAPPZEN_URL) {
+    const s = document.createElement('script');
+    s.async = true; s.src = ZAPPZEN_URL + '/script.js';
+    document.head.appendChild(s);
+  }
   if (CFG.CLARITY_ID) {
     (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script",CFG.CLARITY_ID);
   }
 
-  // Registra o evento no banco e em todas as ferramentas ativas
+  // Registra o evento em todas as ferramentas ativas
   function track(event, params = {}) {
-    supabase('eventos', {visitante_id: VISITANTE_ID, evento: event, etapa: params.etapa ?? null, campo: params.campo ?? null,
-                         utm_source: UTM.utm_source ?? null, utm_medium: UTM.utm_medium ?? null, utm_campaign: UTM.utm_campaign ?? null});
     try {
       if (window.gtag) gtag('event', event, params);
       if (window.fbq) {
@@ -1144,7 +1137,7 @@
 </div>
 
 <script>
-  // Opcional: webhook extra que também recebe o lead (CRM, n8n, Make...). Os leads já vão para o Supabase via config.js.
+  // Opcional: webhook extra que também recebe o lead (CRM, n8n, Make...). Os leads já vão para o ZappZen via config.js.
   const FORM_ENDPOINT = "";
   // Vídeo demo (opcional, para o futuro): link do .mp4 ou do embed do YouTube/Vimeo. Vazio = botão de play escondido.
   const DEMO_VIDEO_URL = "";
@@ -1259,10 +1252,27 @@
   function sendLead(status, etapa) {
     const data = Object.fromEntries(new FormData(form));
     Object.assign(data, {lead_id: LEAD_ID, status, etapa, origem: 'landing-crm-concessionarias'}, UTM);
-    const envios = [supabase('rpc/salvar_lead', {dados: data})];
+    const envios = [];
     if (FORM_ENDPOINT) envios.push(fetch(FORM_ENDPOINT, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data), keepalive:true})
       .catch(err => console.error(err)));
+    if (ZAPPZEN_URL && (status === 'completo' || (etapa === 1 && CFG.ZAPPZEN_PARCIAL !== false))) sendZappZen(data);
     return Promise.all(envios);
+  }
+
+  // ZappZen: roda à parte, sem await. Uma falha lá não trava a tela de "Recebemos!".
+  // Nomes legíveis porque aparecem assim para o vendedor; nome, whatsapp, empresa e cargo o ZappZen reconhece sozinho.
+  function sendZappZen(data) {
+    const dados = {
+      nome: data.nome, whatsapp: data.whatsapp, empresa: data.concessionaria, cargo: data.cargo,
+      'Cidade': data.cidade, 'Leads por mês': data.leads_mes, 'Número de vendedores': data.vendedores,
+      'Status do formulário': data.status, 'Etapa': data.etapa, 'Origem': data.origem, 'Id do lead': data.lead_id
+    };
+    Object.keys(dados).forEach(k => { if (dados[k] === undefined || dados[k] === '') delete dados[k]; });
+    // Se o script ainda não carregou, ou se o envio dele falhar na rede, manda direto para o endereço (com as UTM da URL)
+    const direto = () => fetch(ZAPPZEN_URL, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({...dados, ...UTM}), keepalive:true})
+      .then(r => r.json().catch(() => ({ok: r.ok})));
+    const envio = window.ZappZen ? Promise.resolve(window.ZappZen.enviar(dados)).catch(direto) : direto();
+    envio.then(r => { if (r && r.ok === false) console.warn('ZappZen:', r.erro || r); }).catch(err => console.error(err));
   }
 
   form.addEventListener('submit', async (e) => {
@@ -1270,7 +1280,7 @@
     if (!validate(panes[step - 1])) return;
     track('form_step_complete', {etapa: step});
     if (step < TOTAL) {
-      // Lead parcial: com nome e WhatsApp em mãos, a R3 já consegue chamar mesmo se a pessoa desistir
+      // Lead parcial: só vai para o webhook (FORM_ENDPOINT) e, se ZAPPZEN_PARCIAL estiver ligado, para o ZappZen
       sendLead('parcial', step);
       setStep(step + 1, true);
       return;
