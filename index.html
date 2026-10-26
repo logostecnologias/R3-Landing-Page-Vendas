@@ -1142,10 +1142,10 @@
   // Vídeo demo (opcional, para o futuro): link do .mp4 ou do embed do YouTube/Vimeo. Vazio = botão de play escondido.
   const DEMO_VIDEO_URL = "";
   // Abertura automática do formulário:
-  //   'saida'   (padrão) no computador, abre 1 vez quando o mouse sai da página (intenção de saída). No celular, quem faz esse papel é a barra fixa.
-  //   'rolagem' abre após 45% da página ou 25s · 'entrada' abre ao entrar (como era antes) · 'nunca' só pelos botões
+  //   'saida'   no computador, abre 1 vez quando o mouse sai da página (intenção de saída). No celular, quem faz esse papel é a barra fixa.
+  //   'rolagem' abre após 45% da página ou 25s · 'entrada' (padrão) abre ao entrar · 'nunca' só pelos botões
   // Link com ?form abre o formulário direto (bom para a bio do Instagram e para remarketing).
-  const MODAL_AUTO = 'saida';
+  const MODAL_AUTO = 'entrada';
 
   const nav = document.getElementById('nav');
   const mbar = document.getElementById('mbar');
@@ -1242,6 +1242,8 @@
   function markDone() {
     card.classList.add('done');
     document.getElementById('formulario').classList.add('done');
+    // Quem já respondeu não vê mais o formulário do topo
+    document.getElementById('heroForm').hidden = true;
     setProgress(100);
     progLabel.innerHTML = '<b>Tudo pronto!</b>';
   }
@@ -1293,6 +1295,8 @@
     try { localStorage.setItem(DONE_KEY, '1'); } catch (err) {}
     markDone();
     document.getElementById('btnDone').focus();
+    // Mostra o "Recebemos!" por alguns segundos e fecha sozinho
+    setTimeout(() => { if (modal.classList.contains('open')) closeModal(); }, 3500);
   });
   form.querySelectorAll('input,select').forEach(el => el.addEventListener('input', () => el.closest('.field').classList.remove('err')));
 
