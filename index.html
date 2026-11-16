@@ -3,27 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>R3 Company | Do anúncio ao pátio: mais clientes na sua loja de veículos</title>
-<meta name="description" content="A R3 faz o anúncio da sua loja de veículos, responde cada cliente em segundos, marca a visita com o seu vendedor e mostra toda semana o que o investimento trouxe.">
+<title>R3 Company | Mais visitas no pátio da sua loja de veículos</title>
+<meta name="description" content="A R3 faz o anúncio da sua loja de veículos, responde cada cliente em segundos e marca a visita com o seu vendedor. A meta de trabalho é dobrar as visitas ao pátio.">
 <meta name="theme-color" content="#00333D">
 <!-- Prévia do link no WhatsApp/Instagram (troque a URL pelo domínio final) -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="R3 Company · Do anúncio ao pátio">
 <meta property="og:description" content="Anúncio, atendimento em segundos, visita marcada e relatório semanal. Um time só, do anúncio ao pátio.">
-<meta property="og:image" content="https://r3-teste.vercel.app/assets/og-r3.jpg">
+<meta property="og:image" content="https://r3companny.com.br/assets/og-r3.jpg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/r3-simbolo-lime.svg" type="image/svg+xml">
-<link rel="preload" href="assets/fonts/Pinnacle-ExtraBold.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="preload" href="assets/img/hero_jonas_full.webp" as="image">
+<link rel="preload" href="assets/fonts/Pinnacle-ExtraBold.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="assets/img/venda_entrega.webp" as="image">
 <style>
-  @font-face{font-family:Pinnacle;src:url(assets/fonts/Pinnacle-Bold.ttf) format("truetype");font-weight:700;font-display:swap}
-  @font-face{font-family:Pinnacle;src:url(assets/fonts/Pinnacle-ExtraBold.ttf) format("truetype");font-weight:800;font-display:swap}
-  @font-face{font-family:Montserrat;src:url(assets/fonts/Montserrat-Regular.ttf) format("truetype");font-weight:400;font-display:swap}
-  @font-face{font-family:Montserrat;src:url(assets/fonts/Montserrat-Medium.ttf) format("truetype");font-weight:500;font-display:swap}
-  @font-face{font-family:Montserrat;src:url(assets/fonts/Montserrat-SemiBold.ttf) format("truetype");font-weight:600;font-display:swap}
-  @font-face{font-family:Montserrat;src:url(assets/fonts/Montserrat-Bold.ttf) format("truetype");font-weight:700;font-display:swap}
-  @font-face{font-family:Montserrat;src:url(assets/fonts/Montserrat-ExtraBold.ttf) format("truetype");font-weight:800;font-display:swap}
+  @font-face{font-family:Pinnacle;src:url(assets/fonts/Pinnacle-Bold.woff) format("woff");font-weight:700;font-display:swap}
+  @font-face{font-family:Pinnacle;src:url(assets/fonts/Pinnacle-ExtraBold.woff) format("woff");font-weight:800;font-display:swap}
+  @font-face{font-family:Montserrat;src:url(assets/fonts/Montserrat-Regular.woff) format("woff");font-weight:400;font-display:swap}
+  @font-face{font-family:Montserrat;src:url(assets/fonts/Montserrat-Medium.woff) format("woff");font-weight:500;font-display:swap}
+  @font-face{font-family:Montserrat;src:url(assets/fonts/Montserrat-SemiBold.woff) format("woff");font-weight:600;font-display:swap}
+  @font-face{font-family:Montserrat;src:url(assets/fonts/Montserrat-Bold.woff) format("woff");font-weight:700;font-display:swap}
+  @font-face{font-family:Montserrat;src:url(assets/fonts/Montserrat-ExtraBold.woff) format("woff");font-weight:800;font-display:swap}
 
   :root{
     --teal:#00333D; --teal-2:#0E4954; --deep:#00262E; --abyss:#001B21;
@@ -47,7 +47,6 @@
   .eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-2)}
   .eyebrow::before{content:"";width:30px;height:5px;background:currentColor;transform:skewX(-20deg)}
   .dark .eyebrow,.eyebrow.lm{color:var(--lime)}
-  .pend{background:#FFF1C2;color:#7A4B00;font-weight:700;padding:0 .3em;border-radius:4px;font-size:13px;font-style:normal}
 
   /* botões */
   .btn{display:inline-flex;align-items:center;gap:14px;font:800 16px/1 Montserrat,sans-serif;letter-spacing:.02em;padding:8px 26px 8px 8px;border-radius:999px;border:0;cursor:pointer;transition:transform .18s,box-shadow .18s;white-space:nowrap}
@@ -57,123 +56,44 @@
   .btn-lime .ar{background:var(--teal)}
   .btn-teal{background:var(--teal);color:var(--lime);box-shadow:0 14px 34px -16px rgba(0,51,61,.8)}
   .btn-teal .ar{background:var(--lime)}
-  .ghost{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:15px;padding:14px 4px;border-bottom:1.5px solid rgba(197,213,215,.4)}
-  .ghost:hover{border-color:var(--lime)}
 
   /* corte angular da marca (ângulo da perna do R) */
-  .cut{position:relative;clip-path:polygon(0 0,calc(100% - var(--cut)) 0,100% var(--cut),100% 100%,0 100%)}
-  .cut::after{content:"";position:absolute;top:0;right:0;width:var(--cut);height:var(--cut);background:var(--lime);clip-path:polygon(0 0,100% 100%,0 100%);opacity:.9}
-  .cut.br{clip-path:polygon(0 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%)}
-  .cut.br::after{top:auto;bottom:0;clip-path:polygon(0 0,100% 0,0 100%)}
 
   /* NAV */
   header.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .25s,box-shadow .25s}
   header.nav.scrolled{background:rgba(0,38,46,.9);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line-dk)}
   .nav-in{display:flex;align-items:center;justify-content:space-between;height:84px}
   .brand img{height:34px;width:auto}
-  .nav-links{display:flex;gap:32px;font-size:14px;font-weight:600;color:var(--mist)}
-  .nav-links a:hover{color:#fff}
   .nav .btn{font-size:14px;padding:6px 20px 6px 6px}
   .nav .btn .ar{width:38px;height:38px}
 
   /* HERO */
   .hero{position:relative;background:var(--deep);color:#fff;overflow:hidden;padding:150px 0 0}
-  .hero .bgimg{position:absolute;inset:0;background:url(assets/img/bg_noite.webp) center/cover;opacity:.26;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 60%);mask-image:linear-gradient(90deg,transparent 0%,#000 60%)}
   .hero .wrap{max-width:1320px}
   .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) 504px;gap:56px;align-items:center}
-  .chip{display:inline-flex;align-items:center;gap:12px;border:1.5px solid rgba(214,227,15,.55);color:var(--lime);border-radius:999px;padding:9px 18px;font-size:14px;font-weight:700}
   .hero h1{font-size:clamp(36px,3.9vw,56px);margin:28px 0 24px;color:#fff;line-height:1.08}
   .hero .lede{font-size:clamp(17px,1.35vw,19px);color:#D7E2E3;max-width:560px}
   .hero .lede b{color:#fff}
-  .hero-ctas{display:flex;flex-wrap:wrap;gap:26px;margin-top:40px;align-items:center}
-  .hero-ctas .ghost{color:#E8EFEE}
-  .ticks{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:30px;font-size:13.5px;font-weight:600;color:var(--mist)}
-  .ticks span{display:inline-flex;align-items:center;gap:9px}
-  .hvbox{width:504px;height:594px}
-  .hv{position:relative;width:560px;height:660px;transform:scale(.9);transform-origin:top left}
-  .win{position:absolute;left:20px;top:84px;width:520px;height:560px;border-radius:40px;background:var(--teal);box-shadow:0 50px 90px -30px rgba(0,0,0,.7),0 0 0 1px rgba(197,213,215,.1),0 0 120px -20px rgba(214,227,15,.18)}
-  .wbar{position:absolute;left:0;right:0;top:0;height:58px}
   .tog{position:absolute;left:28px;top:18px;width:58px;height:24px;border-radius:12px;background:var(--lime)}
   .tog i{position:absolute;right:3px;top:3px;width:18px;height:18px;border-radius:50%;background:#F4F8C8;box-shadow:inset 0 0 0 2.5px var(--teal)}
-  .wx{position:absolute;right:28px;top:16px}
-  .win .wph{position:absolute;left:12px;right:12px;top:58px;height:406px;border-radius:12px;overflow:hidden;background:#0A3640}
-  .win .wph img{position:absolute;width:708px;max-width:none;left:-106px;top:-256px}
-  .win .wft{position:absolute;left:0;right:0;bottom:0;height:96px;display:flex;align-items:center;justify-content:center;font-family:Pinnacle;font-weight:800;font-size:28px;color:var(--lime)}
-  .win .wtab{position:absolute;left:50%;transform:translateX(-50%);bottom:84px;width:200px;height:56px;background:var(--teal);border-radius:24px 24px 0 0;display:grid;place-items:center}
-  .win .wtab img{height:28px;width:auto}
-  .pop{position:absolute;left:32px;top:0;width:496px;height:300px;overflow:hidden;pointer-events:none;z-index:3}
-  .pop img{position:absolute;width:708px;max-width:none;left:-106px;top:-114px}
   .notif{position:absolute;z-index:5;left:-44px;top:330px;width:300px;padding:14px 16px;display:flex;gap:12px;background:rgba(244,248,247,.97);color:var(--text);border-radius:22px;box-shadow:0 26px 50px -18px rgba(0,0,0,.55)}
   .notif .ic{flex:none;width:44px;height:44px;border-radius:12px;background:var(--wa);display:grid;place-items:center}
   .notif p{font-size:13px;font-weight:800;display:flex;justify-content:space-between}
   .notif p span{font-weight:600;color:var(--muted);font-size:12px}
   .notif .msg{font-size:14px;font-weight:500;line-height:1.35;margin-top:2px}
   .tg{display:inline-block;font-size:11px;font-weight:800;padding:4px 9px;border-radius:7px;margin-top:6px;white-space:nowrap}
-  .tg.go{background:var(--lime);color:var(--teal)} .tg.tl{background:var(--teal);color:var(--lime)}
-  .stk{position:absolute;z-index:6;border-radius:50%;box-shadow:0 18px 34px -10px rgba(0,0,0,.55);right:-6px;top:118px;width:128px;height:128px;transform:rotate(9deg)}
-  .stk svg{position:absolute;inset:0;width:100%;height:100%}
-  .mp{display:inline-flex;flex-direction:column;border:2px solid #0B2228;border-radius:5px;background:#F4F3EF;overflow:hidden;line-height:1;vertical-align:middle}
-  .mp i{display:block;height:5px;background:var(--teal)}
-  .mp b{font-family:Pinnacle;font-weight:700;font-size:11px;letter-spacing:.06em;color:#0B2228;padding:2px 5px 3px;display:block}
+  .tg.go{background:var(--lime);color:var(--teal)}
   /* estrada: fluxo contínuo */
-  .road{position:relative;z-index:2;margin-top:70px}
-  .road svg{display:block;width:100%;height:auto}
-  .road img{position:absolute;right:4%;top:6px;height:100%;width:auto}
-  .flow{stroke-dasharray:34 22;animation:flow 1.4s linear infinite}
   @keyframes flow{to{stroke-dashoffset:-56}}
 
   /* INTEGRAÇÕES */
-  .integr{background:var(--deep);color:var(--mist);padding:34px 0 40px}
-  .integr .wrap{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:14px 16px}
-  .integr p{width:100%;text-align:center;font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#7E9EA2;margin-bottom:4px}
-  .badge{display:inline-flex;align-items:center;gap:10px;padding:10px 18px 10px 12px;border-radius:999px;border:1px solid var(--line-dk);background:rgba(14,73,84,.5);font-size:14px;font-weight:700;color:#E3ECEB}
-  .badge svg{flex:none}
 
   /* DEMO (show, don't tell) */
   .demo{background:var(--paper)}
-  .demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
   .demo h2{font-size:clamp(30px,3.4vw,46px);color:var(--teal);margin:18px 0 26px}
-  .bul{list-style:none;display:grid;gap:14px;margin-bottom:34px}
-  .bul li{display:flex;gap:14px;align-items:flex-start;font-size:17px;color:var(--ink-2)}
-  .bul li b{color:var(--teal)}
-  .bul .n{flex:none;width:30px;height:30px;border-radius:9px;background:var(--teal);color:var(--lime);display:grid;place-items:center;font:800 14px Pinnacle,sans-serif;transform:skewX(-8deg)}
-  .stage{position:relative;padding:24px 0}
-  .stage::before{content:"";position:absolute;inset:6% 4%;border-radius:40px;background:radial-gradient(ellipse at 50% 40%,rgba(214,227,15,.35),rgba(214,227,15,0) 65%);filter:blur(10px)}
-  .phone{position:relative;width:350px;max-width:100%;margin:0 auto;background:#0A1416;border-radius:48px;padding:12px;box-shadow:0 0 0 2px #22363A,var(--shadow)}
-  .screen{background:#E9EEEC;border-radius:38px;overflow:hidden}
-  .wa-top{background:var(--teal);color:#fff;display:flex;align-items:center;gap:10px;padding:22px 18px 14px}
-  .wa-top .av{width:38px;height:38px;border-radius:50%;background:var(--lime);display:grid;place-items:center}
-  .wa-top .av img{width:22px}
-  .wa-top b{font-size:15px;display:block}
-  .wa-top small{font-size:12px;color:var(--lime);font-weight:600}
-  .chat{padding:16px 12px 22px;display:flex;flex-direction:column;gap:8px;min-height:470px}
-  .bubble{max-width:84%;padding:9px 12px 18px;border-radius:14px;font-size:13.5px;line-height:1.4;position:relative;opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s;box-shadow:0 1px 1px rgba(0,0,0,.06)}
-  .bubble.show{opacity:1;transform:none}
-  .bubble time{position:absolute;right:10px;bottom:4px;font-size:10px;color:#6B7B7E}
-  .bubble.bi{background:#fff;align-self:flex-start;border-top-left-radius:4px}
-  .bubble.bo{background:#DDEAC0;align-self:flex-end;border-top-right-radius:4px}
-  .opts{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
-  .opts span{font-size:12px;padding:5px 10px;border-radius:999px;background:#fff;color:var(--teal);font-weight:700;border:1px solid #C9D9B3}
-  .crmcard{position:absolute;z-index:3;right:-40px;bottom:30px;width:250px;background:var(--teal);color:#fff;border-radius:22px;padding:16px;box-shadow:var(--shadow)}
-  .crmcard .k{font-size:10.5px;font-weight:800;letter-spacing:.16em;color:var(--lime)}
-  .crmcard .v{font-family:Pinnacle;font-weight:800;font-size:22px;margin:6px 0 10px;display:flex;align-items:center;gap:8px}
-  .crmcard .row{display:flex;justify-content:space-between;font-size:12px;font-weight:600;color:var(--mist);padding:6px 0;border-top:1px solid var(--line-dk)}
-  .crmcard .row b{color:#fff}
-  .play{position:absolute;z-index:4;left:50%;top:44%;transform:translate(-50%,-50%);width:92px;height:92px;border-radius:50%;background:var(--lime);display:none;place-items:center;border:0;cursor:pointer;box-shadow:0 0 0 14px rgba(214,227,15,.25),0 20px 40px rgba(0,0,0,.35)}
-  .play.on{display:grid}
-  .vnote{margin-top:18px;font-size:13px}
 
   /* DADOS */
   .data{background:var(--deep);color:#fff;padding:96px 0}
-  .data-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:40px}
-  .data-head h2{font-size:clamp(26px,2.6vw,36px);max-width:640px}
-  .data-head p{color:var(--mist);font-size:15px;max-width:340px}
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-  .stat{--cut:30px;background:linear-gradient(160deg,#0B3E48,#05272E);padding:26px 24px 24px}
-  .stat svg{display:block;margin-bottom:18px}
-  .stat b{display:block;font-family:Pinnacle;font-weight:800;font-size:clamp(38px,3.6vw,52px);line-height:1;color:var(--lime);letter-spacing:-.03em}
-  .stat p{font-size:14.5px;font-weight:600;color:#E3ECEB;margin-top:10px;line-height:1.4}
-  .stat small{display:block;font-size:11.5px;color:#7E9EA2;margin-top:12px;font-weight:600}
 
   /* SEÇÕES */
   section{padding:120px 0}
@@ -181,96 +101,17 @@
   .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
   .sec-head h2{font-size:clamp(32px,3.8vw,52px);margin:18px 0 18px;color:var(--teal)}
   .sec-head p{font-size:18px;color:var(--ink-2)}
-  .dark{background:var(--teal);color:#fff}
-  .dark .sec-head h2{color:#fff}
-  .dark .sec-head p{color:var(--mist)}
-  .cta-row{display:flex;justify-content:center;margin-top:52px}
 
   /* ONDE A VENDA ESCAPA: cards escuros com corte angular */
-  .leaks{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .leak{filter:drop-shadow(0 30px 40px rgba(0,30,36,.28))}
-  .leak .in{--cut:46px;background:linear-gradient(170deg,#0C3F49 0%,#00262E 100%);color:#fff;padding:16px 16px 36px;height:100%}
-  .leak .vis{height:292px;border-radius:16px;position:relative;overflow:hidden}
-  .leak h3{font-size:24px;color:#fff;margin:24px 12px 14px}
-  .leak ul{list-style:none;display:grid;gap:8px;margin:0 12px}
-  .leak li{display:flex;gap:10px;font-size:14.5px;color:var(--mist)}
-  .leak li::before{content:"";flex:none;width:7px;height:7px;margin-top:8px;background:#7E9EA2;transform:skewX(-20deg)}
-  .leak li b{color:#fff}
-  .leak .fix{margin:18px 12px 0;padding:12px 14px;border-radius:12px;background:rgba(214,227,15,.12);border:1px solid rgba(214,227,15,.35);font-size:14px;font-weight:700;color:var(--lime);display:flex;gap:10px;align-items:flex-start}
-  .v-lock{background:linear-gradient(160deg,#0E4954,#001E24);padding:16px 14px}
-  .v-lock .d{text-align:center;font-size:12px;font-weight:600;color:rgba(255,255,255,.75)}
-  .v-lock .t{text-align:center;font-family:Pinnacle;font-weight:700;font-size:46px;line-height:1;margin:2px 0 10px;color:#fff}
-  .nt{display:flex;gap:10px;background:rgba(226,238,236,.12);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:9px 11px;margin-top:7px}
-  .nt .ic{flex:none;width:30px;height:30px;border-radius:9px;background:var(--wa);display:grid;place-items:center}
-  .nt p{font-size:11.5px;font-weight:800;display:flex;justify-content:space-between;gap:8px;color:#fff}
-  .nt p span{font-weight:600;opacity:.7}
-  .nt .m{font-size:12.5px;line-height:1.3;color:#fff}
-  .nt.hot{border-color:rgba(214,227,15,.6);background:rgba(214,227,15,.14)}
-  .v-gauge{background:radial-gradient(circle at 50% 60%,#0E4954,#001E24 75%);display:grid;place-items:center}
-  .v-post{background:#E8E4E1;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px}
-  .pi{font-family:"Ink Free","Segoe Print","Comic Sans MS",cursive;font-size:16px;line-height:1.15;color:var(--text);padding:12px 11px;box-shadow:0 10px 16px -8px rgba(0,0,0,.3);height:72px}
-  .crm{grid-column:2;grid-row:1/span 3;background:var(--teal);border-radius:12px;padding:11px;display:flex;flex-direction:column;gap:7px}
-  .crm h5{font-size:10px;letter-spacing:.16em;color:var(--lime);font-weight:800}
-  .crm div{background:#fff;border-radius:9px;padding:7px 9px;font-size:12px;font-weight:800;color:var(--text)}
-  .crm div span{display:block;font-size:10px;font-weight:700;color:var(--muted);margin-top:2px}
 
   /* MÉTODO */
-  .how .roadline{margin:0 calc(50% - 50vw) 50px;position:relative}
-  .how .roadline svg{width:100%;height:auto;display:block}
-  .how .roadline img{position:absolute;right:3%;top:2px;height:96%;width:auto}
-  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
   .step{--cut:34px;padding:28px 24px;background:linear-gradient(170deg,rgba(14,73,84,.95),rgba(0,38,46,.95))}
   .step .num{font-family:Pinnacle;font-weight:800;font-size:58px;line-height:.9;color:var(--lime);letter-spacing:-.03em;margin-bottom:16px}
   .step h3{font-size:21px;color:#fff;margin-bottom:10px}
   .step p{color:var(--mist);font-size:14.5px}
-  .steps-close{margin-top:52px;text-align:center;font:800 clamp(22px,2.4vw,32px)/1.25 Pinnacle,sans-serif;color:#fff}
 
   /* RESULTADOS: curioso x lead quente */
-  .leadx{display:grid;grid-template-columns:1fr 160px 1fr;align-items:center}
-  .lx{position:relative;padding:30px 30px 26px;border-radius:26px;height:100%}
-  .lx.cold{background:#fff;border:1px solid var(--line);color:var(--ink-2)}
-  .lx.hot{--cut:50px;border-radius:0;background:linear-gradient(165deg,#0C3F49,#00262E);color:#fff;box-shadow:var(--shadow)}
-  .lx-tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;padding:6px 11px;border-radius:7px;background:#ECE8E5;color:#6B7B7E}
-  .hot .lx-tag{background:var(--lime);color:var(--teal)}
-  .lx h3{font-size:22px;margin:14px 0 18px;color:var(--teal)}
-  .hot h3{color:#fff}
-  .lx-chat{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;min-height:44px}
-  .lx-chat span{background:#F1F2F0;border-radius:14px 14px 14px 4px;padding:9px 13px;font-size:14px;font-weight:600;color:#5B6E71}
-  .lx-name{font-family:Pinnacle;font-weight:800;font-size:22px;display:flex;align-items:center;gap:10px;margin-bottom:16px;min-height:44px}
-  .lx dl div{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-top:1px solid var(--line);font-size:14.5px}
-  .hot dl div{border-color:var(--line-dk)}
-  .lx dt{font-weight:600}
-  .lx dd{font-weight:800;color:#A7B2B4;text-align:right}
-  .hot dt{color:var(--mist)} .hot dd{color:#fff} .hot dd.ok{color:var(--lime)}
-  .lx-foot{margin-top:16px;font-size:14.5px;font-weight:700}
-  .cold .lx-foot{color:#86959A}
-  .hot .lx-foot{color:var(--lime)}
-  .lx-mid{position:relative;text-align:center;align-self:center}
-  .lx-mid::before{content:"";position:absolute;left:-6px;right:-6px;top:42px;height:5px;background:repeating-linear-gradient(90deg,var(--teal) 0 14px,transparent 14px 24px)}
-  .lx-ia{position:relative;width:88px;height:88px;border-radius:50%;background:var(--lime);display:grid;place-items:center;margin:0 auto;box-shadow:0 0 0 10px rgba(214,227,15,.28),0 18px 30px -12px rgba(0,51,61,.5)}
-  .lx-ia img{width:46px}
-  .lx-mid p{margin-top:18px;font-size:13px;font-weight:800;color:var(--teal);line-height:1.35}
-  .kpis{display:grid;grid-template-columns:repeat(4,1fr);margin-top:26px;background:#fff;border-radius:24px;box-shadow:0 20px 50px -34px rgba(0,51,61,.45)}
-  .kpis>div{padding:24px;display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:center}
-  .kpis>div+div{border-left:1px solid var(--line)}
-  .kpis svg{grid-row:span 2}
-  .kpis b{font-family:Pinnacle;font-weight:800;font-size:23px;color:var(--teal);line-height:1.05}
-  .kpis span{font-size:13px;color:var(--ink-2);line-height:1.35}
   /* SEM x COM */
-  .vs{background:#fff}
-  .compare{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-  .col{border-radius:30px;padding:40px 38px}
-  .col h3{font-size:26px;margin-bottom:26px;display:flex;align-items:center;gap:14px}
-  .col ul{list-style:none;display:grid;gap:18px}
-  .col li{display:flex;gap:14px;font-size:15.5px}
-  .col li svg{flex:none;margin-top:3px}
-  .col li b{display:block;margin-bottom:2px;font-weight:800}
-  .before{background:var(--paper-2);border:1px solid var(--line);color:var(--ink-2)}
-  .before h3{color:#7C8B8D}
-  .before li b{color:var(--text)}
-  .after{--cut:56px;background:var(--lime);color:var(--teal);border-radius:0}
-  .after::after{background:var(--teal)}
-  .after h3 img{height:30px;width:auto}
 
   /* CALCULADORA */
   .calc{background:var(--deep);color:#fff}
@@ -305,7 +146,6 @@
 
   /* TIME (perto do rodapé) */
   .team{background:#fff}
-  .team-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;max-width:none}
   .people{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
   .person{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/5;background:#0A3640}
   .person img{position:absolute;max-width:none;height:auto;transition:transform .5s;transform-origin:50% 30%}
@@ -321,9 +161,7 @@
   .cta::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,27,33,.96) 30%,rgba(0,27,33,.55));z-index:1}
   .cta-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
   .cta h2{font-size:clamp(34px,4vw,56px);margin:20px 0 22px}
-  .cta .sub{color:var(--mist);font-size:18px;max-width:520px}
   .form-card{background:var(--teal);border-radius:36px;padding:0 0 26px;box-shadow:0 50px 90px -30px rgba(0,0,0,.7),0 0 0 1px rgba(197,213,215,.12),0 0 120px -30px rgba(214,227,15,.25);position:relative;overflow:hidden}
-  .form-card .wbar{position:relative;height:58px}
   .fc-in{background:#fff;color:var(--text);margin:0 12px;border-radius:14px;padding:30px 28px 26px}
   .form-card h3{font-size:26px;color:var(--teal);margin-bottom:6px}
   .next-steps{list-style:none;counter-reset:ns;display:grid;gap:14px;margin:20px 0 20px}
@@ -333,7 +171,6 @@
   .fc-in .btn{width:100%;justify-content:space-between;font-size:16px;padding:8px 8px 8px 26px}
   .form-note{display:flex;gap:8px;align-items:center;justify-content:center;font-size:12.5px;color:var(--muted);margin-top:14px;text-align:center}
   .form-note a{text-decoration:underline}
-  .fc-foot{text-align:center;font-family:Pinnacle;font-weight:800;font-size:22px;color:var(--lime);margin-top:20px}
   .success{display:none;text-align:center;padding:26px 6px}
   .success .ok{width:68px;height:68px;border-radius:50%;background:var(--lime);display:grid;place-items:center;margin:0 auto 18px}
   .success h3{font-size:26px;margin-bottom:10px;color:var(--teal)}
@@ -358,7 +195,6 @@
   html.lock{overflow:hidden}
   .modal,.vmodal{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(0,20,26,.78);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
   .modal.open,.vmodal.open{opacity:1;visibility:visible}
-  .vmodal video,.vmodal iframe{width:min(92vw,960px);aspect-ratio:16/9;border:0;border-radius:20px;background:#000}
   .modal-card{position:relative;width:100%;max-width:540px;max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);overflow:auto;background:var(--teal);border-radius:32px;box-shadow:0 40px 90px -30px rgba(0,0,0,.7);transform:translateY(18px) scale(.98);transition:transform .3s ease;outline:none}
   .modal.open .modal-card{transform:none}
   .prog{position:sticky;top:0;z-index:2;background:var(--teal);padding:18px 26px 16px}
@@ -389,8 +225,8 @@
   .step-btns .btn-back{flex:0 0 auto;background:transparent;color:var(--teal);border:1.5px solid var(--line);padding:16px 22px}
   .step-btns .btn[hidden]{display:none}
   .modal-card:focus,.modal-card:focus-visible{outline:none}
-  .modal-card.done form{display:none}
-  .modal-card.done .success{display:block}
+  .modal-body.done form{display:none}
+  .modal-body.done .success{display:block}
   .success .btn{margin-top:22px}
 
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
@@ -401,14 +237,7 @@
   .hero-grid>*,.demo-grid>*,.cta-grid>*,.calc-grid>*,.leadx>*,.compare>*,.leaks>*{min-width:0}
   @media (max-width:1100px){
     .hero-grid,.demo-grid,.cta-grid,.calc-grid{grid-template-columns:1fr;gap:48px}
-    .kpis{grid-template-columns:1fr 1fr}
-    .kpis>div:nth-child(3){border-left:0}
-    .kpis>div:nth-child(n+3){border-top:1px solid var(--line)}
-    .hvbox{margin:0 auto}
     .steps,.people,.stats{grid-template-columns:repeat(2,1fr)}
-    .leaks{grid-template-columns:1fr 1fr} .leak:last-child{grid-column:1/-1}
-    .nav-links{display:none}
-    .data-head{flex-direction:column;align-items:flex-start}
   }
   @media (max-width:640px){
     .wrap{padding:0 18px}
@@ -416,48 +245,20 @@
     .data{padding:80px 0}
     .hero{padding:110px 0 0}
     .hero h1{font-size:31px}
-    .hero-ctas{gap:14px}
-    .hero-ctas .btn{width:100%;justify-content:space-between;padding:8px 8px 8px 22px}
-    .hero-ctas .btn .ar{order:2}
-    .hvbox{width:336px;height:396px}
-    .hv{transform:scale(.6)}
     .notif{left:-6px}
     .nav-in{height:70px}
     .brand img{height:28px}
     .nav .btn{display:none}
     .steps,.people,.leaks,.compare{grid-template-columns:1fr}
-    .leadx{grid-template-columns:1fr}
-    .lx{padding:26px 22px 22px}
-    .lx-mid{padding:20px 0}
-    .lx-mid::before{left:50%;right:auto;top:0;bottom:0;width:5px;height:auto;margin-left:-2px;background:repeating-linear-gradient(180deg,var(--teal) 0 12px,transparent 12px 20px)}
-    .lx-ia{width:72px;height:72px} .lx-ia img{width:38px}
-    .lx-mid p{display:inline-block;position:relative;background:var(--paper);padding:4px 10px;margin-top:10px}
-    .kpis>div{padding:18px 16px;grid-template-columns:1fr}
-    .kpis svg{grid-row:auto;margin-bottom:8px}
-    .kpis b{font-size:20px}
     .trio b{font-size:28px}
-    .stats{grid-template-columns:1fr 1fr;gap:10px}
-    .stat{--cut:22px;padding:18px 16px}
-    .stat svg{width:32px;height:32px;margin-bottom:12px}
-    .stat b{font-size:30px}
-    .stat p{font-size:13px}
-    .stat small{font-size:10.5px}
-    .integr p{font-size:10.5px;letter-spacing:.12em}
-    .crmcard{width:220px}
-    .crmcard .v{font-size:18px;white-space:nowrap}
     .cta-row .btn,.calc-out .btn,.demo .btn{width:100%;justify-content:space-between;white-space:normal;text-align:left;line-height:1.2;font-size:15px}
     .cta-row .btn .ar,.calc-out .btn .ar,.demo .btn .ar{order:2}
     .cta-row .btn,.calc-out .btn,.demo .btn{padding:7px 7px 7px 22px}
     .calc-in{padding:24px 20px}
     .calc-out{padding:30px 24px}
     .person .cap span{letter-spacing:.05em}
-    .leak:last-child{grid-column:auto}
-    .col{padding:30px 22px}
-    .crmcard{right:0;bottom:-10px;width:210px}
     .sec-head h2{font-size:30px}
     .sec-head h2 br{display:none}
-    .team-head{flex-direction:column;align-items:flex-start;gap:0}
-    .team-head p{max-width:none!important}
     .people{grid-template-columns:1fr 1fr;gap:12px}
     .person .cap{left:12px;right:12px;bottom:12px} .person .cap b{font-size:18px} .person .cap span{font-size:9px;padding:4px 7px}
     .modal{padding:10px}
@@ -484,130 +285,288 @@
   html.past-hero .nav .btn{opacity:1;pointer-events:auto;transform:none}
   .wa-float{opacity:0;pointer-events:none;transition:opacity .25s,transform .15s}
   html.past-hero .wa-float{opacity:1;pointer-events:auto}
-  .hero .micro{margin-top:16px;font-size:13.5px;font-weight:600;color:var(--mist)}
   /* formulário no topo (etapa 1) */
-  .hform{margin-top:34px;max-width:580px;background:rgba(0,26,32,.6);border:1px solid rgba(197,213,215,.2);border-radius:26px;padding:20px 20px 22px;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
-  .hf-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:14px}
-  .hf-top b{font:800 19px Pinnacle,sans-serif;color:#fff}
-  .hf-top span{font-size:12.5px;font-weight:700;color:var(--lime);white-space:nowrap}
-  .hf-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
-  .hf span{display:block;font-size:12px;font-weight:700;color:var(--mist);margin-bottom:6px}
-  .hf input{width:100%;height:54px;border-radius:14px;border:2px solid transparent;background:#F4F8F7;padding:0 16px;font:600 16px Montserrat,sans-serif;color:var(--teal)}
-  .hf input::placeholder{color:#8AA0A3;font-weight:500}
-  .hf input:focus{outline:none;border-color:var(--lime);box-shadow:0 0 0 4px rgba(214,227,15,.25)}
-  .hf.err input{border-color:#E5533D}
-  .hform .btn{width:100%;justify-content:space-between;padding:8px 8px 8px 24px;font-size:17px}
   .trust{display:flex;align-items:center;gap:14px;margin-top:22px}
   .faces{display:flex;flex:none}
   .faces img{width:42px;height:42px;border-radius:50%;object-fit:cover;object-position:50% 22%;border:2px solid var(--deep);background:var(--teal-2)}
   .faces img+img{margin-left:-11px}
   .trust p{font-size:13.5px;font-weight:600;color:var(--mist);line-height:1.35}
   /* dor por etapa do produto */
-  .leaks.l4{grid-template-columns:repeat(2,1fr);gap:22px;max-width:1000px;margin:0 auto}
-  .leaks.l4 .leak .vis{height:270px}
-  .leaks.l4 .leak .vis.v-lock{height:296px}
-  .leaks.l4 .leak h3{font-size:21px;margin:6px 12px 0}
-  .leaks.l4 .leak .in{padding-bottom:30px}
-  .lk{display:block;margin:20px 12px 0;font-size:11.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--lime)}
-  .v-ads{background:#000;display:grid;place-items:center}
-  .v-ads img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45}
-  .ads-n{position:relative;text-align:center;color:#fff}
-  .ads-n b{display:block;font:800 46px/1 Pinnacle,sans-serif}
-  .ads-n span{font-size:13px;font-weight:700;color:var(--mist)}
-  .ads-m{position:absolute;left:12px;right:12px;bottom:12px;background:rgba(0,26,32,.88);border:1px solid rgba(197,213,215,.25);border-radius:12px;padding:9px 12px;font-size:13px;font-weight:700;color:var(--mist)}
-  .ads-m b{color:var(--lime);font-size:15px}
-  .v-blame{background:linear-gradient(160deg,#0E4954,#001E24);padding:18px 14px;display:flex;flex-direction:column;justify-content:center;gap:10px}
-  .bq{max-width:82%;padding:9px 13px 11px;border-radius:15px;font-weight:700;font-size:14.5px;line-height:1.3;color:var(--teal)}
-  .bq small{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;opacity:.65;margin-bottom:2px}
-  .bq.l{background:#F4F8F7;align-self:flex-start;border-top-left-radius:4px}
-  .bq.r{background:var(--mist);align-self:flex-end;border-top-right-radius:4px}
-  .bq.y{background:var(--lime);align-self:center}
-  .stats.s3{grid-template-columns:repeat(3,1fr)}
-  .data-head h2{min-width:0;max-width:100%}
-  .leak h3{margin-bottom:0}
   /* método: uma linha por passo, texto curto + visual */
   .method{background:var(--paper)}
-  .mrow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:64px;align-items:center;padding:36px 0}
-  .mrow+.mrow{border-top:1px solid var(--line)}
-  .mrow.rev .mtx{order:2}
-  .mtx{max-width:470px}
-  .mn{display:block;font:800 72px/.9 Pinnacle,sans-serif;color:transparent;-webkit-text-stroke:2px var(--teal);letter-spacing:-.03em;margin-bottom:14px;text-shadow:5px 5px 0 var(--lime)}
-  .mtx h3{font-size:clamp(26px,2.6vw,36px);color:var(--teal);margin-bottom:14px}
-  .mtx p{font-size:17px;color:var(--ink-2)}
-  .mrow>*{min-width:0}
-  .mvis{position:relative;display:flex;justify-content:center}
-  .admock{width:340px;max-width:100%;background:#fff;border-radius:22px;overflow:hidden;box-shadow:var(--shadow)}
-  .adh{display:flex;gap:10px;align-items:center;padding:12px 14px}
-  .adh .av{width:36px;height:36px;border-radius:50%;background:var(--teal);display:grid;place-items:center}
-  .adh .av img{width:20px}
-  .adh b{display:block;font-size:13.5px;color:var(--teal)} .adh small{font-size:11.5px;color:var(--muted)}
-  .adimg{position:relative;aspect-ratio:1/1;overflow:hidden}
-  .adimg img{width:100%;height:100%;object-fit:cover}
-  .adchip{position:absolute;right:12px;top:12px;background:var(--lime);color:var(--teal);font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:8px 14px;border-radius:999px;transform:rotate(4deg);box-shadow:0 10px 20px -10px rgba(0,0,0,.5)}
-  .adlike{position:absolute;left:12px;bottom:12px;background:rgba(0,26,32,.85);color:var(--mist);font-size:13px;font-weight:700;padding:8px 14px;border-radius:999px}
-  .adlike s{text-decoration-color:var(--lime);text-decoration-thickness:3px}
-  .adbtn{margin:12px;background:var(--teal);color:#fff;text-align:center;font-weight:800;font-size:14px;padding:13px;border-radius:12px}
-  .method .stage{position:relative}
-  .method .chat{min-height:0}
-  .crmstage{position:relative;width:380px;max-width:100%;height:300px}
-  .crmcard.big{position:absolute;right:auto;left:0;top:0;bottom:auto;width:300px}
-  .vcard{position:absolute;z-index:4;right:0;bottom:0;width:230px;background:var(--lime);color:var(--teal);border-radius:20px;padding:16px 18px;box-shadow:var(--shadow);transform:rotate(-3deg)}
-  .vcard span{display:block;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
-  .vcard b{display:block;font:800 30px/1.1 Pinnacle,sans-serif;margin:4px 0 2px}
-  .vcard small{font-size:12.5px;font-weight:700}
-  .dash{width:100%;max-width:380px;background:#fff;border-radius:22px;padding:20px;box-shadow:var(--shadow)}
-  .dhk{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);margin-bottom:12px}
-  .dhk.sm{margin:18px 0 10px}
   .dt{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
   .dt>div{background:var(--teal);border-radius:14px;padding:10px 10px 6px}
   .dt span{font-size:11.5px;font-weight:700;color:var(--mist)}
   .dt svg{display:block;width:100%;height:34px;margin-top:4px}
   .dt path{fill:none;stroke:var(--lime);stroke-width:3.5;stroke-linejoin:round;stroke-linecap:round}
-  .ds{display:grid;grid-template-columns:62px 1fr;grid-template-rows:auto auto;column-gap:10px;row-gap:4px;align-items:center;margin-bottom:10px}
-  .ds b{grid-row:span 2;font-size:13px;color:var(--teal)}
-  .ds i{display:block;height:9px;border-radius:5px;background:linear-gradient(90deg,var(--teal) var(--w),#E9EEEC var(--w))}
-  .ds i.l{background:linear-gradient(90deg,var(--lime) var(--w),#E9EEEC var(--w))}
   .dl{display:flex;gap:16px;font-size:11.5px;font-weight:600;color:var(--ink-2);margin-top:6px}
   .dl em{display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--teal);margin-right:6px;vertical-align:-1px} .dl em.l{background:var(--lime)}
-  .method .steps-close{color:var(--teal);margin-top:40px}
-  .method .kpis{margin-top:40px}
-  @media (max-width:1100px){
-    .leaks.l4{grid-template-columns:1fr 1fr}
-    .leaks.l4 .leak:last-child{grid-column:auto}
-    .mrow{grid-template-columns:1fr;gap:28px;padding:30px 0}
-    .mrow.rev .mtx{order:0}
-    .stats.s3{grid-template-columns:repeat(3,1fr)}
+
+  /* ===== v5: o que controla versão e oferta ===== */
+  [data-var=b] .vc,[data-var=c] .vb{display:none!important}
+  [data-of=sim] .od,[data-of=demo] .os{display:none!important}
+  [data-of=demo] #calculadora{display:none}
+  .modal .prog-track{display:none}
+  [data-var=c] #btnDone{display:none}
+  .success .btn+.btn{margin-top:10px}
+  .linklike{background:none;border:0;padding:0;font:inherit;font-weight:700;color:var(--lime);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+  .fc-in .linklike{color:var(--teal)}
+  .dbg{position:relative;z-index:200;background:#FFF1C2;color:#7A4B00;font:700 11.5px Montserrat,sans-serif;padding:6px 12px;text-align:center}
+
+  /* ===== rodada 3 (10/11/2026) · direção de arte nova =====
+     O Ítalo achou a rodada 2 "muito igual à versão 1". A ideia agora é um cartaz de pátio:
+     título enorme, foto sangrando até a borda com o corte de 10° da perna do R, clientes parceiros em placa,
+     números em ficha técnica e a estrada tracejada que vira contínua no método. Menos caixa, mais respiro.
+     O destaque lima inclinado fica em uma palavra curta por título. */
+  :root{--max:1240px;--rule:rgba(0,51,61,.16);--rule-dk:rgba(197,213,215,.2);--coral:#F08A78}
+  .wrap{padding:0 40px}
+  section{padding:128px 0}
+  h1,h2,h3{text-wrap:balance}
+  .eyebrow{gap:14px;font-size:12.5px;letter-spacing:.2em}
+  /* a linha antes de cada rótulo é uma estrada tracejada em miniatura */
+  .eyebrow::before{width:42px;height:4px;transform:none;background:repeating-linear-gradient(90deg,currentColor 0 10px,transparent 10px 16px)}
+  .sec-head{max-width:920px;margin-bottom:60px}
+  .sec-head h2{font-size:clamp(34px,4.5vw,62px);line-height:1.02;letter-spacing:-.022em;margin:22px 0 0}
+
+  /* botão: retângulo de canto arredondado com a seta solta, no lugar da pílula com bolinha */
+  .btn{gap:18px;justify-content:space-between;min-height:62px;padding:0 26px;border-radius:16px;font-size:17px;line-height:1.15;letter-spacing:0;text-align:left}
+  .btn .ar{order:2;width:auto;height:auto;background:none;border-radius:0}
+  .btn .ar svg{color:currentColor!important;width:22px;height:22px}
+  .btn-lime{box-shadow:0 22px 44px -22px rgba(214,227,15,.6)}
+  .btn-teal{box-shadow:none}
+  .hcta .btn,.fc-in .btn,.step-btns .btn-teal,.calc-out .btn,.mbar .btn{padding:0 26px}
+  .mbar .btn .ar{width:auto;height:auto}
+  .nav-in{height:78px}
+  header.nav.scrolled{background:rgba(0,27,33,.92)}
+  .nav .btn{min-height:46px;padding:0 18px;border-radius:13px;font-size:14px;gap:12px}
+  .nav .btn .ar{width:auto;height:auto}
+  .nav .btn .ar svg{width:18px;height:18px}
+
+  /* primeira dobra */
+  .hero{background:var(--deep);padding:0}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 46vw;gap:0;align-items:stretch;min-height:min(100vh,940px)}
+  .hero-copy{align-self:center;padding:112px 56px 52px max(40px,calc(50vw - 580px))}
+  .hero h1{font-size:clamp(46px,min(6.5vw,11.4vh),98px);line-height:.98;letter-spacing:-.028em;margin:24px 0}
+  .hero .eyebrow{white-space:nowrap}
+  .hero .lede{font-size:clamp(17px,1.4vw,20px);line-height:1.5;max-width:500px}
+  .hero .lede b{font-weight:700}
+  /* o aviso da meta fica colado na promessa, como nota de rodapé dela */
+  .hfine{font-size:12.5px;line-height:1.5;color:#9DB4B7;max-width:470px;margin-top:14px;padding-left:14px;border-left:2px solid rgba(214,227,15,.6)}
+  .hcta{margin-top:34px}
+  .hcta .btn{min-height:68px;min-width:340px;font-size:18px;padding:0 28px}
+  .hnote{font-size:13.5px;font-weight:600;color:var(--mist);margin-top:14px;line-height:1.5}
+  .trust{margin-top:40px;padding-top:22px;border-top:1px solid var(--rule-dk);max-width:500px}
+  .hphoto{position:relative;margin:0;min-height:560px}
+  .hphoto::before{content:"";position:absolute;inset:0;background:var(--lime);clip-path:polygon(140px 0,148px 0,8px 100%,0 100%)}
+  .hpic{position:absolute;inset:0;clip-path:polygon(148px 0,100% 0,100% 100%,8px 100%)}
+  .hpic img{width:100%;height:100%;object-fit:cover;object-position:55% 35%}
+  .notif p span{white-space:nowrap}
+  .hphoto .notif{left:-30px;top:auto;bottom:13%;width:306px;border-radius:20px;animation:sobe .6s .55s cubic-bezier(.2,.7,.2,1) both}
+  .hphoto figcaption,.pphoto figcaption{position:absolute;right:18px;bottom:14px;z-index:2;font-size:10.5px;font-weight:600;color:rgba(255,255,255,.85);text-shadow:0 1px 3px rgba(0,0,0,.7)}
+  @keyframes sobe{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  #heroSlot .modal-body{margin:26px 0 0;max-width:560px;border-radius:20px;color:var(--text);box-shadow:0 40px 80px -40px rgba(0,0,0,.7)}
+  /* tentativa 2 no computador: título menor e campos em duas colunas, para o botão de envio ficar na primeira tela */
+  @media (min-width:981px){
+    [data-var=c] .hero-copy{padding-top:112px;padding-bottom:44px}
+    [data-var=c] .hero h1{font-size:clamp(40px,min(4.6vw,7.6vh),64px);margin:20px 0}
+    #heroSlot .modal-body{margin-top:22px;padding:20px 22px 18px}
+    #heroSlot .pane.active{display:grid;grid-template-columns:1fr 1fr;column-gap:14px}
+    #heroSlot .pane h2{grid-column:1/-1;font-size:21px;margin-bottom:12px}
+    #heroSlot .field{margin-bottom:12px}
+    [data-var=c] .trust{margin-top:26px;padding-top:18px}
+  }
+
+  /* clientes parceiros em placa */
+  .parc{background:var(--abyss);color:#fff;padding:46px 0 50px}
+  .parc .wrap{display:grid;grid-template-columns:auto minmax(0,1fr);gap:56px;align-items:center}
+  .placas{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+  .placa{text-align:center}
+  .pp{background:#F4F3EF;border:2.5px solid #0B2228;border-radius:10px;overflow:hidden;box-shadow:0 0 0 2px #F4F3EF,0 18px 30px -18px rgba(0,0,0,.7)}
+  .pp i{display:block;height:12px;background:var(--teal);position:relative}
+  .pp i::after{content:"";position:absolute;left:12px;top:4px;width:16px;height:4px;background:var(--lime);transform:skewX(-10deg)}
+  .pp b{display:block;font:800 clamp(17px,1.6vw,22px)/1 Pinnacle,sans-serif;letter-spacing:.015em;text-transform:uppercase;color:#0B2228;padding:14px 6px 5px}
+  .pp em{display:block;font:800 10.5px/1 Montserrat,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-2);padding-bottom:11px}
+  .placa span{display:block;margin-top:13px;font-size:13px;font-weight:600;color:var(--mist);line-height:1.35}
+
+  /* números em ficha técnica */
+  .prova{background:var(--paper);padding:120px 0 124px}
+  .ficha>div{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:32px;align-items:baseline;padding:24px 0;border-top:1px solid var(--rule)}
+  .ficha>div:last-child{border-bottom:1px solid var(--rule)}
+  .ficha dd{order:-1;font:800 clamp(44px,6.4vw,90px)/1 Pinnacle,sans-serif;letter-spacing:-.03em;color:var(--teal);white-space:nowrap}
+  .ficha dt{font-size:clamp(15px,1.35vw,19px);font-weight:600;color:var(--ink-2);line-height:1.4;max-width:340px}
+  .pfoot{font-size:12.5px;color:var(--muted);margin-top:18px;line-height:1.5}
+
+  /* o problema e a promessa: a foto do pátio cheio fica na passagem do escuro para o claro */
+  .prob{background:linear-gradient(var(--deep) calc(100% - 330px),var(--paper) 0);color:#fff;padding:128px 0 104px}
+  .dito{font:800 clamp(38px,5.7vw,84px)/1 Pinnacle,sans-serif;letter-spacing:-.028em;color:#fff;margin:26px 0 76px}
+  .dito .on{color:var(--lime)}
+  /* "vazio" só no contorno: a palavra fica vazia como o pátio */
+  .dito .oco{color:transparent;-webkit-text-stroke:.03em var(--lime)}
+  .dores{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:44px}
+  .dores li{border-top:1px solid var(--rule-dk);padding-top:22px}
+  .dlab{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--coral)}
+  .dores h3{font-size:clamp(21px,1.9vw,27px);line-height:1.12;color:#fff;margin:14px 0 10px}
+  .dores p{font-size:16px;color:var(--mist);line-height:1.5}
+  .dores small,.pstat small{display:block;font-size:11.5px;font-weight:600;margin-top:10px}
+  .dores small{color:#7E9EA2}
+  .pprom{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));align-items:end;margin-top:104px}
+  .pphoto{grid-column:1/9;grid-row:1;position:relative;margin:0}
+  .pphoto img{width:100%;height:auto;aspect-ratio:16/10.4;object-fit:cover;object-position:50% 46%;border-radius:20px}
+  .pphoto figcaption{right:auto;left:18px}
+  .pslab{grid-column:9/13;grid-row:1;position:relative;z-index:2;margin:0 0 -52px -60px;background:var(--lime);color:var(--teal);padding:44px 40px 40px 78px;clip-path:polygon(44px 0,100% 0,100% 100%,0 100%)}
+  .pbig{font:800 clamp(26px,2.7vw,38px)/1.1 Pinnacle,sans-serif;letter-spacing:-.015em}
+  .pstat{font-size:15px;line-height:1.5;margin-top:20px;font-weight:500}
+  .pstat b{font-weight:800}
+  .pstat small{color:rgba(0,51,61,.72)}
+
+  /* método: a estrada tracejada vira contínua e chega ao símbolo da R3 */
+  .resumo{background:var(--paper);padding:112px 0 128px;overflow:hidden}
+  .rota{position:relative;list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:36px;padding:108px 0 0}
+  .rota::before{content:"";position:absolute;left:calc(50% - 50vw);right:30px;top:0;height:52px;border-radius:0 26px 26px 0;background:linear-gradient(var(--lime),var(--lime)) right 44px center/28% 5px no-repeat,repeating-linear-gradient(90deg,var(--lime) 0 30px,transparent 30px 52px) left center/calc(100% - 44px) 5px no-repeat,var(--teal)}
+  .rota::after{content:"";position:absolute;right:0;top:-10px;width:72px;height:72px;border-radius:50%;background:var(--teal) url(assets/r3-simbolo-lime.svg) center/34px auto no-repeat;box-shadow:0 0 0 7px var(--paper)}
+  .rota li{position:relative}
+  .rota b{position:absolute;left:0;top:-100px;display:grid;place-items:center;min-width:56px;height:36px;padding:0 10px;background:var(--teal);color:var(--lime);border:2px solid var(--lime);border-radius:8px;box-shadow:0 0 0 3px var(--teal);font:800 17px/1 Pinnacle,sans-serif;letter-spacing:.04em}
+  .rk{display:block;font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
+  .rota h3{font-size:clamp(21px,1.9vw,26px);line-height:1.1;color:var(--teal);margin:10px 0}
+  .rota p{font-size:15.5px;color:var(--ink-2);line-height:1.5}
+
+  /* calculadora, time, dúvidas e fechamento: sem moldura, com linha fina */
+  .calc{background:var(--deep)}
+  .calc .eyebrow{color:var(--lime)}
+  .calc-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
+  .calc-in{background:none;border:0;border-radius:0;padding:0}
+  .rg{margin-bottom:34px}
+  .rg label{font-size:16px;align-items:baseline}
+  .rg label output{font-size:26px}
+  .calc-out{border-radius:22px;padding:42px 40px}
+  .calc-out .money{font-size:clamp(50px,5.8vw,84px)}
+  .team{background:#fff}
+  .sec-head p{margin-top:20px;max-width:560px}
+  .people{gap:26px}
+  .person{aspect-ratio:auto;background:none;border-radius:0;overflow:visible}
+  .person::after{content:none}
+  .pf{position:relative;aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:#0A3640}
+  .person .cap{position:static;margin-top:16px}
+  .person .cap b{color:var(--teal);font-size:22px}
+  .person .cap span{background:none;padding:0;margin-top:6px;color:var(--ink-2);font-size:11.5px;letter-spacing:.16em}
+  #faq{background:#fff;padding-top:0}
+  .faq-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:start}
+  .faq-grid .sec-head{margin:0}
+  .faq{max-width:none;margin:0}
+  details{background:none;border-radius:0;box-shadow:none;padding:0;margin:0;border-top:1px solid var(--rule)}
+  details:last-child{border-bottom:1px solid var(--rule)}
+  summary{font-size:19px;padding:24px 0}
+  details p{padding:0 0 26px;font-size:16px}
+  .cta{background:var(--abyss)}
+  .cta h2{font-size:clamp(32px,3.7vw,52px);line-height:1.04;letter-spacing:-.02em}
+  .form-card{background:var(--paper);border-radius:24px;padding:0;box-shadow:0 50px 90px -40px rgba(0,0,0,.75)}
+  .fc-in{background:none;margin:0;border-radius:0;padding:38px 36px 30px}
+  .form-card h3{font-size:28px}
+  .fit{background:#fff}
+  .modal-card{background:var(--paper);border-radius:26px}
+  .prog{background:var(--paper);padding:18px 22px 10px}
+  .prog-top{margin-bottom:0}
+  .prog-top .tog{display:none}
+  .prog-label{color:var(--ink-2)}
+  .prog-label b{color:var(--teal)}
+  .modal-x{background:rgba(0,51,61,.08)}
+  .modal-x:hover{background:rgba(0,51,61,.16)}
+  .modal-x path{stroke:var(--teal)}
+  .modal-body{border-radius:18px}
+
+  @media (max-width:980px){
+    .hero-grid{grid-template-columns:1fr;min-height:0}
+    .hero-copy{padding:118px 40px 52px}
+    .hphoto{min-height:0;aspect-ratio:1/1.08}
+    .hphoto::before{clip-path:polygon(0 52px,100% 0,100% 8px,0 60px)}
+    .hpic{clip-path:polygon(0 60px,100% 8px,100% 100%,0 100%)}
+    .hpic img{object-position:50% 45%}
+    .hphoto .notif{left:24px;bottom:40px}
+    .parc .wrap{grid-template-columns:1fr;gap:24px}
+    .calc-grid{grid-template-columns:1fr;gap:44px}
+    .faq-grid{grid-template-columns:1fr;gap:36px}
+    .dores{grid-template-columns:1fr;gap:28px}
+    .pprom{display:block;margin-top:64px}
+    .pslab{margin:-56px 0 0 40px}
+  }
+  @media (max-width:760px){
+    .placas{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px}
+    /* no celular a estrada desce pela esquerda */
+    .rota{grid-template-columns:1fr;gap:38px;margin-top:22px;padding:6px 0 92px 76px}
+    .rota::before{left:0;right:auto;top:-28px;bottom:26px;width:48px;height:auto;border-radius:0 0 24px 24px;background:linear-gradient(var(--lime),var(--lime)) center bottom 40px/5px 26% no-repeat,repeating-linear-gradient(180deg,var(--lime) 0 24px,transparent 24px 42px) center top/5px calc(100% - 40px) no-repeat,var(--teal);-webkit-mask-image:linear-gradient(transparent,#000 44px);mask-image:linear-gradient(transparent,#000 44px)}
+    .rota::after{right:auto;left:-10px;top:auto;bottom:0;width:68px;height:68px}
+    .rota b{left:-76px;top:0;min-width:48px;height:32px;padding:0 6px;font-size:15px}
   }
   @media (max-width:640px){
-    .mn{font-size:56px}
-    .mtx h3{font-size:26px}
-    .mtx p{font-size:16px}
-    .stats.s3{grid-template-columns:1fr;gap:10px}
-    .stats.s3 .stat{display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:center;padding:16px 18px}
-    .stats.s3 .stat svg{display:none}
-    .stats.s3 .stat b{font-size:34px;grid-row:span 2}
-    .stats.s3 .stat p{margin-top:0;font-size:13.5px}
-    .stats.s3 .stat small{margin-top:4px}
-    .crmstage{width:330px;height:290px}
-    .crmcard.big{width:260px}
-    .vcard{width:200px}
-    .hero .micro{text-align:center}
-    .hform{padding:16px 14px 16px;margin-top:26px}
-    .hf-row{grid-template-columns:1fr;gap:10px}
-    .hf-top b{font-size:17px}
-    .hform .btn{font-size:16px}
-    .leaks.l4{grid-template-columns:1fr}
-    .leaks.l4 .leak .vis{height:240px}
-    .leaks.l4 .leak .vis.v-lock{height:296px}
+    .wrap{padding:0 20px}
+    section{padding:88px 0}
+    .sec-head{margin-bottom:40px}
+    .sec-head h2{font-size:clamp(30px,8.6vw,36px)}
+    .btn{white-space:normal}
+    .eyebrow{gap:10px;font-size:11px;letter-spacing:.16em}
+    .eyebrow::before{width:26px}
+    .nav-in{height:66px}
+    .hero-copy{padding:98px 20px 44px}
+    .hero h1{font-size:clamp(40px,12.6vw,56px);margin:20px 0 22px}
+    .hfine{font-size:12px}
+    .hcta{margin-top:28px}
+    .hcta .btn{width:100%;min-width:0;min-height:64px;font-size:17px;padding:0 22px}
+    .trust{margin-top:32px}
+    .hphoto .notif{left:16px;bottom:30px;width:276px;padding:11px 12px;gap:10px}
+    .hphoto .notif .ic{width:36px;height:36px}
+    .hphoto .notif .msg{font-size:13px}
+    .parc{padding:40px 0 44px}
+    .pp b{font-size:19px}
+    .prova{padding:84px 0 88px}
+    .ficha>div{grid-template-columns:1fr;gap:6px;padding:20px 0}
+    .ficha dd{font-size:clamp(40px,12vw,54px)}
+    .prob{background:linear-gradient(var(--deep) calc(100% - 226px),var(--paper) 0);padding:88px 0 52px}
+    .dito{font-size:clamp(35px,10.4vw,46px);margin:22px 0 48px}
+    .pprom{margin:56px -20px 0}
+    .pphoto img{border-radius:0;aspect-ratio:1/.9;object-position:50% 42%}
+    .pphoto figcaption{left:auto;right:14px;bottom:72px}
+    .pslab{margin:-60px 0 0 20px;padding:30px 24px 30px 52px;clip-path:polygon(30px 0,100% 0,100% 100%,0 100%)}
+    .resumo{padding:72px 0 92px}
+    .rg{margin-bottom:28px}
+    .calc-out{padding:30px 24px}
+    .people{gap:22px 14px}
+    .person .cap b{font-size:18px}
+    .person .cap span{font-size:10px;letter-spacing:.1em}
+    summary{font-size:17px;padding:20px 0}
+    .fc-in{padding:28px 22px 24px}
+    .form-card h3{font-size:24px}
+    .mbar .btn{min-height:58px;padding:0 22px}
+    .step-btns .btn-teal{padding:0 20px;gap:12px;font-size:16px}
+    .modal-body{padding:22px 18px 20px}
   }
+  /* telas de 360 px (muito Android) */
+  @media (max-width:380px){.hero h1{font-size:43px}.sec-head h2{font-size:29px}.dito{font-size:34px}}
 </style>
 <script src="config.js"></script>
 <script>
-  // Tracking: envia cada passo do visitante para as ferramentas externas configuradas em config.js
+  // Tracking: envia cada passo do visitante para as ferramentas externas configuradas em config.js (Supabase só se SUPABASE_URL estiver preenchido)
   const CFG = window.R3_CONFIG || {};
   const UTM = {};
   new URLSearchParams(location.search).forEach((v, k) => { if (k.startsWith('utm_')) UTM[k] = v; });
+  // Teste v5: variante (b = página curta, WhatsApp primeiro · c = página longa, formulário de 1 campo) e oferta (sim = simulação da loja · demo = ver a R3 atender)
+  // Rodada 2 (retorno do Ítalo, 10/11/2026): a porta é um formulário de uma página; o WhatsApp vira o caminho secundário.
+  // O Ítalo escolheu o formulário já no topo (10/11/2026, noite): v=c é o padrão. v=b (um botão no topo que abre o formulário) e a oferta "demo" seguem guardadas (?v=b, ?o=demo).
+  const escolhe = (opcoes, param) => { const q = new URLSearchParams(location.search).get(param); return opcoes.includes(q) ? q : opcoes[0]; };
+  const VAR = escolhe(['c', 'b'], 'v'), OFERTA = escolhe(['sim', 'demo'], 'o'), VTAG = 'v5' + VAR + '-' + OFERTA;
+  document.documentElement.dataset.var = VAR; document.documentElement.dataset.of = OFERTA;
   const novoId = () => crypto.randomUUID ? crypto.randomUUID() : Date.now() + '-' + Math.random().toString(36).slice(2);
+  let VISITANTE_ID;
+  try { VISITANTE_ID = localStorage.getItem('r3_visitante') || novoId(); localStorage.setItem('r3_visitante', VISITANTE_ID); }
+  catch (err) { VISITANTE_ID = novoId(); }
+
+  function supabase(path, body) {
+    if (!CFG.SUPABASE_URL || !CFG.SUPABASE_ANON_KEY) return Promise.resolve();
+    return fetch(CFG.SUPABASE_URL + '/rest/v1/' + path, {
+      method: 'POST', keepalive: true, body: JSON.stringify(body),
+      headers: {'Content-Type': 'application/json', apikey: CFG.SUPABASE_ANON_KEY,
+                Authorization: 'Bearer ' + CFG.SUPABASE_ANON_KEY, Prefer: 'return=minimal'}
+    }).catch(err => console.error(err));
+  }
 
   window.dataLayer = window.dataLayer || [];
   if (CFG.GA4_ID) {
@@ -632,8 +591,11 @@
     (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script",CFG.CLARITY_ID);
   }
 
-  // Registra o evento em todas as ferramentas ativas
+  // Registra o evento no banco e em todas as ferramentas ativas
   function track(event, params = {}) {
+    params = {...params, variante: VTAG};
+    supabase('eventos', {visitante_id: VISITANTE_ID, evento: event, etapa: params.etapa ?? null, campo: [params.campo, VTAG].filter(Boolean).join('|'),
+                         utm_source: UTM.utm_source ?? null, utm_medium: UTM.utm_medium ?? null, utm_campaign: UTM.utm_campaign ?? null});
     try {
       if (window.gtag) gtag('event', event, params);
       if (window.fbq) {
@@ -641,7 +603,7 @@
         else if (event === 'whatsapp_click') fbq('track', 'Contact', params);
         else fbq('trackCustom', event, params);
       }
-      if (window.clarity) clarity('event', event);
+      if (window.clarity) { clarity('set', 'variante', VTAG); clarity('event', event); }
     } catch (err) { console.error(err); }
   }
   track('page_view');
@@ -652,37 +614,10 @@
 <div class="grain" aria-hidden="true"></div>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-  <filter id="crumple" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
-    <feTurbulence type="fractalNoise" baseFrequency=".02" numOctaves="4" seed="7" result="n"/>
-    <feDiffuseLighting in="n" surfaceScale="4" diffuseConstant="1.15" lighting-color="#ffffff" result="l"><feDistantLight azimuth="225" elevation="54"/></feDiffuseLighting>
-    <feComposite in="l" in2="SourceGraphic" operator="arithmetic" k1="1.1" k2="0" k3="0" k4="-.02" result="m"/>
-    <feComposite in="m" in2="SourceAlpha" operator="in"/>
-  </filter>
-  <filter id="puff" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
-    <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="b"/>
-    <feSpecularLighting in="b" surfaceScale="6" specularConstant="1" specularExponent="16" lighting-color="#EAF5B0" result="s"><fePointLight x="10" y="-30" z="140"/></feSpecularLighting>
-    <feComposite in="s" in2="SourceAlpha" operator="in" result="s2"/>
-    <feComposite in="SourceGraphic" in2="s2" operator="arithmetic" k1="0" k2="1" k3=".6" k4="0" result="lit"/>
-    <feDropShadow in="lit" dx="2" dy="4" stdDeviation="3" flood-color="#00262E" flood-opacity=".4"/>
-  </filter>
   <symbol id="wa" viewBox="0 0 24 24"><path d="M12 2.5a9.5 9.5 0 0 0-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1 0 12 2.5z" fill="#fff"/><path d="M8.6 7.4c.3-.6.6-.6.9-.6h.6c.2 0 .5 0 .7.5l.9 2.1c.1.2.1.5 0 .7l-.5.7c-.1.2-.2.4 0 .6.6 1 1.4 1.8 2.4 2.4.2.1.4.1.6 0l.7-.8c.2-.2.4-.2.7-.1l2 .9c.3.1.4.3.4.6 0 .9-.6 1.8-1.5 2.1-1 .3-2.4.1-4.3-1.1-1.9-1.2-3.2-3.1-3.6-4.1-.4-1-.4-2.1.2-2.9z" fill="#25D366"/></symbol>
   <symbol id="arr" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="chk" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="nox" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
-  <!-- ícones próprios R3: traço teal/claro + acento lima em corte angular -->
-  <symbol id="i-car" viewBox="0 0 48 48"><path d="M5 31v-6l5-10a4 4 0 0 1 3.6-2.2h20.8A4 4 0 0 1 38 15l5 10v6z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M14 22h20l-3-6H17z" fill="#D6E30F"/><circle cx="14" cy="33" r="4.5" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="34" cy="33" r="4.5" fill="none" stroke="currentColor" stroke-width="3"/></symbol>
-  <symbol id="i-eye" viewBox="0 0 48 48"><rect x="13" y="4" width="22" height="40" rx="5" fill="none" stroke="currentColor" stroke-width="3"/><path d="M19 14h10l-3 6h-10z" fill="#D6E30F"/><path d="M19 27h10M19 33h6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
-  <symbol id="i-timer" viewBox="0 0 48 48"><circle cx="24" cy="27" r="16" fill="none" stroke="currentColor" stroke-width="3"/><path d="M24 27V17" stroke="#D6E30F" stroke-width="4" stroke-linecap="round"/><path d="M20 5h8M24 5v6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M24 27 L33 33" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
-  <symbol id="i-bolt" viewBox="0 0 48 48"><path d="M27 4 10 27h12l-3 17 19-25H26z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M24 14l-6 9h6z" fill="#D6E30F"/></symbol>
-  <symbol id="i-chat" viewBox="0 0 48 48"><path d="M8 10h32v22H22l-9 8v-8H8z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M15 19h18l-2 5H15z" fill="#D6E30F"/></symbol>
-  <symbol id="i-funnel" viewBox="0 0 48 48"><path d="M6 8h36L28 25v13l-8 4V25z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M13 14h22l-4 5H17z" fill="#D6E30F"/></symbol>
-  <symbol id="i-clock24" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18" fill="none" stroke="currentColor" stroke-width="3"/><path d="M24 6a18 18 0 0 1 18 18H24z" fill="#D6E30F"/><path d="M24 14v10l7 5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
-  <symbol id="i-lock" viewBox="0 0 48 48"><rect x="9" y="20" width="30" height="22" rx="5" fill="none" stroke="currentColor" stroke-width="3"/><path d="M16 20v-6a8 8 0 0 1 16 0v6" fill="none" stroke="currentColor" stroke-width="3"/><path d="M20 28h8l-2 6h-6z" fill="#D6E30F"/></symbol>
-  <symbol id="i-cal" viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="32" rx="5" fill="none" stroke="currentColor" stroke-width="3"/><path d="M6 19h36M16 5v9M32 5v9" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M15 26h9l-2 7h-9z" fill="#D6E30F"/></symbol>
-  <symbol id="i-fb" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M13.3 19v-6h2.1l.4-2.5h-2.5V9.1c0-.7.3-1.2 1.3-1.2h1.3V5.7c-.3 0-1-.1-1.8-.1-1.9 0-3.1 1.1-3.1 3.2v1.7H8.9V13H11v6" fill="currentColor"/></symbol>
-  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></symbol>
-  <symbol id="i-mega" viewBox="0 0 24 24"><path d="M3 10v4h3l8 5V5L6 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M17 9a4 4 0 0 1 0 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
-  <symbol id="i-store" viewBox="0 0 24 24"><path d="M3 9l2-5h14l2 5M4 9v11h16V9M3 9h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 20v-6h6v6" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
 </defs></svg>
 
 <header class="nav" id="nav">
@@ -695,224 +630,94 @@
 
 <main id="topo">
 
-<!-- 1 · HERO: uma promessa, um botão -->
-<section class="hero" style="padding-bottom:0">
-  <div class="bgimg" aria-hidden="true"></div>
-  <div class="wrap hero-grid">
+<!-- 1 · PRIMEIRA DOBRA (rodada 3): um cartaz. Título enorme, uma promessa, uma porta, e a foto da venda sangrando até a borda com o corte de 10° da perna do R -->
+<section class="hero">
+  <div class="hero-grid">
     <div class="hero-copy">
-      <span class="chip">Para donos de lojas de veículos</span>
-      <h1>Mais clientes no seu pátio, <span class="hl">do anúncio à visita.</span></h1>
-      <p class="lede">A R3 faz o anúncio, responde cada cliente <b>em segundos</b>, marca a visita com o seu vendedor e mostra <b>o que cada real trouxe.</b></p>
-      <!-- Etapa 1 do formulário já no topo (como a Lure), com um botão só. Ao enviar, segue nas etapas 2 e 3 do formulário principal. -->
-      <form class="hform" id="heroForm" novalidate>
-        <div class="hf-top"><b>Fale com a R3</b><span>Etapa 1 de 3 · leva 1 minuto</span></div>
-        <div class="hf-row">
-          <label class="hf"><span>Nome</span><input id="heroNome" type="text" autocomplete="name" placeholder="Seu nome" required></label>
-          <label class="hf"><span>WhatsApp com DDD</span><input id="heroWhats" type="tel" inputmode="numeric" autocomplete="tel" placeholder="(00) 00000-0000" required></label>
-        </div>
-        <button type="submit" class="btn btn-lime">Quero clientes no meu pátio<span class="ar"><svg width="20" height="20" style="color:#D6E30F"><use href="#arr"/></svg></span></button>
-      </form>
+      <span class="eyebrow lm">Para donos de lojas de veículos</span>
+      <h1>Dobre as <br><span class="hl">visitas</span> na <br>sua loja.</h1>
+      <p class="lede">Mais cliente no pátio é mais carro vendido. A meta da R3 com a sua loja é <b>passar de 5 vendas a mais por mês.</b></p>
+      <p class="hfine">Meta de trabalho, não garantia: o resultado depende do estoque, do preço e do time da loja.</p>
+      <!-- Tentativa 1 (v=b, padrão): um botão abre o formulário de uma página · Tentativa 2 (v=c): o formulário já aparece aqui (o script move o cartão para o heroSlot) -->
+      <div class="hcta vb"><button type="button" class="btn btn-lime" data-open-form>Quero clientes no meu pátio<span class="ar"><svg width="22" height="22"><use href="#arr"/></svg></span></button></div>
+      <div class="vc" id="heroSlot"></div>
+      <p class="hnote"><span class="vb">São 4 perguntas rápidas. </span><a class="linklike" data-wa="topo" href="#">Prefere chamar no WhatsApp?</a></p>
       <div class="trust">
         <span class="faces"><img src="assets/img/time_joao.webp" alt=""><img src="assets/img/time_italo.webp" alt=""><img src="assets/img/time_jordan.webp" alt=""><img src="assets/img/time_jonas.webp" alt=""></span>
         <p>Um time de verdade, de São Luís, há mais de 4 anos.</p>
       </div>
     </div>
-    <div class="hvbox"><div class="hv" aria-hidden="true">
-      <div class="win">
-        <div class="wbar"><div class="tog"><i></i></div><svg class="wx" width="26" height="26" viewBox="0 0 26 26"><path d="M5 5 L21 21 M21 5 L5 21" stroke="#D6E30F" stroke-width="4" stroke-linecap="round"/></svg></div>
-        <div class="wph"><img src="assets/img/hero_jonas_full.webp" alt=""></div>
-        <div class="wtab"><img src="assets/r3-logo-ondark.svg" alt=""></div>
-        <div class="wft">Do anúncio ao pátio.</div>
-      </div>
-      <div class="pop"><img src="assets/img/hero_jonas.webp" alt=""></div>
-      <div class="notif"><div class="ic"><svg width="22" height="22"><use href="#wa"/></svg></div><div><p>Cliente do anúncio <span>dom, 22:08</span></p><div class="msg">Oi! O SUV ainda tá disponível?</div><span class="tg go">✓ Visita marcada · seg 10:30</span></div></div>
-      <div class="stk"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#D6E30F" filter="url(#crumple)"/><g transform="translate(19 19) scale(.52)" filter="url(#puff)"><path fill="#00333D" d="M16 28 Q16 14 30 14 H90 Q104 14 104 28 V70 Q104 84 90 84 H54 L32 104 V84 H30 Q16 84 16 70 Z"/><path d="M24 30 Q24 22 32 22 H88 Q96 22 96 30 V68 Q96 76 88 76 H51 L39 87 V76 H32 Q24 76 24 68 Z" fill="none" stroke="#E6F27A" stroke-width="2.4" stroke-dasharray="5 6"/><g fill="#D6E30F"><circle cx="40" cy="49" r="7"/><circle cx="60" cy="49" r="7"/><circle cx="80" cy="49" r="7"/></g></g></svg></div>
-    </div></div>
-  </div>
-  <div class="road" aria-hidden="true">
-    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-      <rect x="0" y="30" width="1440" height="70" fill="#00333D"/>
-      <line x1="0" y1="34" x2="1440" y2="34" stroke="#C5D5D7" stroke-opacity=".22" stroke-width="2"/>
-      <line x1="0" y1="96" x2="1440" y2="96" stroke="#C5D5D7" stroke-opacity=".22" stroke-width="2"/>
-      <line class="flow" x1="0" y1="65" x2="760" y2="65" stroke="#D6E30F" stroke-width="7"/>
-      <line x1="760" y1="65" x2="1300" y2="65" stroke="#D6E30F" stroke-width="7"/>
-    </svg>
-    <img src="assets/r3-simbolo-lime.svg" alt="">
+    <!-- Foto gerada (Higgsfield, 10/11/2026), por isso a legenda "Imagem ilustrativa". Trocar por foto real de entrega num cliente quando houver -->
+    <figure class="hphoto">
+      <div class="hpic"><img src="assets/img/venda_entrega.webp" alt="Vendedor entrega a chave de um seminovo a um casal no pátio da loja" width="896" height="1120"></div>
+      <div class="notif" aria-hidden="true"><div class="ic"><svg width="22" height="22"><use href="#wa"/></svg></div><div><p>Cliente do anúncio <span>dom, 22:08</span></p><div class="msg">Oi! O SUV ainda tá disponível?</div><span class="tg go">✓ Visita marcada · seg 10:30</span></div></div>
+      <figcaption>Imagem ilustrativa</figcaption>
+    </figure>
   </div>
 </section>
 
-<!-- 2 · INTEGRAÇÕES -->
-<div class="integr">
+<!-- 1a · CLIENTES PARCEIROS, cada um numa placa (elemento aprovado da marca), com o tempo de parceria.
+     Caso da Atalaia, quando o Ítalo mandar o período: "De [mês/ano] a [mês/ano]: de 4 para 12 a 15 vendas por mês. Fonte: [origem do número]. Resultado deste cliente." -->
+<div class="parc" id="parceiros">
   <div class="wrap">
-    <p>Funciona com o que a sua loja já usa</p>
-    <span class="badge"><svg width="22" height="22"><use href="#wa"/></svg>WhatsApp da loja</span>
-    <span class="badge"><svg width="20" height="20" style="color:#D6E30F"><use href="#i-ig"/></svg>Instagram</span>
-    <span class="badge"><svg width="20" height="20" style="color:#D6E30F"><use href="#i-fb"/></svg>Facebook</span>
-    <span class="badge"><svg width="20" height="20" style="color:#D6E30F"><use href="#i-mega"/></svg>Anúncios Meta</span>
+    <p class="eyebrow lm">Clientes parceiros</p>
+    <ul class="placas">
+      <li class="placa reveal"><div class="pp"><i></i><b>Atalaia</b><em>Veículos</em></div><span>mais de 3 anos de parceria</span></li>
+      <li class="placa reveal"><div class="pp"><i></i><b>Alexandra</b><em>Veículos</em></div><span>mais de 2 anos de parceria</span></li>
+      <li class="placa reveal"><div class="pp"><i></i><b>ADS</b><em>Veículos</em></div><span>mais de 2 anos de parceria</span></li>
+      <li class="placa reveal"><div class="pp"><i></i><b>Magneto</b><em>Fumê</em></div><span>mais de 1 ano e meio de parceria</span></li>
+    </ul>
   </div>
 </div>
 
-
-<!-- 3 · A DOR, na mesma estrutura do produto: anúncio, atendimento, visita, controle -->
-<section id="onde-escapa">
+<!-- 1b · PROVA: os números da própria R3, em ficha técnica (número grande, uma linha por dado) -->
+<section id="prova" class="prova">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">Onde a venda escapa</span>
-      <h2>O WhatsApp enche. <br>O pátio continua <span class="hl">cheio.</span></h2>
+      <span class="eyebrow">A R3 em números</span>
+      <h2>Números da operação, <span class="hl">sem enfeite.</span></h2>
     </div>
-    <div class="leaks l4">
-      <article class="leak reveal"><div class="in cut br">
-        <div class="vis v-ads"><img src="assets/img/anuncio_carro.jpg" alt="" loading="lazy"><div class="ads-n"><b>♥ 1.284</b><span>curtidas</span></div><div class="ads-m"><b>2</b> pediram o preço</div></div>
-        <span class="lk">01 · Anúncio</span>
-        <h3>O anúncio dá curtida. Não dá cliente.</h3>
-      </div></article>
-      <article class="leak reveal"><div class="in cut br">
-        <div class="vis v-lock">
-          <p class="d">sexta-feira</p><p class="t">19:40</p>
-          <div class="nt"><div class="ic"><svg width="18" height="18"><use href="#wa"/></svg></div><div><p>Cliente do anúncio <span>19:40</span></p><div class="m">Boa noite! A picape ainda tá à venda?</div></div></div>
-          <div class="nt"><div class="ic"><svg width="18" height="18"><use href="#wa"/></svg></div><div><p>Cliente do anúncio <span>20:52</span></p><div class="m">Consegue me mandar mais fotos?</div></div></div>
-          <div class="nt hot"><div class="ic"><svg width="18" height="18"><use href="#wa"/></svg></div><div><p>Cliente do anúncio <span>sáb, 09:15</span></p><div class="m">Obrigado, já resolvi em outra loja.</div></div></div>
-        </div>
-        <span class="lk">02 · Atendimento</span>
-        <h3>A loja fecha. O cliente continua chamando.</h3>
-      </div></article>
-      <article class="leak reveal"><div class="in cut br">
-        <div class="vis v-post">
-          <div class="pi" style="background:#D6E30F;transform:rotate(-5deg)">ligar pro cliente do sábado!!</div>
-          <div class="crm"><h5>COM O CRM DA R3</h5><div>Juliana R.<span>Visita seg · 10:30 ✓</span></div><div>Paulo S.<span>Retorno hoje · 14h</span></div><div>Lucas A.<span>Proposta enviada ✓</span></div></div>
-          <div class="pi" style="background:#fff;transform:rotate(4deg)">quem era o da picape??</div>
-          <div class="pi" style="background:#C5D5D7;transform:rotate(-2deg)">proposta pro... esqueci</div>
-        </div>
-        <span class="lk">03 · Visita</span>
-        <h3>Seu CRM ainda é um post-it?</h3>
-      </div></article>
-      <article class="leak reveal"><div class="in cut br">
-        <div class="vis v-blame"><div class="bq l"><small>Vendedor</small>O lead é fraco.</div><div class="bq r"><small>Agência</small>A gente entregou.</div><div class="bq y"><small>Você</small>E o meu dinheiro?</div></div>
-        <span class="lk">04 · Controle</span>
-        <h3>Você paga, mas não sabe o que voltou.</h3>
-      </div></article>
+    <dl class="ficha">
+      <div class="reveal"><dt>clientes atendidos pela R3</dt><dd>+25</dd></div>
+      <div class="reveal"><dt>em estoque de lojas gerenciado pela R3</dt><dd>+R$&nbsp;1&nbsp;mi</dd></div>
+      <div class="reveal"><dt>em anúncios de lojas gerenciados em 4 anos</dt><dd>+R$&nbsp;500&nbsp;mil</dd></div>
+      <div class="reveal"><dt>no mercado automotivo</dt><dd>4 anos</dd></div>
+    </dl>
+    <p class="pfoot">Dados da própria R3, com contagem até outubro de 2026.</p>
+  </div>
+</section>
+
+<!-- 1c · O PROBLEMA E A PROMESSA: as dores do manual (anúncio, atendimento, controle) e a meta. Só dados verificados, com fonte.
+     "Vazio" e não "cheio": correção do Ítalo em 10/11/2026 (nesta página, pátio cheio é pátio com cliente) -->
+<section id="problema" class="prob">
+  <div class="wrap">
+    <span class="eyebrow lm">O problema</span>
+    <h2 class="dito reveal">O WhatsApp <span class="on">enche.</span><br>O pátio continua <span class="oco">vazio.</span></h2>
+    <ol class="dores">
+      <li class="reveal"><span class="dlab"><svg width="14" height="14"><use href="#nox"/></svg>No anúncio</span><h3>O anúncio dá curtida, não dá cliente.</h3><p>Muita gente vê o carro. Pouca gente pede o preço.</p></li>
+      <li class="reveal"><span class="dlab"><svg width="14" height="14"><use href="#nox"/></svg>No atendimento</span><h3>O cliente chama e fica esperando.</h3><p>Depois de 4 horas sem resposta, o interesse dele cai 35%.</p><small>Estudos da Webmotors, segundo a AWS, jun/2025</small></li>
+      <li class="reveal"><span class="dlab"><svg width="14" height="14"><use href="#nox"/></svg>No controle</span><h3>Você paga e não sabe o que voltou.</h3><p>O vendedor diz que o lead é fraco. A agência diz que entregou.</p></li>
+    </ol>
+    <div class="pprom">
+      <figure class="pphoto reveal"><img src="assets/img/patio_visitas.webp" alt="Clientes olhando carros no pátio de uma loja de seminovos" loading="lazy" width="896" height="1120"><figcaption>Imagem ilustrativa</figcaption></figure>
+      <div class="pslab reveal">
+        <p class="pbig">O comprador está aí. A meta da R3 é levar esse cliente até o <span class="hl dk">seu pátio.</span></p>
+        <p class="pstat"><b>15,8 milhões</b> de veículos usados e seminovos foram negociados no Brasil de janeiro a outubro de 2026.<small>Fenauto, 03/11/2026 (o total inclui motos)</small></p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 4 · DADOS DE MERCADO (com fonte) -->
-<div class="data" id="dados">
+<!-- 4b · MÉTODO em quatro passos, sobre a linha de estrada da marca (tracejada, vira contínua e termina no símbolo da R3) -->
+<section id="resumo" class="resumo">
   <div class="wrap">
-    <div class="data-head reveal">
-      <h2>O cliente está comprando. Quem responde <span class="hl dk">primeiro leva.</span></h2>
-    </div>
-    <div class="stats s3">
-      <div class="stat cut reveal"><svg width="44" height="44" style="color:#F1EEEE"><use href="#i-car"/></svg><b>18,5 mi</b><p>carros usados trocaram de dono no Brasil em 2025.</p><small>Fenauto, jan/2026</small></div>
-      <div class="stat cut reveal"><svg width="44" height="44" style="color:#F1EEEE"><use href="#i-timer"/></svg><b>só 12%</b><p>das empresas respondem o primeiro contato em até 10 min.</p><small>Ramper, 1,9 mil empresas</small></div>
-      <div class="stat cut reveal"><svg width="44" height="44" style="color:#F1EEEE"><use href="#i-bolt"/></svg><b>7x</b><p>mais chance de qualificar quem é atendido em até 1 hora.</p><small>Harvard Business Review, 2011</small></div>
-    </div>
-  </div>
-</div>
-
-<!-- 5 · O PRODUTO: o método inteiro, um passo por vez (mesma ordem do vídeo) -->
-<section id="como-funciona" class="method">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow">Método R3</span>
-      <h2>Uma solução pra <span class="hl">cada etapa.</span></h2>
-      <p>Um time só cuida do anúncio, do atendimento, da visita e dos números.</p>
-    </div>
-
-    <div class="mrow reveal">
-      <div class="mtx"><span class="mn">01</span><h3>Anúncio pra quem procura carro</h3><p>Os carros do seu pátio, com preço, pra quem está procurando carro na sua região. Não pra quem só curte foto.</p></div>
-      <div class="mvis"><div class="admock">
-        <div class="adh"><span class="av"><img src="assets/r3-simbolo-lime.svg" alt=""></span><div><b>sualoja.seminovos</b><small>Patrocinado</small></div></div>
-        <div class="adimg"><img src="assets/img/anuncio_carro.jpg" alt="" loading="lazy"><span class="adchip">Procurando carro</span><span class="adlike"><s>só curtiu</s></span></div>
-        <div class="adbtn">Enviar mensagem</div>
-      </div></div>
-    </div>
-
-    <div class="mrow rev reveal">
-      <div class="mtx"><span class="mn">02</span><h3>Resposta em segundos, 24 horas</h3><p>No WhatsApp que a loja já usa. A conversa já descobre modelo, entrada e troca.</p></div>
-      <div class="mvis stage">
-      <div class="phone">
-        <div class="screen">
-          <div class="wa-top">
-            <div class="av"><img src="assets/r3-simbolo-teal.svg" alt=""></div>
-            <div><b>Sua Loja de Veículos</b><small>online</small></div>
-          </div>
-          <div class="chat" id="chat">
-            <div class="bubble bi">Boa noite! Vi o SUV no anúncio. Ainda tem?<time>22:08</time></div>
-            <div class="bubble bo">Boa noite, Juliana! Temos sim. É automático. Vai dar algum carro na troca?<time>22:08</time></div>
-                        <div class="bubble bo">Perfeito, avaliamos na hora. Qual horário fica bom pra você?
-              <div class="opts"><span>Seg 09:00</span><span>Seg 10:30</span><span>Ter 18:00</span></div><time>22:09</time></div>
-                        <div class="bubble bo">Agendado pra segunda, 10:30. O Rafael vai te receber ✅<time>22:10</time></div>
-          </div>
-        </div>
-      </div>      <button type="button" class="play" id="playDemo" aria-label="Assistir à demonstração"><svg width="30" height="30" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#00333D"/></svg></button>
-      </div>
-    </div>
-
-    <div class="mrow reveal">
-      <div class="mtx"><span class="mn">03</span><h3>Visita marcada, conversa inteira no CRM</h3><p>Quem está pronto sai com dia e hora. O vendedor recebe o cliente com todo o histórico.</p></div>
-      <div class="mvis"><div class="crmstage">
-      <div class="crmcard big">
-        <div class="k">NO CRM DA LOJA</div>
-        <div class="v">Juliana R. <span class="mp"><i></i><b>ROT 4H21</b></span></div>
-        <div class="row"><span>Interesse</span><b>SUV automático</b></div>
-        <div class="row"><span>Troca</span><b>Sim</b></div>
-        <div class="row"><span>Visita</span><b style="color:#D6E30F">Seg · 10:30</b></div>
-      </div>
-        <div class="vcard"><span>Lembrete enviado</span><b>Seg · 10:30</b><small>Juliana R. · com Rafael</small></div>
-      </div></div>
-    </div>
-
-    <div class="mrow rev reveal">
-      <div class="mtx"><span class="mn">04</span><h3>Você enxerga tudo</h3><p>Toda semana: quanto investiu, quantos clientes chegaram, quantos visitaram e o que cada vendedor fez.</p></div>
-      <div class="mvis"><div class="dash">
-        <div class="dhk">Relatório da semana</div>
-        <div class="dt"><div><span>Investido</span><svg viewBox="0 0 120 40"><path d="M2 30 L24 24 L46 27 L68 15 L90 18 L118 6" /></svg></div><div><span>Clientes</span><svg viewBox="0 0 120 40"><path d="M2 32 L24 26 L46 20 L68 22 L90 12 L118 8" /></svg></div><div><span>Visitas</span><svg viewBox="0 0 120 40"><path d="M2 34 L24 30 L46 24 L68 25 L90 16 L118 10" /></svg></div></div>
-        <div class="dhk sm">Por vendedor</div>
-        <div class="ds"><b>Bruno</b><i style="--w:92%"></i><i class="l" style="--w:56%"></i></div>
-        <div class="ds"><b>Léo</b><i style="--w:74%"></i><i class="l" style="--w:38%"></i></div>
-        <div class="ds"><b>Rafael</b><i style="--w:61%"></i><i class="l" style="--w:30%"></i></div>
-        <div class="dl"><span><em></em>atendeu</span><span><em class="l"></em>levou à visita</span></div>
-      </div></div>
-    </div>
-
-    <p class="steps-close reveal">Seu vendedor para de correr atrás de cliente e faz o que sabe: <span class="hl">vender.</span></p>
-    <div class="kpis reveal">
-      <div><svg width="40" height="40" style="color:#00333D"><use href="#i-chat"/></svg><b>Segundos</b><span>para a primeira resposta, a qualquer hora</span></div>
-      <div><svg width="40" height="40" style="color:#00333D"><use href="#i-clock24"/></svg><b>24h, 7 dias</b><span>de atendimento, sem folga e sem fila</span></div>
-      <div><svg width="40" height="40" style="color:#00333D"><use href="#i-funnel"/></svg><b>100%</b><span>dos leads registrados no CRM da loja</span></div>
-      <div><svg width="40" height="40" style="color:#00333D"><use href="#i-cal"/></svg><b>Toda semana</b><span>relatório de leads, visitas e custo por visita</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- 6 · SEM × COM -->
-<section class="vs">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow">O que muda</span>
-      <h2>A diferença aparece <span class="hl">no seu pátio.</span></h2>
-    </div>
-    <div class="compare">
-      <div class="col before reveal">
-        <h3>Sem a R3</h3>
-        <ul>
-          <li><svg width="22" height="22" style="color:#B44A3E"><use href="#nox"/></svg><div><b>Sábado à noite</b>Resposta na segunda. Ele já comprou.</div></li>
-          <li><svg width="22" height="22" style="color:#B44A3E"><use href="#nox"/></svg><div><b>Visita</b>Marcada no caderno, se for marcada.</div></li>
-          <li><svg width="22" height="22" style="color:#B44A3E"><use href="#nox"/></svg><div><b>Contatos</b>No celular do vendedor.</div></li>
-          <li><svg width="22" height="22" style="color:#B44A3E"><use href="#nox"/></svg><div><b>Anúncio</b>Você vê curtidas.</div></li>
-        </ul>
-      </div>
-      <div class="col after cut reveal">
-        <h3><img src="assets/r3-logo-onlight.svg" alt="Com a R3"></h3>
-        <ul>
-          <li><svg width="22" height="22" style="color:#00333D"><use href="#chk"/></svg><div><b>Sábado à noite</b>Atendido em segundos.</div></li>
-          <li><svg width="22" height="22" style="color:#00333D"><use href="#chk"/></svg><div><b>Visita</b>Marcada, com lembrete.</div></li>
-          <li><svg width="22" height="22" style="color:#00333D"><use href="#chk"/></svg><div><b>Contatos</b>No CRM da loja, com o histórico.</div></li>
-          <li><svg width="22" height="22" style="color:#00333D"><use href="#chk"/></svg><div><b>Anúncio</b>Você vê quantos chegaram ao pátio.</div></li>
-        </ul>
-      </div>
-    </div>
-    <div class="cta-row reveal"><a href="#formulario" class="btn btn-lime" data-open-form><span class="ar"><svg width="20" height="20" style="color:#D6E30F"><use href="#arr"/></svg></span>Quero a minha loja do lado verde</a></div>
+    <div class="sec-head reveal"><span class="eyebrow">Método R3</span><h2>Do anúncio ao pátio, em <span class="hl">quatro passos.</span></h2></div>
+    <ol class="rota">
+      <li class="reveal"><b>01</b><span class="rk">Anúncio</span><h3>Pra quem procura carro</h3><p>Os carros do seu pátio, com preço, anunciados na sua região.</p></li>
+      <li class="reveal"><b>02</b><span class="rk">Atendimento</span><h3>Resposta em segundos</h3><p>A qualquer hora, já puxando modelo, entrada e troca.</p></li>
+      <li class="reveal"><b>03</b><span class="rk">Visita</span><h3>Marcada com o seu vendedor</h3><p>Quem está pronto sai com a visita marcada, e o vendedor recebe a conversa inteira.</p></li>
+      <li class="reveal"><b>04</b><span class="rk">Controle</span><h3>Relatório toda semana</h3><p>Quanto você investiu, quantos clientes chegaram e o que cada real trouxe.</p></li>
+    </ol>
   </div>
 </section>
 
@@ -920,28 +725,28 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Calculadora</span>
-      <h2 style="color:#fff">Quanto a demora está <span class="hl">custando à sua loja?</span></h2>
+      <h2 style="color:#fff">Quanto a demora está custando <span class="hl">à sua loja?</span></h2>
       
     </div>
     <div class="calc-grid">
       <div class="calc-in reveal">
         <div class="rg"><label for="cLeads">Leads por mês <output id="oLeads">150</output></label><input type="range" id="cLeads" min="20" max="1000" step="10" value="150"></div>
-        <div class="rg"><label for="cPerda">Leads sem resposta em até 1 hora <output id="oPerda">40%</output></label><input type="range" id="cPerda" min="5" max="90" step="5" value="40"><small>Inclui noite, fim de semana e horário de pico no pátio.</small></div>
+        <div class="rg"><label for="cPerda">Leads que esperam mais de 4 horas <output id="oPerda">40%</output></label><input type="range" id="cPerda" min="5" max="90" step="5" value="40"><small>Inclui noite, fim de semana e horário de pico no pátio.</small></div>
         <div class="rg"><label for="cConv">Leads que viram venda <output id="oConv">5%</output></label><input type="range" id="cConv" min="1" max="20" step="1" value="5"></div>
         <div class="rg" style="margin-bottom:0"><label for="cLucro">Lucro médio por carro <output id="oLucro">R$ 3.000</output></label><input type="range" id="cLucro" min="500" max="15000" step="500" value="3000"></div>
       </div>
-      <div class="calc-out cut reveal">
+      <div class="calc-out reveal">
         <div>
           <span class="k">Na sua loja, por mês</span>
           <div class="trio">
-            <div><b id="oAt">60</b><span>clientes atendidos em segundos, e não depois de 1 hora</span></div>
-            <div><b id="oVend">3</b><span>vendas em jogo nesse grupo de clientes</span></div>
+            <div><b id="oAt">60</b><span>clientes esperando mais de 4 horas pela resposta</span></div>
+            <div><b>35%</b><span>é quanto o interesse cai depois de 4 horas sem resposta</span></div>
           </div>
-          <p class="money" id="oMoney">R$ 9.000</p>
-          <p class="per">de lucro indo pra concorrência todo mês.</p>
-          <p class="how">Conta feita com os seus números. Não é promessa: é o tamanho do problema.</p>
+          <p class="money" id="oMoney">R$ 3.150</p>
+          <p class="per">de lucro em risco todo mês.</p>
+          <p class="how">Conta feita com os seus números e com a queda de 35% do interesse (estudos da Webmotors, segundo a AWS, jun/2025). É uma estimativa, não uma promessa.</p>
         </div>
-        <a href="#formulario" class="btn btn-teal" data-open-form style="align-self:flex-start"><span class="ar"><svg width="20" height="20" style="color:#00333D"><use href="#arr"/></svg></span>Quero recuperar esse dinheiro</a>
+        <a href="#formulario" class="btn btn-teal" data-open-form style="align-self:flex-start"><span class="ar"><svg width="20" height="20" style="color:#00333D"><use href="#arr"/></svg></span>Conferir essa conta com a R3</a>
       </div>
     </div>
   </div>
@@ -950,23 +755,23 @@
 
 <section id="time" class="team">
   <div class="wrap">
-    <div class="sec-head team-head reveal">
-      <div style="max-width:640px"><span class="eyebrow">Quem somos</span><h2>Gente de verdade cuidando <span class="hl">da sua loja.</span></h2></div>
-      <p style="max-width:380px">Nascemos em São Luís, há mais de 4 anos. Hoje atendemos lojas de todo o Brasil.</p>
+    <div class="sec-head reveal">
+      <span class="eyebrow">Quem somos</span><h2>Gente de verdade cuidando <span class="hl">da sua loja.</span></h2>
+      <p>Nascemos em São Luís, há mais de 4 anos. Hoje atendemos lojas de todo o Brasil.</p>
     </div>
     <div class="people">
-      <div class="person reveal"><img src="assets/img/time_joao.webp" alt="João Vitor, CEO da R3" style="width:156.3%;left:-33.3%;top:-37.6%"><div class="cap"><b>João Vitor</b><span>CEO</span></div></div>
-      <div class="person reveal"><img src="assets/img/time_italo.webp" alt="Italo Matheus, Diretor Comercial da R3" style="width:104%;left:-4.1%;top:-7.9%"><div class="cap"><b>Italo Matheus</b><span>Diretor Comercial</span></div></div>
-      <div class="person reveal"><img src="assets/img/time_jordan.webp" alt="Jordan, Diretor Operacional da R3" style="width:204.5%;left:-49.4%;top:-13.1%"><div class="cap"><b>Jordan</b><span>Diretor Operacional</span></div></div>
-      <div class="person reveal"><img src="assets/img/time_jonas.webp" alt="Jonas, Head de Expansão da R3" style="width:108.5%;left:-6.1%;top:-6.6%"><div class="cap"><b>Jonas</b><span>Head de Expansão</span></div></div>
+      <div class="person reveal"><div class="pf"><img src="assets/img/time_joao.webp" alt="João Vitor, CEO da R3" style="width:156.3%;left:-33.3%;top:-37.6%"></div><div class="cap"><b>João Vitor</b><span>CEO</span></div></div>
+      <div class="person reveal"><div class="pf"><img src="assets/img/time_italo.webp" alt="Italo Matheus, Diretor Comercial da R3" style="width:104%;left:-4.1%;top:-7.9%"></div><div class="cap"><b>Italo Matheus</b><span>Diretor Comercial</span></div></div>
+      <div class="person reveal"><div class="pf"><img src="assets/img/time_jordan.webp" alt="Jordan, Diretor Operacional da R3" style="width:204.5%;left:-49.4%;top:-13.1%"></div><div class="cap"><b>Jordan</b><span>Diretor Operacional</span></div></div>
+      <div class="person reveal"><div class="pf"><img src="assets/img/time_jonas.webp" alt="Jonas, Head de Expansão da R3" style="width:108.5%;left:-6.1%;top:-6.6%"></div><div class="cap"><b>Jonas</b><span>Head de Expansão</span></div></div>
     </div>
   </div>
 </section>
 
 
-<section id="faq" style="padding-top:40px;background:#fff">
-  <div class="wrap">
-    <div class="sec-head center reveal">
+<section id="faq">
+  <div class="wrap faq-grid">
+    <div class="sec-head reveal">
       <span class="eyebrow">Dúvidas</span>
       <h2>Perguntas frequentes</h2>
     </div>
@@ -974,7 +779,7 @@
             <details><summary>Preciso trocar o número do WhatsApp?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#00333D" stroke-width="2.6" stroke-linecap="round"/></svg></span></summary><p>Não. A R3 funciona com o número que a sua loja já usa.</p></details>
       <details><summary>Atende no fim de semana e à noite?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#00333D" stroke-width="2.6" stroke-linecap="round"/></svg></span></summary><p>Sim. O cliente é respondido a qualquer hora, e a visita fica marcada para o próximo horário da loja.</p></details>
       <details><summary>Quem faz os anúncios?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#00333D" stroke-width="2.6" stroke-linecap="round"/></svg></span></summary><p>A própria R3. O mesmo time cuida do anúncio, do atendimento e do CRM, então tudo é medido junto.</p></details>
-      <details><summary>Vocês garantem a venda?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#00333D" stroke-width="2.6" stroke-linecap="round"/></svg></span></summary><p>A venda é do seu time. A R3 garante que todo cliente seja atendido em segundos, qualificado e entregue ao vendedor com a visita marcada.</p></details>
+      <details><summary>Vocês garantem a venda?<span class="pm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#00333D" stroke-width="2.6" stroke-linecap="round"/></svg></span></summary><p>Não. A venda é do seu time. A meta da R3 é responder cada cliente em segundos, qualificar e entregar ao vendedor com a visita marcada. A R3 mede o tempo e mostra no relatório.</p></details>
     </div>
   </div>
 </section>
@@ -985,31 +790,27 @@
     <div class="reveal">
       <span class="eyebrow" style="color:#D6E30F">Próximo passo</span>
       <h2>O próximo cliente da sua loja pode chegar hoje à noite. <span style="color:var(--lime)">Quem vai responder?</span></h2>
-      <p class="sub">Conte um pouco sobre a sua loja. A gente chama você no WhatsApp e mostra a R3 funcionando.</p>
     </div>
 
     <div class="form-card reveal" id="formulario">
-      <div class="wbar"><div class="tog"><i></i></div><svg class="wx" width="26" height="26" viewBox="0 0 26 26"><path d="M5 5 L21 21 M21 5 L5 21" stroke="#D6E30F" stroke-width="4" stroke-linecap="round"/></svg></div>
       <div class="fc-in">
         <div class="hero-cta">
-          <h3>Veja como levar mais clientes ao seu pátio</h3>
+          <h3><span class="os">Peça a simulação da sua loja</span><span class="od">Veja a R3 atender um cliente</span></h3>
           <ol class="next-steps">
-            <li>Você preenche o formulário, em menos de 1 minuto.</li>
+            <li>Você responde 4 perguntas rápidas sobre a loja.</li>
             <li>Um especialista da R3 chama você no WhatsApp.</li>
-            <li>Marcamos uma conversa para mostrar a R3 funcionando.</li>
+            <li><span class="os">A gente mostra a simulação com os números da sua loja.</span><span class="od">A gente mostra a R3 atendendo um cliente.</span></li>
           </ol>
-          <!-- PENDENTE: validar critério mínimo (nº de vendedores ou de leads por mês) -->
           <p class="fit">É para você se a sua loja recebe contatos todos os dias pelo WhatsApp, Instagram ou anúncios.</p>
           <button type="button" class="btn btn-teal" data-open-form>Quero clientes no meu pátio<span class="ar"><svg width="20" height="20" style="color:#00333D"><use href="#arr"/></svg></span></button>
-          <p class="form-note">Leva 1 minuto. Um especialista da R3 entra em contato pelo WhatsApp.</p>
+          <p class="form-note"><a class="linklike" data-wa="final" href="#">Prefere chamar no WhatsApp?</a></p>
         </div>
         <div class="success" role="status" aria-live="polite">
           <div class="ok"><svg width="30" height="30" style="color:#00333D"><use href="#chk"/></svg></div>
           <h3>Recebemos!</h3>
-          <p>Um especialista da R3 vai falar com você pelo WhatsApp.</p>
+          <p>Um especialista da R3 vai falar com você pelo WhatsApp. Salve nosso número: (98) 98346-5750.</p>
         </div>
       </div>
-      <p class="fc-foot">Do anúncio ao pátio.</p>
     </div>
   </div>
 </section>
@@ -1018,25 +819,21 @@
 <footer>
   <div class="wrap ft">
     <img src="assets/r3-logo-ondark.svg" alt="R3 Company">
-    <nav><a href="#como-funciona">Como funciona</a><a href="#faq">Dúvidas</a></nav>
-    <!-- PENDENTE: razão social, CNPJ e link da política de privacidade -->
-    <div class="legal"><span>R3 Company · São Luís, MA</span><a href="#">Política de privacidade</a></div>
+    <nav><a href="#faq">Dúvidas</a></nav>
+    <!-- Razão social e CNPJ do cartão CNPJ (emitido em 23/12/2024). A política é um rascunho: só vai ao ar depois da revisão do advogado -->
+    <div class="legal"><span>R3 COMPANY LTDA · CNPJ&nbsp;58.531.279/0001-10 · São&nbsp;Luís,&nbsp;MA</span><a href="politica.html">Política de privacidade</a></div>
   </div>
 </footer>
 
-<!-- Link de mensagem do WhatsApp comercial da R3 -->
-<a class="wa-float" id="waFloat" href="https://wa.me/message/2E2EWGWUF53KO1" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+<!-- O número e a mensagem pronta vêm do script (WA_NUM e MSG): todo link com data-wa é preenchido lá -->
+<a class="wa-float" id="waFloat" data-wa="flutuante" href="#" aria-label="Falar no WhatsApp">
   <svg width="30" height="30" viewBox="0 0 32 32" fill="#fff"><path d="M16 3a13 13 0 00-11.2 19.6L3 29l6.6-1.7A13 13 0 1016 3zm0 23.7a10.7 10.7 0 01-5.5-1.5l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1116 26.7zm5.9-8c-.3-.2-1.9-1-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.8 8.8 0 01-4.4-3.8c-.3-.6.3-.5 1-1.8a.6.6 0 000-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 00-.9.4 3.6 3.6 0 00-1.1 2.7 6.3 6.3 0 001.3 3.3 14.4 14.4 0 005.5 4.9c2 .9 2.9 1 3.9.8a3.3 3.3 0 002.2-1.5 2.7 2.7 0 00.2-1.5c-.1-.2-.3-.3-.6-.4z"/></svg>
 </a>
 
 <!-- CTA fixo no celular -->
 <div class="mbar" id="mbar">
-  <a href="#formulario" class="btn btn-lime" data-open-form>Quero clientes no meu pátio<span class="ar"><svg width="18" height="18" style="color:#D6E30F"><use href="#arr"/></svg></span></a>
-  <a class="wa" id="waBar" href="https://wa.me/message/2E2EWGWUF53KO1" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg width="30" height="30"><use href="#wa"/></svg></a>
+  <button type="button" class="btn btn-lime" data-open-form>Quero clientes no meu pátio<span class="ar"><svg width="18" height="18" style="color:#D6E30F"><use href="#arr"/></svg></span></button>
 </div>
-
-<!-- VÍDEO DEMO (lightbox) -->
-<div class="vmodal" id="vModal" aria-hidden="true"><div id="vSlot"></div></div>
 
 <!-- MODAL DO FORMULÁRIO -->
 <div class="modal" id="leadModal" aria-hidden="true">
@@ -1044,7 +841,7 @@
     <div class="prog">
       <div class="prog-top">
         <div class="tog"><i></i></div>
-        <span class="prog-label" id="progLabel"><b>Etapa 1 de 3</b></span>
+        <span class="prog-label" id="progLabel"><b>Fale com a R3</b></span>
         <button type="button" class="modal-x" id="modalClose" aria-label="Fechar">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#D6E30F" stroke-width="2.8" stroke-linecap="round"/></svg>
         </button>
@@ -1055,11 +852,21 @@
     <div class="modal-body">
       <form id="leadForm" novalidate>
         <div class="pane active">
-          <h2 id="modalTitle">Veja como levar mais clientes ao seu pátio</h2>
+          <h2 id="modalTitle"><span class="os">Receba a simulação da sua loja</span><span class="od">Veja a R3 atender um cliente</span></h2>
           <div class="field">
-            <label for="nome">Nome</label>
+            <label for="nome">Seu nome</label>
             <input id="nome" name="nome" type="text" autocomplete="name" placeholder="Ex.: Carlos Almeida" required>
             <span class="msg">Informe seu nome.</span>
+          </div>
+          <div class="field">
+            <label for="loja">Nome da loja</label>
+            <input id="loja" name="concessionaria" type="text" autocomplete="organization" placeholder="Ex.: Almeida Veículos" required>
+            <span class="msg">Informe o nome da loja.</span>
+          </div>
+          <div class="field">
+            <label for="vendas">Carros vendidos por mês</label>
+            <select id="vendas" name="vendas_mes" required><option value="" selected disabled>Escolha uma faixa</option><option>Até 5</option><option>6 a 15</option><option>16 a 30</option><option>Mais de 30</option></select>
+            <span class="msg">Escolha uma faixa.</span>
           </div>
           <div class="field">
             <label for="whats">WhatsApp com DDD</label>
@@ -1068,69 +875,20 @@
           </div>
         </div>
 
-        <div class="pane">
-          <div class="field">
-            <label for="loja">Nome da loja</label>
-            <input id="loja" name="concessionaria" type="text" autocomplete="organization" placeholder="Ex.: Almeida Veículos" required>
-            <span class="msg">Informe o nome da loja.</span>
-          </div>
-          <div class="field">
-            <label for="cidade">Cidade</label>
-            <input id="cidade" name="cidade" type="text" autocomplete="address-level2" placeholder="Ex.: São Luís" required>
-            <span class="msg">Informe a cidade da loja.</span>
-          </div>
-          <div class="field">
-            <label for="cargo">Cargo</label>
-            <select id="cargo" name="cargo" required>
-              <option value="">Selecione</option>
-              <option>Dono / Sócio</option>
-              <option>Diretor</option>
-              <option>Gerente de vendas</option>
-              <option>Marketing</option>
-              <option>Outro</option>
-            </select>
-            <span class="msg">Selecione seu cargo.</span>
-          </div>
-        </div>
-
-        <div class="pane">
-          <div class="field">
-            <label for="leadsMes">Leads por mês</label>
-            <!-- Faixas provisórias: confirmar os valores com a R3 -->
-            <select id="leadsMes" name="leads_mes" required>
-              <option value="">Selecione</option>
-              <option>Até 100</option>
-              <option>100 a 300</option>
-              <option>300 a 600</option>
-              <option>Mais de 600</option>
-            </select>
-            <span class="msg">Selecione a quantidade de leads por mês.</span>
-          </div>
-          <div class="field">
-            <label for="vend">Número de vendedores</label>
-            <select id="vend" name="vendedores" required>
-              <option value="">Selecione</option>
-              <option>1 a 5</option>
-              <option>6 a 15</option>
-              <option>16 a 30</option>
-              <option>Mais de 30</option>
-            </select>
-            <span class="msg">Selecione a quantidade de vendedores.</span>
-          </div>
-        </div>
+        <input type="hidden" name="simulacao" id="simData">
 
         <div class="step-btns">
           <button type="button" class="btn btn-back" id="btnBack" hidden>Voltar</button>
           <button type="submit" class="btn btn-teal" id="btnNext"><span>Continuar</span><b class="ar"><svg width="20" height="20" style="color:#00333D"><use href="#arr"/></svg></b></button>
         </div>
-        <!-- PENDENTE: link da política de privacidade -->
-        <p class="form-note"><span>Usamos seus dados só para falar com você sobre a R3. <a href="#">Política de privacidade</a></span></p>
+        <p class="form-note"><span>Usamos seus dados só para falar com você sobre a R3. <a href="politica.html" target="_blank" rel="noopener">Política de privacidade</a></span></p>
       </form>
 
       <div class="success" role="status" aria-live="polite">
         <div class="ok"><svg width="30" height="30" style="color:#00333D"><use href="#chk"/></svg></div>
         <h3>Recebemos!</h3>
-        <p>Um especialista da R3 vai falar com você pelo WhatsApp.</p>
+        <p>Um especialista da R3 vai falar com você pelo WhatsApp. Salve nosso número: (98) 98346-5750.</p>
+        <a class="btn btn-teal" data-wa="obrigado" href="#"><span class="ar"><svg width="22" height="22"><use href="#wa"/></svg></span>Adiantar no WhatsApp</a>
         <button type="button" class="btn btn-lime" id="btnDone"><span class="ar"><svg width="18" height="18" style="color:#D6E30F"><use href="#arr"/></svg></span>Continuar no site</button>
       </div>
     </div>
@@ -1140,13 +898,18 @@
 <script>
   // Opcional: webhook extra que também recebe o lead (CRM, n8n, Make...). Os leads já vão para o ZappZen via config.js.
   const FORM_ENDPOINT = "";
-  // Vídeo demo (opcional, para o futuro): link do .mp4 ou do embed do YouTube/Vimeo. Vazio = botão de play escondido.
-  const DEMO_VIDEO_URL = "";
   // Abertura automática do formulário:
-  //   'saida'   no computador, abre 1 vez quando o mouse sai da página (intenção de saída). No celular, quem faz esse papel é a barra fixa.
-  //   'rolagem' abre após 45% da página ou 25s · 'entrada' (padrão) abre ao entrar · 'nunca' só pelos botões
+  //   'saida'   (padrão) no computador, abre 1 vez quando o mouse sai da página (intenção de saída). No celular, quem faz esse papel é a barra fixa.
+  //   'rolagem' abre após 45% da página ou 25s · 'entrada' abre ao entrar (como era antes) · 'nunca' só pelos botões
   // Link com ?form abre o formulário direto (bom para a bio do Instagram e para remarketing).
-  const MODAL_AUTO = 'entrada';
+  const MODAL_AUTO = 'nunca'; // no teste v5 nada abre sozinho: a porta é o botão (ou o campo do topo)
+
+  // WhatsApp: número e mensagem pronta (o "Ref" no fim diz à equipe de qual versão a pessoa veio)
+  const WA_NUM = '5598983465750'; // WhatsApp comercial da R3, confirmado pelo Ítalo em 10/11/2026 (55 + DDD + número)
+  const MSG = {sim: 'Olá! Vim pelo site da R3 e quero a simulação com os números da minha loja.', demo: 'Olá! Vim pelo site da R3 e quero ver a R3 atendendo um cliente no WhatsApp da minha loja.'};
+  const waHref = (txt) => 'https://wa.me/' + WA_NUM + '?text=' + encodeURIComponent(txt + '\n\nRef: ' + VTAG);
+  document.querySelectorAll('[data-wa]').forEach(a => { a.href = waHref(MSG[OFERTA]); a.target = '_blank'; a.rel = 'noopener'; a.addEventListener('click', () => track('whatsapp_click', {origem: a.dataset.wa})); });
+  if (/[?&]debug/.test(location.search)) { const d = document.createElement('div'); d.className = 'dbg'; d.textContent = 'PRÉVIA · versão ' + VAR.toUpperCase() + ' · oferta ' + OFERTA + ' · troque com ?v=b|c&o=sim|demo'; document.body.prepend(d); }
 
   const nav = document.getElementById('nav');
   const mbar = document.getElementById('mbar');
@@ -1168,10 +931,13 @@
   const DONE_KEY = 'r3_lead_enviado';
   const modal = document.getElementById('leadModal');
   const card = modal.querySelector('.modal-card');
+  const fbox = modal.querySelector('.modal-body'); // o cartão do formulário: no modal (tentativa 1) ou no topo (tentativa 2)
+  if (VAR === 'c') document.getElementById('heroSlot').appendChild(fbox);
   let lastFocus = null;
 
   function openModal() {
     track('form_open');
+    if (VAR === 'c') { fbox.scrollIntoView({block: 'center'}); document.getElementById('nome').focus({preventScroll: true}); return; }
     lastFocus = document.activeElement;
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');
@@ -1180,7 +946,7 @@
     setTimeout(() => card.focus(), 60);
   }
   function closeModal() {
-    if (!card.classList.contains('done')) track('form_close', {etapa: step});
+    if (!fbox.classList.contains('done')) track('form_close', {etapa: step});
     modal.classList.remove('open');
     modal.setAttribute('aria-hidden', 'true');
     document.documentElement.classList.remove('lock');
@@ -1189,8 +955,6 @@
   }
   document.querySelectorAll('[data-open-form]').forEach(el => el.addEventListener('click', e => { e.preventDefault(); openModal(); }));
   document.getElementById('modalClose').addEventListener('click', closeModal);
-  document.getElementById('waFloat').addEventListener('click', () => track('whatsapp_click'));
-  document.getElementById('waBar').addEventListener('click', () => track('whatsapp_click'));
   document.getElementById('btnDone').addEventListener('click', closeModal);
   modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
   document.addEventListener('keydown', e => {
@@ -1223,9 +987,9 @@
     step = n;
     panes.forEach((p, i) => p.classList.toggle('active', i === n - 1));
     setProgress(n / TOTAL * 100);
-    progLabel.innerHTML = `<b>Etapa ${n} de ${TOTAL}</b>`;
+    progLabel.innerHTML = '<b>Fale com a R3</b>';
     btnBack.hidden = n === 1;
-    btnNext.querySelector('span').textContent = n === TOTAL ? 'Quero clientes no meu pátio' : 'Continuar';
+    btnNext.querySelector('span').textContent = n === TOTAL ? 'Pedir que a R3 me chame' : 'Continuar';
     card.scrollTop = 0;
     if (focus) panes[n - 1].querySelector('input,select').focus();
   }
@@ -1241,10 +1005,8 @@
     return ok;
   }
   function markDone() {
-    card.classList.add('done');
+    fbox.classList.add('done');
     document.getElementById('formulario').classList.add('done');
-    // Quem já respondeu não vê mais o formulário do topo
-    document.getElementById('heroForm').hidden = true;
     setProgress(100);
     progLabel.innerHTML = '<b>Tudo pronto!</b>';
   }
@@ -1254,21 +1016,22 @@
   const LEAD_ID = novoId();
   function sendLead(status, etapa) {
     const data = Object.fromEntries(new FormData(form));
-    Object.assign(data, {lead_id: LEAD_ID, status, etapa, origem: 'landing-crm-concessionarias'}, UTM);
-    const envios = [];
+    Object.assign(data, {lead_id: LEAD_ID, status, etapa, origem: 'landing-crm-concessionarias', variante: VTAG, visitante_id: VISITANTE_ID}, UTM);
+    const envios = [supabase('rpc/salvar_lead', {dados: data})];
     if (FORM_ENDPOINT) envios.push(fetch(FORM_ENDPOINT, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data), keepalive:true})
       .catch(err => console.error(err)));
-    if (ZAPPZEN_URL && (status === 'completo' || (etapa === 1 && CFG.ZAPPZEN_PARCIAL !== false))) sendZappZen(data);
+    if (ZAPPZEN_URL && (status === 'completo' || CFG.ZAPPZEN_PARCIAL !== false)) sendZappZen(data);
     return Promise.all(envios);
   }
 
-  // ZappZen: roda à parte, sem await. Uma falha lá não trava a tela de "Recebemos!".
-  // Nomes legíveis porque aparecem assim para o vendedor; nome, whatsapp, empresa e cargo o ZappZen reconhece sozinho.
+  // ZappZen: destino principal dos leads. Roda à parte, sem await: uma falha lá não trava a tela de "Recebemos!".
+  // Nomes legíveis porque aparecem assim para o vendedor; nome, whatsapp e empresa o ZappZen reconhece sozinho.
   function sendZappZen(data) {
     const dados = {
-      nome: data.nome, whatsapp: data.whatsapp, empresa: data.concessionaria, cargo: data.cargo,
-      'Cidade': data.cidade, 'Leads por mês': data.leads_mes, 'Número de vendedores': data.vendedores,
-      'Status do formulário': data.status, 'Etapa': data.etapa, 'Origem': data.origem, 'Id do lead': data.lead_id
+      nome: data.nome, whatsapp: data.whatsapp, empresa: data.concessionaria,
+      'Carros vendidos por mês': data.vendas_mes, 'Simulação': data.simulacao,
+      'Versão da página': data.variante, 'Status do formulário': data.status, 'Origem': data.origem,
+      'Id do lead': data.lead_id, 'Id do visitante': data.visitante_id
     };
     Object.keys(dados).forEach(k => { if (dados[k] === undefined || dados[k] === '') delete dados[k]; });
     // Se o script ainda não carregou, ou se o envio dele falhar na rede, manda direto para o endereço (com as UTM da URL)
@@ -1283,7 +1046,7 @@
     if (!validate(panes[step - 1])) return;
     track('form_step_complete', {etapa: step});
     if (step < TOTAL) {
-      // Lead parcial: só vai para o webhook (FORM_ENDPOINT) e, se ZAPPZEN_PARCIAL estiver ligado, para o ZappZen
+      // Lead parcial: com nome e WhatsApp em mãos, a R3 já consegue chamar mesmo se a pessoa desistir
       sendLead('parcial', step);
       setStep(step + 1, true);
       return;
@@ -1291,13 +1054,11 @@
 
     btnNext.disabled = true; btnNext.style.opacity = .7;
     await sendLead('completo', step);
-    const f = form.elements;
-    track('form_submit', {cargo: f.cargo.value, vendedores: f.vendedores.value, leads_mes: f.leads_mes.value});
+    track('form_submit');
     try { localStorage.setItem(DONE_KEY, '1'); } catch (err) {}
     markDone();
     document.getElementById('btnDone').focus();
-    // Mostra o "Recebemos!" por alguns segundos e fecha sozinho
-    setTimeout(() => { if (modal.classList.contains('open')) closeModal(); }, 3500);
+    document.dispatchEvent(new Event('lead:done'));
   });
   form.querySelectorAll('input,select').forEach(el => el.addEventListener('input', () => el.closest('.field').classList.remove('err')));
 
@@ -1320,30 +1081,21 @@
     }
   }
 
-  // Calculadora de dinheiro na mesa
+  // Calculadora: lucro em risco. QUEDA é o quanto o interesse cai depois de 4 horas sem resposta (estudos da Webmotors, segundo a AWS, jun/2025)
+  const QUEDA = 0.35;
   const brl = v => 'R$ ' + Math.round(v).toLocaleString('pt-BR');
+  let calcTocada = false;
   const calc = () => {
     const L = +cLeads.value, P = +cPerda.value / 100, C = +cConv.value / 100, M = +cLucro.value;
     oLeads.textContent = L; oPerda.textContent = Math.round(P * 100) + '%'; oConv.textContent = Math.round(C * 100) + '%'; oLucro.textContent = brl(M);
     oAt.textContent = Math.round(L * P).toLocaleString('pt-BR');
-    oVend.textContent = (L * P * C).toLocaleString('pt-BR', {maximumFractionDigits: 1});
-    oMoney.textContent = brl(L * P * C * M);
+    oMoney.textContent = brl(L * P * C * QUEDA * M);
+    // a conta feita vai junto na mensagem (e no formulário), assim a R3 já começa a conversa sabendo os números da loja
+    const simTxt = `Simulei na página da R3: ${L} leads por mês, ${Math.round(P * 100)}% esperam mais de 4 horas pela resposta, ${Math.round(C * 100)}% viram venda, lucro de ${brl(M)} por carro. Deu ${brl(L * P * C * QUEDA * M)} de lucro em risco por mês. Quero conferir com a R3.`;
+    simData.value = calcTocada ? simTxt : '';
   };
-  let calcTocada = false;
-  ['cLeads','cPerda','cConv','cLucro'].forEach(id => document.getElementById(id).addEventListener('input', () => { calc(); if (!calcTocada) { calcTocada = true; track('calc_use'); } }));
+  ['cLeads','cPerda','cConv','cLucro'].forEach(id => document.getElementById(id).addEventListener('input', () => { if (!calcTocada) { calcTocada = true; track('calc_use'); } calc(); }));
   calc();
-
-  // Vídeo demo
-  const play = document.getElementById('playDemo'), vModal = document.getElementById('vModal'), vSlot = document.getElementById('vSlot');
-  if (DEMO_VIDEO_URL) {
-    play.classList.add('on');
-    play.addEventListener('click', () => {
-      track('video_play');
-      vSlot.innerHTML = /youtube|vimeo/.test(DEMO_VIDEO_URL) ? `<iframe src="${DEMO_VIDEO_URL}" allow="autoplay; fullscreen" allowfullscreen></iframe>` : `<video src="${DEMO_VIDEO_URL}" controls autoplay playsinline></video>`;
-      vModal.classList.add('open'); document.documentElement.classList.add('lock');
-    });
-    vModal.addEventListener('click', e => { if (e.target === vModal) { vModal.classList.remove('open'); vSlot.innerHTML = ''; document.documentElement.classList.remove('lock'); } });
-  }
 
   // Animações de entrada
   const io = new IntersectionObserver(entries => entries.forEach(en => {
@@ -1351,31 +1103,7 @@
   }), {threshold:.12});
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  // Conversa do WhatsApp aparecendo em sequência
-  const msgs = document.querySelectorAll('#chat .bubble');
-  const chatIo = new IntersectionObserver(([en]) => {
-    if (!en.isIntersecting) return;
-    msgs.forEach((m,i) => setTimeout(() => m.classList.add('show'), 350 + i*700));
-    chatIo.disconnect();
-  }, {threshold:.3});
-  chatIo.observe(document.getElementById('chat'));
-
-  // Formulário do topo (etapa 1): copia nome e WhatsApp para o formulário principal e segue para a etapa 2
-  const heroForm = document.getElementById('heroForm'), heroNome = document.getElementById('heroNome'), heroWhats = document.getElementById('heroWhats');
-  heroWhats.addEventListener('input', () => {
-    let d = heroWhats.value.replace(/\D/g,'').slice(0,11);
-    heroWhats.value = d.length > 10 ? `(${d.slice(0,2)}) ${d.slice(2,7)}-${d.slice(7)}` : d.length > 6 ? `(${d.slice(0,2)}) ${d.slice(2,6)}-${d.slice(6)}` : d.length > 2 ? `(${d.slice(0,2)}) ${d.slice(2)}` : d;
-  });
-  [heroNome, heroWhats].forEach(el => el.addEventListener('input', () => el.closest('.hf').classList.remove('err')));
-  heroForm.addEventListener('submit', e => {
-    e.preventDefault();
-    const okNome = heroNome.value.trim() !== '', okWa = heroWhats.value.replace(/\D/g,'').length >= 10;
-    heroNome.closest('.hf').classList.toggle('err', !okNome); heroWhats.closest('.hf').classList.toggle('err', !okWa);
-    if (!okNome || !okWa) { track('form_error', {etapa: 1, campo: !okNome ? 'nome' : 'whatsapp', origem: 'topo'}); (!okNome ? heroNome : heroWhats).focus(); return; }
-    form.elements.nome.value = heroNome.value.trim(); whats.value = heroWhats.value;
-    openModal();
-    if (!card.classList.contains('done') && step === 1) form.requestSubmit();
-  });
+  calc();
 </script>
 </body>
 </html>
